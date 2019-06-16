@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/css/bootstrap.min.css">
+     <link href="/demo/login.css" rel="stylesheet" />
+  
   <script src="/js/core/jquery.min.js"></script>
   <script src="/js/core/bootstrap.min.js"></script>
 </head>
@@ -15,7 +17,7 @@ padding-right:10%
 </style>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">BLOOD-LIFE</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -24,7 +26,7 @@ padding-right:10%
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/homepage">Home</a>
+        <a class="nav-link" href="/index">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Events</a>
@@ -36,35 +38,56 @@ padding-right:10%
     </ul>
   </div>
 </nav>
-  
-<div class="container">
-	<div class="row" >
-	<div class="col-6"></div>
-		<div class="col-6" style="margin-top:10%">
-			<div class="jumbotron" style="background:#343a40; padding-bottom:1%;padding-top:5%;border-radius:2%" >
-			<h2 style="color:white;text-align:center;margin-bottom:5%">Login</h2>
-				<form onsubmit="return login()" action="javascript:void(0)">
-					<div class="form-group" ><input type="text" class="form-control" placeholder="username"></div>
-					<div  class="form-group"><input type="password" class="form-control" placeholder="password"></div>
-					<div  class="form-group" style="text-align:center"><button type="submit" class="btn btn-lg btn-outline-success" style="margin:5%">Login</button><button type="submit" class="btn btn-lg btn-outline-warning" style="margin:5%">Signup</button></div>
-					
-				</form>
-			</div>
-		</div>
-	</div>
+
+<div class="wrap ">
+
+<div class="card">
+<div class="container-fluid">
+  <div class="row no-gutter">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6 ">
+      <div class="login d-flex align-items-center py-5"">
+        <div class="container ">
+          <div class="row center">
+            <div class="col-md-9 col-lg-8 mx-auto ">
+              <h3 class="login-heading mb-4">Welcome back!</h3>
+              <form>
+                <div class="form-label-group">
+                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                  <label for="inputEmail">Email address</label>
+                </div>
+
+                <div class="form-label-group">
+                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                  <label for="inputPassword">Password</label>
+                </div>
+
+                <div class="custom-control custom-checkbox mb-3">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1">Remember password</label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
+                                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign up</button>
+                
+                <div class="text-center">
+                  <a class="small" href="#">Forgot password?</a></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
   
 </div>
-<footer id="sticky-footer" class="py-4 bg-dark text-white-50" style="position:fixed;bottom:0;width:100%">
-    <div class="container text-center">
-      <small>Copyright &copy; Your Website</small>
-    </div>
-  </footer>
-<Script>
+</div>
+<!-- <Script>
 function login(){
 
 	document.location.href = '/dashboard'
 }
 
-</Script>
+</Script> -->
 </body>
 </html>
