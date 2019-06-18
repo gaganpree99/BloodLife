@@ -17,14 +17,13 @@ The code for these webpages can be access through [GitLab](https://git.cs.dal.ca
 
  **Landing page:**
 
-[1].Unsplash, “This local sheriff took about 30 minu... | HD photo by LuAnn Hunt (@luannhunt180) on Unsplash,” Beautiful Free Images & Pictures. [Online]. Available: https://unsplash.com/photos/X20g2GQsVdA. [Accessed: 31-May-2019].
 
-[2].Unsplash, “Working on web components | HD photo by Yucel Moran (@yucelmoran) on Unsplash,” Beautiful Free Images & Pictures. [Online]. Available: https://unsplash.com/photos/Ky9JHrdvb1o. [Ac-cessed: 31-May-2019].
-
-[3].Unsplash, “Human, person, injection and arm | HD photo by Chang Duong (@chang612) on Unsplash,” Beautiful Free Images & Pictures. [Online]. Available: https://unsplash.com/photos/z4n1tcahzrk. [Ac-cessed: 31-May-2019].
-
-[4].Unsplash, “Painted red | HD photo by Tim Marshall (@timmarshall) on Unsplash,” Beautiful Free Images & Pictures. [Online]. Available: https://unsplash.com/photos/cAtzHUz7Z8g. [Accessed: 31-May-2019].
-
+1. Unsplash, “This local sheriff took about 30 minu... | HD photo by LuAnn Hunt (@luannhunt180) on Unsplash,” Beautiful Free Images & Pictures. [Online]. Available: https://unsplash.com/photos/X20g2GQsVdA. [Accessed: 31-May-2019].
+1. Unsplash, “Working on web components | HD photo by Yucel Moran (@yucelmoran) on Unsplash,” Beautiful Free Images & Pictures. [Online]. Available: https://unsplash.com/photos/Ky9JHrdvb1o. [Ac-cessed: 31-May-2019].
+1. Unsplash, “Human, person, injection and arm | HD photo by Chang Duong (@chang612) on Unsplash,” Beautiful Free Images & Pictures. [Online]. Available: https://unsplash.com/photos/z4n1tcahzrk. [Ac-cessed: 31-May-2019].
+1. 
+1. Unsplash, “Painted red | HD photo by Tim Marshall (@timmarshall) on Unsplash,” Beautiful Free Images & Pictures. [Online]. Available: https://unsplash.com/photos/cAtzHUz7Z8g. [Accessed: 31-May-2019].
+1. 
 
 **Update profile:**
 
@@ -51,11 +50,9 @@ The code for these webpages can be access through [GitLab](https://git.cs.dal.ca
  
 ## Libraries/Toolkits Used
  1. **Bootsrap**
-    
     Bootstrap is an open source toolkit for HTML, CSS, and JS development. I have used this toolkit to add responsiveness to the webpages.
 
  2. **Jquery**
-    
     Jquery is a lightweight Javascript language. It helps in HTML/DOM, CSS manipulation and HTML event methods. 
 
 ## Code Inspirations
