@@ -3,7 +3,7 @@
 The following webpages have been implemented for this assignment:
 1. Home Page
 2. Donor Registration Page
-3. Organisation Login
+3. Organization Login
 4. Donor Login
 3. Gallery Page
 4. Event Page
