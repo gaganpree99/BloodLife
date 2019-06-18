@@ -165,7 +165,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-8 col-sm-6 mb-3">
+					<div class="col-lg-12 col-sm-6 mb-3">
 						<div id="card3" class="card h-100">
 							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
 							<div class="header" style="padding: 1.5%; margin: 0px">
