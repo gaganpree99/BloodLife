@@ -1,11 +1,13 @@
 # Read Me for BloodLife
 
 The following webpages have been implemented for this assignment:
-1. [Home Page](https://web.cs.dal.ca/~singh1/csci5709/a2/index.html)
-2. [Donor Registration Page](https://web.cs.dal.ca/~singh1/csci5709/a2/signup.html)
-3. [Gallery Page](https://web.cs.dal.ca/~singh1/csci5709/a2/gallery.html)
-4. [Manage Gallery](https://web.cs.dal.ca/~singh1/csci5709/a2/manage_gallery.html)
-5. [Registration Successfull Page (Additional)](https://web.cs.dal.ca/~singh1/csci5709/a2/success.html)
+1. [Home Page]
+2. [Donor Registration Page]
+3. [Gallery Page]
+4. [Manage Gallery]
+5. [Registration Successfull Page]
+6. Organisation Login
+7. Donor Login
 
 The Hyperlink takes you directly to the bluenose/hector server where you can preview them.
 
