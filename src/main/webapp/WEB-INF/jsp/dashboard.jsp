@@ -28,6 +28,13 @@
 	href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
 	integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
 	crossorigin="anonymous">
+<link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"
+	rel="stylesheet" />
+<style>
+.box:hover {
+	box-shadow: 3px 3px 20px #000000;
+}
+</style>
 </head>
 <body>
 <body class="">
@@ -39,268 +46,281 @@
 			<!-- End Navbar -->
 			<div class="content">
 				<div class="row">
-					<div class="col-lg-4 col-sm-6">
-						<div class="card" style="background: #ad4848; color: white">
-							<div class="content">
-								<div class="container">
-									<div class="row">
-										<div class="col-xs-4" style="margin: 4%">
-											<div class="text-center">
-												<i class="fas fa-prescription-bottle"
-													style="font-size: 48px"></i>
-											</div>
-										</div>
-										<div class="col-xs-5" style="margin: 4%">
-											<div style="font-size: 18px">
-												<p>Blood Group: A+</p>
-												500ml
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6">
-						<div class="card" style="background: #883636; color: white">
-							<div class="content">
-								<div class="container">
-									<div class="row">
-										<div class="col-xs-3" style="margin: 4%">
-											<div class="text-center">
-												<i class="fas fa-prescription-bottle"
-													style="font-size: 48px"></i>
-											</div>
-										</div>
-										<div class="col-xs-5" style="margin: 4%">
-											<div style="font-size: 18px">
-												<p>Blood Group: B+</p>
-												600ml
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6">
-						<div class="card" style="background: #b92300; color: white">
-							<div class="content">
-								<div class="container">
-									<div class="row">
-										<div class="col-xs-3" style="margin: 4%">
-											<div class="text-center">
-												<i class="fas fa-prescription-bottle"
-													style="font-size: 48px"></i>
-											</div>
-										</div>
-										<div class="col-xs-5" style="margin: 4%">
-											<div style="font-size: 18px">
-												<p>Blood Group: AB+</p>
-												600ml
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6">
-						<div class="card" style="background: #ad4848; color: white">
-							<div class="content">
-								<div class="container">
-									<div class="row">
-										<div class="col-xs-3" style="margin: 4%">
-											<div class="text-center">
-												<i class="fas fa-prescription-bottle"
-													style="font-size: 48px"></i>
-											</div>
-										</div>
-										<div class="col-xs-5" style="margin: 4%">
-											<div style="font-size: 18px">
-												<p>Blood Group: A-</p>
-												600ml
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6">
-						<div class="card" style="background: #883636; color: white">
-							<div class="content">
-								<div class="container">
-									<div class="row">
-										<div class="col-xs-3" style="margin: 4%">
-											<div class="text-center">
-												<i class="fas fa-prescription-bottle"
-													style="font-size: 48px"></i>
-											</div>
-										</div>
-										<div class="col-xs-5" style="margin: 4%">
-											<div style="font-size: 18px">
-												<p>Blood Group: B-</p>
-												600ml
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6">
-						<div class="card" style="background: #b92300; color: white">
-							<div class="content">
-								<div class="container">
-									<div class="row">
-										<div class="col-xs-3" style="margin: 4%">
-											<div class="text-center">
-												<i class="fas fa-prescription-bottle"
-													style="font-size: 48px"></i>
-											</div>
-										</div>
-										<div class="col-xs-5" style="margin: 4%">
-											<div style="font-size: 18px">
-												<p>Blood Group: AB-</p>
-												600ml
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6">
-						<div class="card" style="background: #b15f4b; color: white">
-							<div class="content">
-								<div class="container">
-									<div class="row">
-										<div class="col-xs-3" style="margin: 4%">
-											<div class="text-center">
-												<i class="fas fa-prescription-bottle"
-													style="font-size: 48px"></i>
-											</div>
-										</div>
-										<div class="col-xs-5" style="margin: 4%">
-											<div style="font-size: 18px">
-												<p>Blood Group: O+</p>
-												600ml
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6">
-						<div class="card" style="background: #b15f4b; color: white">
-							<div class="content">
-								<div class="container">
-									<div class="row">
-										<div class="col-xs-3" style="margin: 4%">
-											<div class="text-center">
-												<i class="fas fa-prescription-bottle"
-													style="font-size: 48px"></i>
-											</div>
-										</div>
-										<div class="col-xs-5" style="margin: 4%">
-											<div style="font-size: 18px">
-												<p>Blood Group: O-</p>
-												600ml
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<div class="card">
-							<div class="header" style="padding: 1%; margin: 0px">
-								<h4>
-									Recent Donors <i class="fas fa-sync"
-										style="float: right; padding: 2%; cursor: pointer"></i>
+					<div class="col-lg-2 col-sm-6 mb-3">
+						<div id="card3" class="card h-100">
+							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
+							<a href="#"><img class="card-img-top"
+								src="https://cdn1.medicalnewstoday.com/content/images/articles/320/320717/red-blood-cells.jpg"
+								alt=""></a>
+							<div class="card-body">
+								<h4 class="card-title" style="margin: 0px;font-weight: 700;">
+									<a class="text" href="#">Blood Group: A+</a>
 								</h4>
-								<p class="categories">5 Recent donors</p>
-								<hr>
+								<p class="card-text" style="font-size:28px">5300 ml</p>
 							</div>
-							<div class="content">
-								<div class="container table-responsive">
-									<table class="table table-striped" id="receiverTable">
-										<thead class="thead-dark">
-											<tr>
-												<th scope="col">#</th>
-												<th scope="col">First Name</th>
-												<th scope="col">Last Name</th>
-												<th scope="col">Blood Group</th>
-												<th scope="col">Quantity</th>
-												<th scope="col">Contact Number</th>
-												<th scope="col">Date</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<th scope="row">1</th>
-												<td>Varun</td>
-												<td>Mahagaokar</td>
-												<td>O+</td>
-												<td>100</td>
-												<td>+919990002323</td>
-												<td>05/31/2019</td>
-											</tr>
-											<tr>
-												<th scope="row">2</th>
-												<td>Smit</td>
-												<td>Saraiya</td>
-												<td>O+</td>
-												<td>200</td>
-												<td>+919990002323</td>
-												<td>05/31/2019</td>
-											</tr>
-											<tr>
-												<th scope="row">3</th>
-												<td>Nishant</td>
-												<td>Bhambani</td>
-												<td>A+</td>
-												<td>150</td>
-												<td>+919990002323</td>
-												<td>05/31/2019</td>
-											</tr>
-											<tr>
-												<th scope="row">4</th>
-												<td>Anant</td>
-												<td>Pillai</td>
-												<td>AB+</td>
-												<td>300</td>
-												<td>+919990002323</td>
-												<td>05/31/2019</td>
-											</tr>
-											<tr>
-												<th scope="row">5</th>
-												<td>Dhruv</td>
-												<td>Purohit</td>
-												<td>B-</td>
-												<td>250</td>
-												<td>+919990002323</td>
-												<td>05/31/2019</td>
-											</tr>
-										</tbody>
-									</table>
+						</div>
+					</div>
+					<div class="col-lg-2 col-sm-6 mb-3">
+						<div id="card3" class="card h-100">
+							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
+							<a href="#"><img class="card-img-top"
+								src="https://cdn1.medicalnewstoday.com/content/images/articles/319/319544/3d-render-of-red-blood-cells.jpg"
+								alt=""></a>
+							<div class="card-body">
+								<h4 class="card-title" style="margin: 0px;font-weight: 700;">
+									<a class="text" href="#">Blood Group: A+</a>
+								</h4>
+								<p class="card-text" style="font-size:28px">5300 ml</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2 col-sm-6 mb-3">
+						<div id="card3" class="card h-100">
+							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
+							<a href="#"><img class="card-img-top"
+								src="https://dp9bxf2pat5uz.cloudfront.net/wp-content/uploads/red-blood-cells-1.jpg"
+								alt=""></a>
+							<div class="card-body">
+								<h4 class="card-title" style="margin: 0px;font-weight: 700;">
+									<a class="text" href="#">Blood Group: A+</a>
+								</h4>
+								<p class="card-text" style="font-size:28px">5300 ml</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2 col-sm-6 mb-3">
+						<div id="card3" class="card h-100">
+							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
+							<a href="#"><img class="card-img-top"
+								src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+								alt=""></a>
+							<div class="card-body">
+								<h4 class="card-title" style="margin: 0px;font-weight: 700;">
+									<a class="text" href="#">Blood Group: A+</a>
+								</h4>
+								<p class="card-text" style="font-size:28px">5300 ml</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2 col-sm-6 mb-3">
+						<div id="card3" class="card h-100">
+							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
+							<a href="#"><img class="card-img-top"
+								src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+								alt=""></a>
+							<div class="card-body">
+								<h4 class="card-title" style="margin: 0px;font-weight: 700;">
+									<a class="text" href="#">Blood Group: A+</a>
+								</h4>
+								<p class="card-text" style="font-size:28px">5300 ml</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2 col-sm-6 mb-3">
+						<div id="card3" class="card h-100">
+							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
+							<a href="#"><img class="card-img-top"
+								src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+								alt=""></a>
+							<div class="card-body">
+								<h4 class="card-title" style="margin: 0px;font-weight: 700;">
+									<a class="text" href="#">Blood Group: A+</a>
+								</h4>
+								<p class="card-text" style="font-size:28px">5300 ml</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2 col-sm-6 mb-3">
+						<div id="card3" class="card h-100">
+							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
+							<a href="#"><img class="card-img-top"
+								src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+								alt=""></a>
+							<div class="card-body">
+								<h4 class="card-title" style="margin: 0px;font-weight: 700;">
+									<a class="text" href="#">Blood Group: A+</a>
+								</h4>
+								<p class="card-text" style="font-size:28px">5300 ml</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2 col-sm-6 mb-3">
+						<div id="card3" class="card h-100">
+							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
+							<a href="#"><img class="card-img-top"
+								src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+								alt=""></a>
+							<div class="card-body">
+								<h4 class="card-title" style="margin: 0px;font-weight: 700;">
+									<a class="text" href="#">Blood Group: A+</a>
+								</h4>
+								<p class="card-text" style="font-size:28px">5300 ml</p>
+							</div>
+						</div>
+					</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="card box">
+								<div class="header" style="padding: 1%; margin: 0px">
+									<h4>
+										Recent Donors <i class="fas fa-sync"
+											style="float: right; padding: 2%; cursor: pointer"></i>
+									</h4>
+									<p class="categories">5 Recent donors</p>
+									<hr>
+								</div>
+								<div class="content">
+									<div class="container table-responsive">
+										<table class="table table-striped" id="donorTable">
+											<thead class="thead-dark">
+												<tr>
+													<th scope="col">#</th>
+													<th scope="col">First Name</th>
+													<th scope="col">Last Name</th>
+													<th scope="col">Blood Group</th>
+													<th scope="col">Quantity</th>
+													<th scope="col">Contact Number</th>
+													<th scope="col">Date</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<th scope="row">1</th>
+													<td>Varun</td>
+													<td>Mahagaokar</td>
+													<td>O+</td>
+													<td>100</td>
+													<td>+919990002323</td>
+													<td>05/31/2019</td>
+												</tr>
+												<tr>
+													<th scope="row">2</th>
+													<td>Smit</td>
+													<td>Saraiya</td>
+													<td>O+</td>
+													<td>200</td>
+													<td>+919990002323</td>
+													<td>05/31/2019</td>
+												</tr>
+												<tr>
+													<th scope="row">3</th>
+													<td>Nishant</td>
+													<td>Bhambani</td>
+													<td>A+</td>
+													<td>150</td>
+													<td>+919990002323</td>
+													<td>05/31/2019</td>
+												</tr>
+												<tr>
+													<th scope="row">4</th>
+													<td>Anant</td>
+													<td>Pillai</td>
+													<td>AB+</td>
+													<td>300</td>
+													<td>+919990002323</td>
+													<td>05/31/2019</td>
+												</tr>
+												<tr>
+													<th scope="row">5</th>
+													<td>Dhruv</td>
+													<td>Purohit</td>
+													<td>B-</td>
+													<td>250</td>
+													<td>+919990002323</td>
+													<td>05/31/2019</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="card box">
+								<div class="header" style="padding: 1%; margin: 0px">
+									<h4>
+										Recent Receivers <i class="fas fa-sync"
+											style="float: right; padding: 2%; cursor: pointer"></i>
+									</h4>
+									<p class="categories">5 Recent Receivers</p>
+									<hr>
+								</div>
+								<div class="content">
+									<div class="container table-responsive">
+										<table class="table table-striped" id="receiverTable">
+											<thead class="thead-dark">
+												<tr>
+													<th scope="col">#</th>
+													<th scope="col">First Name</th>
+													<th scope="col">Last Name</th>
+													<th scope="col">Blood Group</th>
+													<th scope="col">Quantity</th>
+													<th scope="col">Contact Number</th>
+													<th scope="col">Date</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<th scope="row">1</th>
+													<td>Varun</td>
+													<td>Mahagaokar</td>
+													<td>O+</td>
+													<td>100</td>
+													<td>+919990002323</td>
+													<td>05/31/2019</td>
+												</tr>
+												<tr>
+													<th scope="row">2</th>
+													<td>Smit</td>
+													<td>Saraiya</td>
+													<td>O+</td>
+													<td>200</td>
+													<td>+919990002323</td>
+													<td>05/31/2019</td>
+												</tr>
+												<tr>
+													<th scope="row">3</th>
+													<td>Nishant</td>
+													<td>Bhambani</td>
+													<td>A+</td>
+													<td>150</td>
+													<td>+919990002323</td>
+													<td>05/31/2019</td>
+												</tr>
+												<tr>
+													<th scope="row">4</th>
+													<td>Anant</td>
+													<td>Pillai</td>
+													<td>AB+</td>
+													<td>300</td>
+													<td>+919990002323</td>
+													<td>05/31/2019</td>
+												</tr>
+												<tr>
+													<th scope="row">5</th>
+													<td>Dhruv</td>
+													<td>Purohit</td>
+													<td>B-</td>
+													<td>250</td>
+													<td>+919990002323</td>
+													<td>05/31/2019</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
 
+					</div>
+					<div class="row"></div>
 				</div>
-				<div class="row"></div>
+				<jsp:include page="footer.jsp" />
 			</div>
-			<jsp:include page="footer.jsp" />
 		</div>
-	</div>
-
 </body>
 
 <script src="/js/core/jquery.min.js"></script>
@@ -310,6 +330,7 @@
 <script src="/js/plugins/bootstrap-notify.js"></script>
 <script src="/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
 <script src="/demo/demo.js"></script>
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
 
 <script>
@@ -317,8 +338,12 @@
 		$("#header").html("Dashboard");
 		$("li").removeClass("active");
 		$("#dashboard").addClass("active")
-		//
-
+		var donorTable = $('#donorTable').DataTable({
+			"paging" : false
+		});
+		var receiverTable = $('#receiverTable').DataTable({
+			"paging" : false
+		});
 	})
 </script>
 </html>

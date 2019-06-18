@@ -1,4 +1,4 @@
-    <div class="sidebar" data-color="white" data-active-color="danger">
+    <div class="sidebar" data-color="black" data-active-color="danger">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
@@ -25,6 +25,18 @@
             <a href="/receiver">
              <i class="fas fa-user-injured"></i>
               <p>Receiver</p>
+            </a>
+          </li>
+           <li id="eventsJsp">
+            <a href="/events">
+             <i class="fas fa-user-injured"></i>
+              <p>events</p>
+            </a>
+          </li>
+           <li id="galleryJsp">
+            <a href="/gallery">
+             <i class="fas fa-user-injured"></i>
+              <p>Gallery</p>
             </a>
           </li>
         </ul>
