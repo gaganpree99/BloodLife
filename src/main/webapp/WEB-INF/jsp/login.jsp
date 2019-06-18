@@ -4,11 +4,9 @@
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <link rel="stylesheet" href="/css/bootstrap.min.css">
      <link href="/demo/login.css" rel="stylesheet" />
-  
-  <script src="/js/core/jquery.min.js"></script>
-  <script src="/js/core/bootstrap.min.js"></script>
 </head>
 <style>
 .nav-item{
@@ -67,7 +65,7 @@ padding-right:10%
                   <label class="custom-control-label" for="customCheck1">Remember password</label>
                 </div>
                 <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
-                                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign up</button>
+                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="button" id="signUp">Sign up</button>
                 
                 <div class="text-center">
                   <a class="small" href="#">Forgot password?</a></div>
@@ -82,12 +80,108 @@ padding-right:10%
   
 </div>
 </div>
- <Script>
-function login(){
 
-	document.location.href = '/dashboard'
-}
+<div id="signUpModal" class="modal " tabindex="-1"
+					role="dialog">
+					<div class="modal-dialog modal-md" role="document">
+						<div class="modal-content">
+							<form onsubmit="return addDonor()" action="javascript:void(0)"
+								id="addDonorDetails">
+								<div class="modal-header">
+									<h5 class="modal-title">Sign Up</h5>
+									<button type="button" class="close" data-dismiss="modal"
+										aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<div class="form-group">
+										<label class="control-label"> First Name:<span
+											style="color: red"> *</span>
+										</label> <input type="text" class="form-control" name="firstName"
+											id="firstName" placeholder="firstname" required>
+									</div>
+									<div class="form-group">
+										<label class="control-label"> Last Name:<span
+											style="color: red"> *</span>
+										</label> <input type="text" class="form-control" name="lastName"
+											id="lastName" placeholder="lastName" required>
+									</div>
+									<div class="form-group">
+										<label class="control-label"> Blood Group:<span
+											style="color: red"> *</span>
+										</label> <select
+											class="col-sm-12" id="bloodList" style="width: 100%">
+											<option value="A+">A+</option>
+											<option value="A-">A-</option>
+											<option value="B+">B+</option>
+											<option value="O+">O+</option>
+											<option value="O-">O-</option>
+											<option value="AB+">AB+</option>
+											<option value="AB-">AB-</option>
+										</select>
 
+									</div>
+							
+									<div class="form-group">
+										<label class="control-label"> Email:<span
+											style="color: red"> *</span>
+										</label> <input type="email" class="form-control" name="contact"
+											id="contact" placeholder="contact" required>
+									</div>
+									<div class="form-group">
+										<label class="control-label"> Age: <span
+											style="color: red"> *</span>
+										</label> <input type="number" class="form-control" name="date"
+											id="age" placeholder="date" required>
+									</div>
+
+								</div>
+								<div class="modal-footer">
+									<button type="submit" class="btn btn-success" id="btnSave">Sign up</button>
+									<button type="button" class="btn btn-secondary"
+										data-dismiss="modal">Close</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+	<script src="/js/core/jquery.min.js" type="text/javascript"></script>
+	<script src="/js/core/popper.min.js" type="text/javascript"></script>
+	<script src="/js/core/bootstrap.min.js" type="text/javascript"></script>
+	<script src="/js/plugins/perfect-scrollbar.jquery.min.js"
+		type="text/javascript"></script>
+	<script src="/js/plugins/bootstrap-notify.js"></script>
+	<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="/js/paper-dashboard.js?v=2.0.0" type="text/javascript"></script>
+	<script>
+	
+		function login(){
+
+			document.location.href = '/dashboard'
+		}
+
+		function addDonor() {
+			$("#signUpModal").modal('hide');
+			$.notify({
+				// options
+				message : 'Account created successfully'
+			}, {
+				// settings
+				type : 'success',
+				allow_dismiss : true,
+				placement : {
+					from : "top",
+					align : "center"
+				},
+				timer : 200
+			});
+		}
+		
+		$("#signUp").click(function() {
+			$("#signUpModal").modal('show');
+		})
 </Script> 
 </body>
 </html>

@@ -35,8 +35,12 @@
 	box-shadow: 3px 3px 20px #000000;
 }
 
+#card3:hover{
+	box-shadow: 3px 3px 20px #000000;
+	
+}
 .card_img {
-	height: 180px;
+	height: 280px;
 }
 .text{
 	color:#bd2a2a
@@ -54,114 +58,108 @@
 			<div class="content">
 				<div class="row">
 					<div class="col-lg-3 col-sm-6 mb-3">
-						<div id="card3" class="card h-100">
+						<div id="card3" class="card ">
 							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
 							<a href="#"><img class="card-img-top card_img"
-								src="https://cdn1.medicalnewstoday.com/content/images/articles/320/320717/red-blood-cells.jpg"
-								alt=""></a>
+								
+								alt="" style="background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),
+    url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038772-stock-photo-a-blood-type-on-red.jpg'); background-position: center;
+  background-repeat: no-repeat; background-size: cover; border-radius:10px;"></a>
 							<div class="card-body">
-								<h4 class="card-title" style="margin: 0px; font-weight: 700;">
-									<span class="text">Blood Group: A+</span>
-								</h4>
-								<p class="card-text" style="font-size: 24px">5300 ml</p>
+								
+								<p class="card-text" style="font-size: 24px;  font-weight: 700;">5300 ml</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-3 col-sm-6 mb-3">
-						<div id="card3" class="card h-100">
+						<div id="card3" class="card ">
 							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
 							<a href="#"><img class="card-img-top card_img"
-								src="https://cdn1.medicalnewstoday.com/content/images/articles/319/319544/3d-render-of-red-blood-cells.jpg"
-								alt=""></a>
+								alt="" style="background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),
+    url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038792-stock-photo-a-blood-type-on-red.jpg'); background-position: center;
+  background-repeat: no-repeat; background-size: cover; border-radius:10px;"></a>
 							<div class="card-body">
-								<h4 class="card-title" style="margin: 0px; font-weight: 700;">
-									<span class="text">Blood Group: A-</span>
-								</h4>
-								<p class="card-text" style="font-size: 28px">5300 ml</p>
+								
+								<p class="card-text" style="font-size: 24px;  font-weight: 700;">5300 ml</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-3 col-sm-6 mb-3">
-						<div id="card3" class="card h-100">
+						<div id="card3" class="card">
 							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
 							<a href="#"><img class="card-img-top card_img"
-								src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-								alt=""></a>
+								alt="" style="background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),
+    url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038856-stock-photo-b-blood-type-on-red.jpg'); background-position: center;
+  background-repeat: no-repeat; background-size: cover; border-radius:10px;"></a>
 							<div class="card-body">
-								<h4 class="card-title" style="margin: 0px; font-weight: 700;">
-									<span class="text">Blood Group: B+</span>
-								</h4>
-								<p class="card-text" style="font-size: 28px">5300 ml</p>
+								
+								<p class="card-text" style="font-size: 24px;  font-weight: 700;">5300 ml</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-3 col-sm-6 mb-3">
-						<div id="card3" class="card h-100">
+						<div id="card3" class="card">
 							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
 							<a href="#"><img class="card-img-top card_img"
-								src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-								alt=""></a>
+								alt="" style="background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),
+    url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038868-stock-photo-b-blood-type-on-red.jpg'); background-position: center;
+  background-repeat: no-repeat; background-size: cover; border-radius:10px;"></a>
 							<div class="card-body">
-								<h4 class="card-title" style="margin: 0px; font-weight: 700;">
-									<span class="text">Blood Group: B-</span>
-								</h4>
-								<p class="card-text" style="font-size: 28px">5300 ml</p>
+								
+								<p class="card-text" style="font-size: 24px;  font-weight: 700;">5300 ml</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-3 col-sm-6 mb-3">
-						<div id="card3" class="card h-100">
+						<div id="card3" class="card">
 							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
 							<a href="#"><img class="card-img-top card_img"
-								src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-								alt=""></a>
+								alt="" style="background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),
+    url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038882-stock-photo-o-blood-type-on-red.jpg'); background-position: center;
+  background-repeat: no-repeat; background-size: cover; border-radius:10px;"></a>
 							<div class="card-body">
-								<h4 class="card-title" style="margin: 0px; font-weight: 700;">
-									<span class="text">Blood Group: O+</span>
-								</h4>
-								<p class="card-text" style="font-size: 28px">5300 ml</p>
+								
+								<p class="card-text" style="font-size: 24px;  font-weight: 700;">5300 ml</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-3 col-sm-6 mb-3">
-						<div id="card3" class="card h-100">
+						<div id="card3" class="card">
 							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
 							<a href="#"><img class="card-img-top card_img"
-								src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-								alt=""></a>
+								alt="" style="background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),
+    url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038906-stock-photo-o-blood-type-on-red.jpg'); background-position: center;
+  background-repeat: no-repeat; background-size: cover;  border-radius:10px;"></a>
 							<div class="card-body">
-								<h4 class="card-title" style="margin: 0px; font-weight: 700;">
-									<span class="text">Blood Group: O-</span>
-								</h4>
-								<p class="card-text" style="font-size: 28px">5300 ml</p>
+								
+								<p class="card-text" style="font-size: 24px;  font-weight: 700;">5300 ml</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-3 col-sm-6 mb-3">
-						<div id="card3" class="card h-100">
+						<div id="card3" class="card">
 							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
 							<a href="#"><img class="card-img-top card_img"
-								src="https://dp9bxf2pat5uz.cloudfront.net/wp-content/uploads/red-blood-cells-1.jpg"
-								alt=""></a>
+								alt="" style="background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),
+    url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038822-stock-photo-ab-blood-type-on-red.jpg'); background-position: center;
+  background-repeat: no-repeat; background-size: cover;  border-radius:10px;"></a>
 							<div class="card-body">
-								<h4 class="card-title" style="margin: 0px; font-weight: 700;">
-									<span class="text">Blood Group: AB+</span>
-								</h4>
-								<p class="card-text" style="font-size: 28px">5300 ml</p>
+								
+								<p class="card-text" style="font-size: 24px;  font-weight: 700;">5300 ml</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-3 col-sm-6 mb-3">
-						<div id="card3" class="card h-100">
+						<div id="card3" class="card">
 							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
 							<a href="#"><img class="card-img-top card_img"
-								src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-								alt=""></a>
+								
+								alt="" style="background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),
+    url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038840-stock-photo-ab-blood-type-on-red.jpg'); background-position: center;
+  background-repeat: no-repeat; background-size: cover;  border-radius:10px;"></a>
 							<div class="card-body">
-								<h4 class="card-title" style="margin: 0px; font-weight: 700;">
-									<span class="text">Blood Group: AB-</span>
-								</h4>
-								<p class="card-text" style="font-size: 28px">5300 ml</p>
+								
+								<p class="card-text" style="font-size: 24px;  font-weight: 700;">5300 ml</p>
 							</div>
 						</div>
 					</div>

@@ -15,6 +15,10 @@ public class ViewController {
 	public String homepage() {
 		return "homepage";
 	}
+	@RequestMapping("/updateProfile")
+	public String updateProfile() {
+		return "updateProfile";
+	}
 
 	@RequestMapping("/index")
 	public String index() {
@@ -51,4 +55,5 @@ public class ViewController {
 	public String report() {
 		return "report";
 	}
-}
+	
+	}
