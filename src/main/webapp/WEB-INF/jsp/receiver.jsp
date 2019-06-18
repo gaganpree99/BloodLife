@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>Donor Details</title>
+<title>Receiver Details</title>
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta
@@ -44,113 +44,101 @@
 				<div class="row">
 					<div class="col-sm-1">
 						<button type="button" class="btn btn-default btn-md"
-							id="addDonor">
-							<i class="fas fa-user-plus"></i> Add Donor
+							id="addReceiver">
+							<i class="fas fa-user-plus"></i> Add Receiver
 						</button>
 					</div>
 				</div>
 				<hr>
 				<div class="row">
 					<div class="container table-responsive">
-						<table class="table table-striped" id="donorTable"
-							style="text-align: center">
+						<table class="table table-striped" id="receiverTable" style="text-align:center">
 							<thead class="thead-dark">
 								<tr>
 									<th scope="col" width="5%">#</th>
 									<th scope="col" width="10%">First Name</th>
 									<th scope="col" width="10%">Last Name</th>
 									<th scope="col" width="10%">Blood Group</th>
-									<th scope="col" width="10%">Bag Number</th>
 									<th scope="col" width="10%">Quantity</th>
 									<th scope="col" width="10%">Contact Number</th>
-									<th scope="col" width="10%">Donated Date</th>
-									<th scope="col" width="10%">Expiry Date</th>
+									<th scope="col" width="10%">Date</th>
 									<th scope="col" width="10%"></th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td>1</td>
+									<th scope="row">1</th>
 									<td>Varun</td>
 									<td>Mahagaokar</td>
 									<td>O+</td>
-									<td>O0234</td>
 									<td>100</td>
 									<td>+919990002323</td>
 									<td>05/31/2019</td>
-									<td>06/10/2019</td>
 									<td><i class="fas fa-edit"
 										style="margin-right: 10%; font-size: 18px; color: #22733d"
-										onclick="editDonor()"></i><i class="fas fa-trash-alt"
+										onclick="editReceiver()"></i><i class="fas fa-trash-alt"
 										style="margin-left: 10%; font-size: 18px; color: #bb3b3b"
 										onclick="deleteData()"></i></td>
 								</tr>
 								<tr>
-									<td>2</td>
+									<th scope="row">2</th>
 									<td>Smit</td>
 									<td>Saraiya</td>
 									<td>O+</td>
-									<td>O0432</td>
 									<td>200</td>
 									<td>+919990002323</td>
 									<td>05/31/2019</td>
-									<td>06/10/2019</td>
 									<td><i class="fas fa-edit"
 										style="margin-right: 10%; font-size: 18px; color: #22733d"
-										onclick="editDonor()"></i><i class="fas fa-trash-alt"
+										onclick="editReceiver()"></i><i class="fas fa-trash-alt"
 										style="margin-left: 10%; font-size: 18px; color: #bb3b3b"
 										onclick="deleteData()"></i></td>
 
 								</tr>
 								<tr>
-									<td>3</td>
+									<th scope="row">3</th>
 									<td>Nishant</td>
 									<td>Bhambani</td>
 									<td>A+</td>
-									<td>A0234</td>
 									<td>150</td>
 									<td>+919990002323</td>
 									<td>05/31/2019</td>
-									<td>06/10/2019</td>
 									<td><i class="fas fa-edit"
 										style="margin-right: 10%; font-size: 18px; color: #22733d"
-										onclick="editDonor()"></i><i class="fas fa-trash-alt"
+										onclick="editReceiver()"></i><i class="fas fa-trash-alt"
 										style="margin-left: 10%; font-size: 18px; color: #bb3b3b"
 										onclick="deleteData()"></i></td>
 
 								</tr>
 								<tr>
-									<td>4</td>
+									<th scope="row">4</th>
 									<td>Anant</td>
 									<td>Pillai</td>
 									<td>AB+</td>
-									<td>AB0234</td>
 									<td>300</td>
 									<td>+919990002323</td>
 									<td>05/31/2019</td>
-									<td>06/10/2019</td>
 									<td><i class="fas fa-edit"
 										style="margin-right: 10%; font-size: 18px; color: #22733d"
-										onclick="editDonor()"></i><i class="fas fa-trash-alt"
+										onclick="editReceiver()"></i><i class="fas fa-trash-alt"
 										style="margin-left: 10%; font-size: 18px; color: #bb3b3b"
 										onclick="deleteData()"></i></td>
 
 								</tr>
 								<tr>
-									<td>5</td>
+									<th scope="row">5</th>
 									<td>Dhruv</td>
 									<td>Purohit</td>
 									<td>B-</td>
-									<td>B1234</td>
 									<td>250</td>
 									<td>+919990002323</td>
 									<td>05/31/2019</td>
-									<td>06/10/2019</td>
 									<td><i class="fas fa-edit"
 										style="margin-right: 10%; font-size: 18px; color: #22733d"
-										onclick="editDonor()"></i><i class="fas fa-trash-alt"
+										onclick="editReceiver()"></i><i class="fas fa-trash-alt"
 										style="margin-left: 10%; font-size: 18px; color: #bb3b3b"
 										onclick="deleteData()"></i></td>
+
 								</tr>
 							</tbody>
 						</table>
@@ -158,14 +146,14 @@
 				</div>
 				<!--Add Begin Modal -->
 
-				<div id="addDonorModal" class="modal " tabindex="-1"
+				<div id="addReceiverModal" class="modal " tabindex="-1"
 					role="dialog">
 					<div class="modal-dialog modal-md" role="document">
 						<div class="modal-content">
-							<form onsubmit="return addDonor()" action="javascript:void(0)"
-								id="addDonorDetails">
+							<form onsubmit="return addReceiver()" action="javascript:void(0)"
+								id="addReceiverDetails">
 								<div class="modal-header">
-									<h5 class="modal-title">Donor Details</h5>
+									<h5 class="modal-title">Receiver Details</h5>
 									<button type="button" class="close" data-dismiss="modal"
 										aria-label="Close">
 										<span aria-hidden="true">&times;</span>
@@ -221,14 +209,14 @@
 				</div>
 				<!-- End Add Modal -->
 				<!--Edit Begin Modal -->
-				<div id="editDonorModal" class="modal " tabindex="-1"
+				<div id="editReceiverModal" class="modal " tabindex="-1"
 					role="dialog">
 					<div class="modal-dialog modal-lg" role="document">
 						<div class="modal-content">
-							<form onsubmit="return updateDonor()"
+							<form onsubmit="return updateReceiver()"
 								action="javascript:void(0)">
 								<div class="modal-header">
-									<h5 class="modal-title">Update Donor Details</h5>
+									<h5 class="modal-title">Update Receiver Details</h5>
 									<button type="button" class="close" data-dismiss="modal"
 										aria-label="Close">
 										<span aria-hidden="true">&times;</span>
@@ -287,123 +275,125 @@
 			<jsp:include page="footer.jsp" />
 		</div>
 	</div>
+</body>
+<!--   Core JS Files   -->
+<script src="/js/core/jquery.min.js" type="text/javascript"></script>
+<script src="/js/core/popper.min.js" type="text/javascript"></script>
+<script src="/js/core/bootstrap.min.js" type="text/javascript"></script>
+<script src="/js/plugins/perfect-scrollbar.jquery.min.js"
+	type="text/javascript"></script>
+<script src="/js/plugins/bootstrap-notify.js"></script>
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="/js/paper-dashboard.js?v=2.0.0" type="text/javascript"></script>
 
-	<!--   Core JS Files   -->
-	<script src="/js/core/jquery.min.js" type="text/javascript"></script>
-	<script src="/js/core/popper.min.js" type="text/javascript"></script>
-	<script src="/js/core/bootstrap.min.js" type="text/javascript"></script>
-	<script src="/js/plugins/perfect-scrollbar.jquery.min.js"
-		type="text/javascript"></script>
-	<script src="/js/plugins/bootstrap-notify.js"></script>
-	<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="/js/paper-dashboard.js?v=2.0.0" type="text/javascript"></script>
-	<script>
-		$(document).ready(function() {
-			$("#header").html("Donor Details");
-			$("li").removeClass("active");
-			$("#donorJsp").addClass("active")
-			table = $('#donorTable').DataTable({
-				"ordering" : false
-			});
 
-			$(function() {
-				$("#datepicker").datepicker({
-					maxDate : "+1w",
-					minDate : "-1d"
-				});
-			});
+<script>
+	var table;
+	$(document).ready(function() {
+		$("#header").html("Receiver Details");
+		$("li").removeClass("active");
+		$("#receiverJsp").addClass("active")
+		table = $('#receiverTable').DataTable();
 
-			$(function() {
-				$("#editDatepicker").datepicker({
-					maxDate : "+1w",
-					minDate : "-1d"
-				});
+		$(function() {
+			$("#datepicker").datepicker({
+				maxDate : "+1w",
+				minDate : "-1d"
 			});
 		});
 
-		function selectRow(operation) {
-			$('#donorTable tbody').on('click', 'tr', function() {
+		$(function() {
+			$("#editDatepicker").datepicker({
+				maxDate : "+1w",
+				minDate : "-1d"
+			});
+		});
+	});
 
-				if ($(this).hasClass('rowSelected')) {
-					$(this).removeClass('rowSelected');
-				} else {
-					table.$('tr.rowSelected').removeClass('rowSelected');
-					$(this).addClass('rowSelected');
-					if (operation == "edit") {
-						edit();
-					} else {
-						deleteDonor();
-					}
+	function selectRow(operation) {
+		$('#receiverTable tbody').on('click', 'tr', function() {
 
+			if ($(this).hasClass('rowSelected')) {
+				$(this).removeClass('rowSelected');
+			} else {
+				table.$('tr.rowSelected').removeClass('rowSelected');
+				$(this).addClass('rowSelected');
+				if(operation == "edit"){
+					edit();
+				}else{
+					deleteReceiver();
 				}
-			});
+				
+			}
+		});
 
-		}
+	}
 
-		function addDonor() {
-			$("#addDonorModal").modal('hide');
-			$.notify({
-				// options
-				message : 'Donor added successfully'
-			}, {
-				// settings
-				type : 'success',
-				allow_dismiss : true,
-				placement : {
-					from : "top",
-					align : "center"
-				},
-				timer : 200
-			});
-		}
+	function addReceiver() {
+		$("#addReceiverModal").modal('hide');
+		$.notify({
+			// options
+			message : 'Receiver added successfully'
+		}, {
+			// settings
+			type : 'success',
+			allow_dismiss : true,
+			placement : {
+				from : "top",
+				align : "center"
+			},
+			timer : 200
+		});
+	}
 
-		function updateDonor() {
-			$("#editDonorModal").modal('hide');
-			$.notify({
-				// options
-				message : 'Donor updated successfully'
-			}, {
-				// settings
-				type : 'success',
-				allow_dismiss : true,
-				placement : {
-					from : "top",
-					align : "center"
-				},
-				timer : 200
-			});
-		}
+	function updateReceiver() {
+		$("#editReceiverModal").modal('hide');
+		$.notify({
+			// options
+			message : 'Receiver updated successfully'
+		}, {
+			// settings
+			type : 'success',
+			allow_dismiss : true,
+			placement : {
+				from : "top",
+				align : "center"
+			},
+			timer : 200
+		});
+	}
 
-		function editDonor() {
-			selectRow("edit");
-		}
+	function editReceiver() {
+		selectRow("edit");
+	}
 
-		function deleteData() {
-			selectRow("deleteDonor");
-		}
+	function deleteData() {
+		selectRow("deleteReceiver");
+	}
 
-		function edit() {
-			var rowData = $('#donorTable').DataTable().row(
-					$('#donorTable tbody').find(".rowSelected")).data();
+	
+	function edit() {
+			var rowData = $('#receiverTable').DataTable().row(
+					$('#receiverTable tbody').find(".rowSelected")).data();
 			$("#editFirstName").val(rowData[1]);
 			$("#editLastName").val(rowData[2]);
 			$("#editBloodGroup").val(rowData[3]);
 			$("#editQuantity").val(rowData[4]);
 			$("#editContact").val(rowData[5]);
 			$('#editDatepicker').datepicker("setDate", new Date(rowData[6]));
-			$("#editDonorModal").modal('show');
-		}
-
-		function deleteDonor() {
-			var rowData = $('#donorTable').DataTable().row(
-					$('#donorTable tbody').find(".rowSelected")).data();
+			$("#editReceiverModal").modal('show');
+	}
+	 
+	 
+	 function deleteReceiver() {
+			var rowData = $('#receiverTable').DataTable().row(
+					$('#receiverTable tbody').find(".rowSelected")).data();
 			console.log(rowData);
-		}
+	}
 
-		$("#addDonor").click(function() {
-			$("#addDonorModal").modal('show');
-		})
-	</script>
-</body>
+	$("#addReceiver").click(function() {
+		$("#addReceiverModal").modal('show');
+	})
+</script>
 </html>

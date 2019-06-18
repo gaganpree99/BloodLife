@@ -1,74 +1,187 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta
-	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
-	name='viewport' />
-<!--     Fonts and icons     -->
-<link
-	href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200"
-	rel="stylesheet" />
-<link
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"
-	rel="stylesheet">
-<!-- CSS Files -->
-<link href="/css/bootstrap.min.css" rel="stylesheet" />
-<link href="/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
-<!-- CSS Just for demo purpose, don't include it in your project -->
-<link href="/demo/demo.css" rel="stylesheet" />
-<title>Blood Life</title>
-<style type="text/css">
-.login{
-	margin-top: 5%; background: #130101d4; border-radius: 40px; color: white; text-align: center;
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+     <link href="/demo/login.css" rel="stylesheet" />
+</head>
+<style>
+.nav-item{
+padding-right:10%
 }
 </style>
-</head>
+<body>
 
-<body style="background-image: url('img/bloodDonation5.png'); background-size: cover">
-	<div class="wrapper">
-		<nav class="navbar  navbar-expand-lg navbar-dark bg-dark">
-			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<div class="navbar-nav">
-					<a class="nav-item nav-link" style="font-size: 16px" href="#">Home</a>
-					<a class="nav-item nav-link" style="font-size: 16px" href="#">Gallery</a>
-					<a class="nav-item nav-link" style="font-size: 16px" href="#">Events</a>
-				</div>
-			</div>
-		</nav>
-		<div class="row">
-			<div class="col"></div>
-			<div class="jumbotron col login">
-				<h2>Login</h2>
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="username" />
-				</div>
-				<div class="form-group">
-					<input type="password" class="form-control" placeholder="password" />
-				</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">BLOOD-LIFE</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-				<div class="form-group">
-					<a href="#" style="margin-right: 10%">Forget Password?</a>
-					<button type="button" class="btn btn-outline-info">Login</button>
-					<button type="button" class="btn btn-outline-success">Signup</button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/index">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Events</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#">Gallery</a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap ">
+
+<div class="card">
+<div class="container-fluid">
+  <div class="row no-gutter">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6 ">
+      <div class="login d-flex align-items-center py-5"">
+        <div class="container ">
+          <div class="row center">
+            <div class="col-md-9 col-lg-8 mx-auto ">
+              <h3 class="login-heading mb-4">Welcome back!</h3>
+              <form onsubmit="return login()" action="javascript:void(0)">
+                <div class="form-label-group">
+                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                  <label for="inputEmail">Email address</label>
+                </div>
+
+                <div class="form-label-group">
+                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                  <label for="inputPassword">Password</label>
+                </div>
+
+                <div class="custom-control custom-checkbox mb-3" style="padding-left:10%">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1">Remember password</label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
+                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="button" id="signUp">Sign up</button>
+                
+                <div class="text-center">
+                  <a class="small" href="#">Forgot password?</a></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+</div>
+</div>
+
+<div id="signUpModal" class="modal " tabindex="-1"
+					role="dialog">
+					<div class="modal-dialog modal-md" role="document">
+						<div class="modal-content">
+							<form onsubmit="return addDonor()" action="javascript:void(0)"
+								id="addDonorDetails">
+								<div class="modal-header">
+									<h5 class="modal-title">Sign Up</h5>
+									<button type="button" class="close" data-dismiss="modal"
+										aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<div class="form-group">
+										<label class="control-label"> First Name:<span
+											style="color: red"> *</span>
+										</label> <input type="text" class="form-control" name="firstName"
+											id="firstName" placeholder="firstname" required>
+									</div>
+									<div class="form-group">
+										<label class="control-label"> Last Name:<span
+											style="color: red"> *</span>
+										</label> <input type="text" class="form-control" name="lastName"
+											id="lastName" placeholder="lastName" required>
+									</div>
+									<div class="form-group">
+										<label class="control-label"> Blood Group:<span
+											style="color: red"> *</span>
+										</label> <select
+											class="col-sm-12" id="bloodList" style="width: 100%">
+											<option value="A+">A+</option>
+											<option value="A-">A-</option>
+											<option value="B+">B+</option>
+											<option value="O+">O+</option>
+											<option value="O-">O-</option>
+											<option value="AB+">AB+</option>
+											<option value="AB-">AB-</option>
+										</select>
+
+									</div>
+							
+									<div class="form-group">
+										<label class="control-label"> Email:<span
+											style="color: red"> *</span>
+										</label> <input type="email" class="form-control" name="contact"
+											id="contact" placeholder="contact" required>
+									</div>
+									<div class="form-group">
+										<label class="control-label"> Age: <span
+											style="color: red"> *</span>
+										</label> <input type="number" class="form-control" name="date"
+											id="age" placeholder="date" required>
+									</div>
+
+								</div>
+								<div class="modal-footer">
+									<button type="submit" class="btn btn-success" id="btnSave">Sign up</button>
+									<button type="button" class="btn btn-secondary"
+										data-dismiss="modal">Close</button>
+								</div>
+							</form>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="col"></div>
-		</div>
-	</div>
-	<footer class="page-footer row font-small bg-dark">
-				<p> Blood life</p>
-	</footer>
+	<script src="/js/core/jquery.min.js" type="text/javascript"></script>
+	<script src="/js/core/popper.min.js" type="text/javascript"></script>
+	<script src="/js/core/bootstrap.min.js" type="text/javascript"></script>
+	<script src="/js/plugins/perfect-scrollbar.jquery.min.js"
+		type="text/javascript"></script>
+	<script src="/js/plugins/bootstrap-notify.js"></script>
+	<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="/js/paper-dashboard.js?v=2.0.0" type="text/javascript"></script>
+	<script>
+	
+		function login(){
+
+			document.location.href = '/dashboard'
+		}
+
+		function addDonor() {
+			$("#signUpModal").modal('hide');
+			$.notify({
+				// options
+				message : 'Account created successfully'
+			}, {
+				// settings
+				type : 'success',
+				allow_dismiss : true,
+				placement : {
+					from : "top",
+					align : "center"
+				},
+				timer : 200
+			});
+		}
+		
+		$("#signUp").click(function() {
+			$("#signUpModal").modal('show');
+		})
+</Script> 
 </body>
-<script src="/js/core/jquery.min.js"></script>
-<script src="/js/core/popper.min.js"></script>
-<script src="/js/core/bootstrap.min.js"></script>
-<script src="/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-<script src="/js/plugins/bootstrap-notify.js"></script>
-<!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-<script src="/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
-<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-<script src="./demo/demo.js"></script>
 </html>
