@@ -24,29 +24,21 @@ The code for these webpages can be access through [GitLab](https://git.cs.dal.ca
 1. Unsplash, “Painted red | HD photo by Tim Marshall (@timmarshall) on Unsplash,” Beautiful Free Images & Pictures. [Online]. Available: https://unsplash.com/photos/cAtzHUz7Z8g. [Accessed: 31-May-2019].
 
 **Update profile:**
-
-
 1.  “Free Image on Pixabay - Head, The Dummy, Avatar, Man, Tie,” Head The Dummy Avatar - Free image on Pixabay. [Online]. Available: https://pixabay.com/illustrations/head-the-dummy-avatar-man-tie-659651/. [Accessed: 31-May-2019]. 
 
 **Login:**
-
-
-
 1. Vecteezy. (2019). Blood Drive. [online] Available at: https://www.vecteezy.com/vector-art/224235-blood-drive [Ac-cessed 18 Jun. 2019].
-
 1. Bootstrap, S. (2019). Bootstrap 4 Modern Sign In Page. [online] Start Bootstrap. Available at: https://startbootstrap.com/snippets/sign-in-split/ [Accessed 18 Jun. 2019].
 
 **Dashboard:**
 
-[1]. Depositphotos, I. (2019). AB- blood type on red back-ground.. [online] Depositphotos. Available at: https://depositphotos.com/118038840/stock-photo-ab-blood-type-on-red.html [Accessed 18 Jun. 2019].
+1. Depositphotos, I. (2019). AB- blood type on red back-ground.. [online] Depositphotos. Available at: https://depositphotos.com/118038840/stock-photo-ab-blood-type-on-red.html [Accessed 18 Jun. 2019].
+1. Depositphotos, I. (2019). B+ blood type on red back-ground.. [online] Depositphotos. Available at: https://depositphotos.com/118038856/stock-photo-b-blood-type-on-red.html [Accessed 18 Jun. 2019].
+1. Depositphotos, I. (2019). A+ blood type on red back-ground.. [online] Depositphotos. Available at: https://depositphotos.com/118038772/stock-photo-a-blood-type-on-red.html [Accessed 18 Jun. 2019].
+1. Depositphotos, I. (2019). O+ blood type on red back-ground.. [online] Depositphotos. Available at: https://depositphotos.com/118038882/stock-photo-o-blood-type-on-red.html [Accessed 18 J
+1. 
+1.  
 
-[2]. Depositphotos, I. (2019). B+ blood type on red back-ground.. [online] Depositphotos. Available at: https://depositphotos.com/118038856/stock-photo-b-blood-type-on-red.html [Accessed 18 Jun. 2019].
-
-[3]. Depositphotos, I. (2019). A+ blood type on red back-ground.. [online] Depositphotos. Available at: https://depositphotos.com/118038772/stock-photo-a-blood-type-on-red.html [Accessed 18 Jun. 2019].
-
-[4]. Depositphotos, I. (2019). O+ blood type on red back-ground.. [online] Depositphotos. Available at: https://depositphotos.com/118038882/stock-photo-o-blood-type-on-red.html [Accessed 18 J
-
- 
  
 ## Libraries/Toolkits Used
  1. **Bootsrap**
