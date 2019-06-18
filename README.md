@@ -9,7 +9,7 @@ The following webpages have been implemented for this assignment:
 4. Event Page
 4. Manage Gallery
 5. Registration Successfull Page
-6. 
+6. View Reports
 7. Event Management
 
 The Hyperlink takes you directly to the bluenose/hector server where you can preview them.
