@@ -25,14 +25,16 @@ The code for these webpages can be access through [GitLab](https://git.cs.dal.ca
 
 **Update profile:**
 
-[1].“Free Image on Pixabay - Head, The Dummy, Avatar, Man, Tie,” Head The Dummy Avatar - Free image on Pixabay. [Online]. Available: https://pixabay.com/illustrations/head-the-dummy-avatar-man-tie-659651/. [Accessed: 31-May-2019]. 
+
+1.  “Free Image on Pixabay - Head, The Dummy, Avatar, Man, Tie,” Head The Dummy Avatar - Free image on Pixabay. [Online]. Available: https://pixabay.com/illustrations/head-the-dummy-avatar-man-tie-659651/. [Accessed: 31-May-2019]. 
 
 **Login:**
 
 
-[1]. Vecteezy. (2019). Blood Drive. [online] Available at: https://www.vecteezy.com/vector-art/224235-blood-drive [Ac-cessed 18 Jun. 2019].
 
-[2]. Bootstrap, S. (2019). Bootstrap 4 Modern Sign In Page. [online] Start Bootstrap. Available at: https://startbootstrap.com/snippets/sign-in-split/ [Accessed 18 Jun. 2019].
+1. Vecteezy. (2019). Blood Drive. [online] Available at: https://www.vecteezy.com/vector-art/224235-blood-drive [Ac-cessed 18 Jun. 2019].
+
+1. Bootstrap, S. (2019). Bootstrap 4 Modern Sign In Page. [online] Start Bootstrap. Available at: https://startbootstrap.com/snippets/sign-in-split/ [Accessed 18 Jun. 2019].
 
 **Dashboard:**
 
