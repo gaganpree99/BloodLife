@@ -51,7 +51,7 @@ padding-right:10%
           <div class="row center">
             <div class="col-md-9 col-lg-8 mx-auto ">
               <h3 class="login-heading mb-4">Welcome back!</h3>
-              <form>
+              <form onsubmit="return login()" action="javascript:void(0)">
                 <div class="form-label-group">
                   <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
                   <label for="inputEmail">Email address</label>
@@ -62,7 +62,7 @@ padding-right:10%
                   <label for="inputPassword">Password</label>
                 </div>
 
-                <div class="custom-control custom-checkbox mb-3">
+                <div class="custom-control custom-checkbox mb-3" style="padding-left:10%">
                   <input type="checkbox" class="custom-control-input" id="customCheck1">
                   <label class="custom-control-label" for="customCheck1">Remember password</label>
                 </div>
@@ -82,12 +82,12 @@ padding-right:10%
   
 </div>
 </div>
-<!-- <Script>
+ <Script>
 function login(){
 
 	document.location.href = '/dashboard'
 }
 
-</Script> -->
+</Script> 
 </body>
 </html>

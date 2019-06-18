@@ -25,6 +25,16 @@ public class ViewController {
 	public String donor() {
 		return "donor";
 	}
+	
+	@RequestMapping("/events")
+	public String events() {
+		return "events";
+	}
+
+	@RequestMapping("/gallery")
+	public String gallery() {
+		return "gallery";
+	}
 
 	@RequestMapping("/dashboard")
 	public String dashboard() {
@@ -34,5 +44,11 @@ public class ViewController {
 	@RequestMapping("/receiver")
 	public String receiver() {
 		return "receiver";
+	}
+	
+
+	@RequestMapping("/report")
+	public String report() {
+		return "report";
 	}
 }
