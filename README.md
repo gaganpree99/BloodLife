@@ -3,13 +3,14 @@
 The following webpages have been implemented for this assignment:
 1. Home Page
 2. Donor Registration Page
+3. Organisation Login
+4. Donor Login
 3. Gallery Page
 4. Event Page
 4. Manage Gallery
 5. Registration Successfull Page
-6. Organisation Login
-7. Donor Login
-8. Event Management
+6. 
+7. Event Management
 
 The Hyperlink takes you directly to the bluenose/hector server where you can preview them.
 
