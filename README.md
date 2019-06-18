@@ -44,7 +44,7 @@ The code for these webpages can be access through [GitLab](https://git.cs.dal.ca
 
  
 ## Libraries/Toolkits Used
- 1. **Bootsrap**
+ 1. **Bootstrap**
     Bootstrap is an open source toolkit for HTML, CSS, and JS development. I have used this toolkit to add responsiveness to the webpages.
 
  2. **Jquery**
