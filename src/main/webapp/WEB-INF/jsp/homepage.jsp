@@ -57,18 +57,27 @@
 
 <body style="background: #f4f3ef">
 	<div style="margin-bottom: 2.5%">
-		<nav class="navbar  navbar-expand-lg navbar-light bg-light">
-			<div class="nav-brand" style="font-size: 24px">BLOOD LIFE</div>
-			<div class="collapse navbar-collapse d-flex flex-row-reverse"
-				id="navbarNavAltMarkup">
-				<div class="navbar-nav">
-					<a class="nav-item nav-link" style="font-size: 16px" href="/">Login</a>
-					<a class="nav-item nav-link" style="font-size: 16px" href="#">Gallery</a>
-					<a class="nav-item nav-link" style="font-size: 16px" href="#">Events</a>
-				</div>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">BLOOD-LIFE</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-			</div>
-		</nav>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/index">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Events</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#">Gallery</a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
 
 		<div class="container">
 			<div class="row" style="margin: 1.5%">
