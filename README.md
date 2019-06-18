@@ -14,32 +14,30 @@ The Hyperlink takes you directly to the bluenose/hector server where you can pre
 The code for these webpages can be access through [GitLab](https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/tree/master).
 
 ## Images
- 1. Image used on the home page of IBMS has been taken from[https://www.fmh.org/News-Calendar/News/2018/January/Give-the-Gift-of-Life-Donate-Blood.aspx](https://www.fmh.org/News-Calendar/News/2018/January/Give-the-Gift-of-Life-Donate-Blood.aspx) and modified as per requirement using Microsoft Paint.
- 2. Dummy Images used in Gallery Page have taken through https://dummyimage.com/
- 
 
  **Landing page:**
 
-* [ ] [1].Unsplash, “This local sheriff took about 30 minu... | HD photo by LuAnn Hunt (@luannhunt180) on Unsplash,” Beautiful Free Images & Pictures. [Online]. Available: https://unsplash.com/photos/X20g2GQsVdA. [Accessed: 31-May-2019].
-* [ ] 
-* [ ] [2].Unsplash, “Working on web components | HD photo by Yucel Moran (@yucelmoran) on Unsplash,” Beautiful Free Images & Pictures. [Online]. Available: https://unsplash.com/photos/Ky9JHrdvb1o. [Ac-cessed: 31-May-2019].
-* [ ] 
-* [ ] [3].Unsplash, “Human, person, injection and arm | HD photo by Chang Duong (@chang612) on Unsplash,” Beautiful Free Images & Pictures. [Online]. Available: https://unsplash.com/photos/z4n1tcahzrk. [Ac-cessed: 31-May-2019].
-* [ ] 
-* [ ] [4].Unsplash, “Painted red | HD photo by Tim Marshall (@timmarshall) on Unsplash,” Beautiful Free Images & Pictures. [Online]. Available: https://unsplash.com/photos/cAtzHUz7Z8g. [Accessed: 31-May-2019].
-* [ ] 
+[1].Unsplash, “This local sheriff took about 30 minu... | HD photo by LuAnn Hunt (@luannhunt180) on Unsplash,” Beautiful Free Images & Pictures. [Online]. Available: https://unsplash.com/photos/X20g2GQsVdA. [Accessed: 31-May-2019].
 
-Update profile:
+[2].Unsplash, “Working on web components | HD photo by Yucel Moran (@yucelmoran) on Unsplash,” Beautiful Free Images & Pictures. [Online]. Available: https://unsplash.com/photos/Ky9JHrdvb1o. [Ac-cessed: 31-May-2019].
+
+[3].Unsplash, “Human, person, injection and arm | HD photo by Chang Duong (@chang612) on Unsplash,” Beautiful Free Images & Pictures. [Online]. Available: https://unsplash.com/photos/z4n1tcahzrk. [Ac-cessed: 31-May-2019].
+
+[4].Unsplash, “Painted red | HD photo by Tim Marshall (@timmarshall) on Unsplash,” Beautiful Free Images & Pictures. [Online]. Available: https://unsplash.com/photos/cAtzHUz7Z8g. [Accessed: 31-May-2019].
+
+
+**Update profile:**
 
 [1].“Free Image on Pixabay - Head, The Dummy, Avatar, Man, Tie,” Head The Dummy Avatar - Free image on Pixabay. [Online]. Available: https://pixabay.com/illustrations/head-the-dummy-avatar-man-tie-659651/. [Accessed: 31-May-2019]. 
 
-Login:
+**Login:**
+
 
 [1]. Vecteezy. (2019). Blood Drive. [online] Available at: https://www.vecteezy.com/vector-art/224235-blood-drive [Ac-cessed 18 Jun. 2019].
 
 [2]. Bootstrap, S. (2019). Bootstrap 4 Modern Sign In Page. [online] Start Bootstrap. Available at: https://startbootstrap.com/snippets/sign-in-split/ [Accessed 18 Jun. 2019].
 
-Dashboard:
+**Dashboard:**
 
 [1]. Depositphotos, I. (2019). AB- blood type on red back-ground.. [online] Depositphotos. Available at: https://depositphotos.com/118038840/stock-photo-ab-blood-type-on-red.html [Accessed 18 Jun. 2019].
 
