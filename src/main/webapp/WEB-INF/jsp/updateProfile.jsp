@@ -116,7 +116,18 @@
 </div>
 </div>
 </div>
+<script src="/js/core/jquery.min.js" type="text/javascript"></script>
+<script src="/js/core/popper.min.js" type="text/javascript"></script>
+<script src="/js/core/bootstrap.min.js" type="text/javascript"></script>
+<script src="/js/plugins/perfect-scrollbar.jquery.min.js"
+	type="text/javascript"></script>
+<script src="/js/plugins/bootstrap-notify.js"></script>
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="/js/paper-dashboard.js?v=2.0.0" type="text/javascript"></script>
 <script>
+
+
 var first_name, last_name, Age, email, phone;
 
 function myFunction() {
@@ -147,14 +158,64 @@ function saveChanges() {
   var stringCheck = /[a-zA-Z]/;
   var ageCheck = /^\d+$/;
   if (!phone.match(number)) {
-    alert("Phone number should be a 10 digit Number");
-    debugger;
+	  
+	  $.notify({
+			// options
+			message : 'Phone number should be a 10 digit Number'
+		}, {
+			// settings
+			type : 'danger',
+			allow_dismiss : true,
+			placement : {
+				from : "top",
+				align : "center"
+			},
+			timer : 200
+		});
   } else if (!email.match(emailValidation)) {
-    alert("Invalid Email Address, it should be of format abc@abc.abc");
+	  
+	  $.notify({
+			// options
+			message : 'Invalid Email Address, it should be of format abc@abc.abc'
+		}, {
+			// settings
+			type : 'danger',
+			allow_dismiss : true,
+			placement : {
+				from : "top",
+				align : "center"
+			},
+			timer : 200
+		});
   } else if (!first_name.match(stringCheck) || !last_name.match(stringCheck)) {
-    alert("First Name or Last Name should not be empty");
+	  $.notify({
+			// options
+			message : 'First Name or Last Name should not be empty'
+		}, {
+			// settings
+			type : 'danger',
+			allow_dismiss : true,
+			placement : {
+				from : "top",
+				align : "center"
+			},
+			timer : 200
+		});
   } else if (!Age.match(ageCheck)) {
-    alert("Age should be a Number");
+	  $.notify({
+		// options
+		message : 'Age should be a Number'
+	}, {
+		// settings
+		type : 'danger',
+		allow_dismiss : true,
+		placement : {
+			from : "top",
+			align : "center"
+		},
+		timer : 200
+	});
+  
   } else {
 
     document.getElementById('first_name').value = first_name;
@@ -171,7 +232,19 @@ function saveChanges() {
     document.getElementById('save_btn').setAttribute('disabled', 'disabled');
     document.getElementById('edit_btn').removeAttribute('disabled');
     document.getElementById('type').setAttribute('disabled', 'disabled');
-    alert("Profile Successfully updated")
+    $.notify({
+		// options
+		message : 'Profile Successfully updated'
+	}, {
+		// settings
+		type : 'success',
+		allow_dismiss : true,
+		placement : {
+			from : "top",
+			align : "center"
+		},
+		timer : 200
+	});
 
   }
 }
