@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <title>Donor Details</title>
-<!-- Required meta tags -->
-<meta charset=utf-8><meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name=viewport><meta content=#3c790a name=theme-color>
-<meta name="viewport"  content="width=device-width, initial-scale=1">
-<meta name="viewport" content="IE=edge,chrome=1" />
+<meta charset="utf-8">
+<meta
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0 , shrink-to-fit=no"
+	name="viewport" />
 <!--     Fonts and icons     -->
 <link
 	href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200"

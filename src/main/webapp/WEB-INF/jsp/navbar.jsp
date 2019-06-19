@@ -21,7 +21,7 @@
             
               <li class="nav-item btn-rotate dropdown">
                 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i>Varun Mahagaokar</i>
+                  <i>Group 14</i>
                   <!-- <p>
                     <span class="d-lg-none d-md-block">Some Actions</span>
                   </p> -->
