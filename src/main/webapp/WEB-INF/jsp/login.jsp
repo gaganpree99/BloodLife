@@ -68,7 +68,7 @@ padding-right:10%
                 <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="button" id="signUp">Sign up</button>
                 
                 <div class="text-center">
-                  <a class="small" href="#">Forgot password?</a></div>
+                  <a class="small" href="#" onClick='forgotPass()' id="forgotPass">Forgot password?</a></div>
               </form>
             </div>
           </div>
@@ -85,7 +85,7 @@ padding-right:10%
 					role="dialog">
 					<div class="modal-dialog modal-md" role="document">
 						<div class="modal-content">
-							<form onsubmit="return addDonor()" action="javascript:void(0)"
+							<form onsubmit="return SignUpDone()" action="javascript:void(0)"
 								id="addDonorDetails">
 								<div class="modal-header">
 									<h5 class="modal-title">Sign Up</h5>
@@ -146,6 +146,40 @@ padding-right:10%
 						</div>
 					</div>
 				</div>
+				
+				
+				<!-- Forgot password modal -->
+				<div id="forgotPasswordModal" class="modal " tabindex="-1"
+					role="dialog">
+					<div class="modal-dialog modal-md" role="document">
+						<div class="modal-content">
+							<form onsubmit="return forgotPassDone()" action="javascript:void(0)"
+								id="addDonorDetails">
+								<div class="modal-header">
+									<h5 class="modal-title">Forgot Password?</h5>
+									<button type="button" class="close" data-dismiss="modal"
+										aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<div class="form-group">
+										<label class="control-label"> Email<span
+											style="color: red"> *</span>
+										</label> <input type="email" class="form-control" name="firstName"
+											id="firstName" placeholder="Email" required>
+									</div>
+
+								</div>
+								<div class="modal-footer">
+									<button type="submit" class="btn btn-success" id="btnSave">Submit</button>
+									<button type="button" class="btn btn-secondary"
+										data-dismiss="modal">Close</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
 	<script src="/js/core/jquery.min.js" type="text/javascript"></script>
 	<script src="/js/core/popper.min.js" type="text/javascript"></script>
 	<script src="/js/core/bootstrap.min.js" type="text/javascript"></script>
@@ -162,7 +196,7 @@ padding-right:10%
 			document.location.href = '/dashboard'
 		}
 
-		function addDonor() {
+		function SignUpDone() {
 			$("#signUpModal").modal('hide');
 			$.notify({
 				// options
@@ -179,9 +213,32 @@ padding-right:10%
 			});
 		}
 		
+		function forgotPassDone() {
+			$("#forgotPasswordModal").modal('hide');
+			$.notify({
+				// options
+				message : 'Email Sent'
+			}, {
+				// settings
+				type : 'success',
+				allow_dismiss : true,
+				placement : {
+					from : "top",
+					align : "center"
+				},
+				timer : 200
+			});
+		}
+		
+		
 		$("#signUp").click(function() {
 			$("#signUpModal").modal('show');
 		})
+		
+		function forgotPass(){
+			$("#forgotPasswordModal").modal('show');
+		}
+		
 </Script> 
 </body>
 </html>
