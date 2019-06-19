@@ -13,7 +13,10 @@
 <link href="/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+	integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+	crossorigin="anonymous">
  <link rel="stylesheet" href="demo/edit_profile.css">
 	
 <title>Profile</title>
@@ -126,7 +129,9 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="/js/paper-dashboard.js?v=2.0.0" type="text/javascript"></script>
 <script>
-
+$(document).ready(function(){
+	$("#header").html("Update Profile");
+})
 
 var first_name, last_name, Age, email, phone;
 
