@@ -5,10 +5,8 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta
-	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0 , shrink-to-fit=no"
 	name="viewport" />
-
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 <!--     Fonts and icons     -->
 <link
@@ -39,9 +37,9 @@ a {
 </head>
 <body>
 	<div class="wrapper">
-		<jsp:include page="sidebar.jsp" />
+		<jsp:include page="sidebar.jsp"></jsp:include>
 		<div class="main-panel">
-			<jsp:include page="navbar.jsp" />
+			<jsp:include page="navbar.jsp"></jsp:include>
 			<div class="content">
 				<div class="row">
 					<div class="container">
@@ -135,20 +133,20 @@ a {
 				</div>
 				<div class="row"></div>
 			</div>
-			<jsp:include page="footer.jsp" />
+			<jsp:include page="footer.jsp"></jsp:include>
 		</div>
 	</div>
 
 	<!--   Core JS Files   -->
-	<script src="/js/core/jquery.min.js" type="text/javascript"></script>
-	<script src="/js/core/popper.min.js" type="text/javascript"></script>
-	<script src="/js/core/bootstrap.min.js" type="text/javascript"></script>
+	<script src="/js/core/jquery.min.js" ></script>
+	<script src="/js/core/popper.min.js" ></script>
+	<script src="/js/core/bootstrap.min.js" ></script>
 	<script src="/js/plugins/perfect-scrollbar.jquery.min.js"
-		type="text/javascript"></script>
+		></script>
 	<script src="/js/plugins/bootstrap-notify.js"></script>
 	<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="/js/paper-dashboard.js?v=2.0.0" type="text/javascript"></script>
+	<script src="/js/paper-dashboard.js?v=2.0.0" ></script>
 	<script src="https://code.highcharts.com/highcharts.src.js"></script>
 
 	<script src="https://code.highcharts.com/modules/exporting.js"></script>

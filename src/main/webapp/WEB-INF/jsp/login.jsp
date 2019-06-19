@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
 <title>Login</title>
-<meta charset=utf-8><meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name=viewport><meta content=#3c790a name=theme-color>
-<meta name="viewport"  content="width=device-width, initial-scale=1">
-<meta name="viewport" content="IE=edge,chrome=1" />
+<meta charset="utf-8">
+<meta
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0 , shrink-to-fit=no"
+	name="viewport" />
 <link rel="stylesheet" href="/css/bootstrap.min.css">
 <link href="/demo/login.css" rel="stylesheet" />
 <style>
@@ -17,7 +18,7 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
-		<a class="navbar-brand" href="#">Blood-Life</a>
+		<a class="navbar-brand" href="#">BLOOD LIFE</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
 			aria-expanded="false" aria-label="Toggle navigation">
@@ -140,10 +141,16 @@
 								id="contact" placeholder="contact" required>
 						</div>
 						<div class="form-group">
+							<label class="control-label"> Password:<span
+								style="color: red"> *</span>
+							</label> <input type="password" class="form-control" name="passwordSignUp"
+								id="passwordSignUp" placeholder="password" required>
+						</div>
+						<div class="form-group">
 							<label class="control-label"> Age: <span
 								style="color: red"> *</span>
-							</label> <input type="number" class="form-control" name="date" id="age"
-								placeholder="date" required>
+							</label> <input type="number" class="form-control" name="age" id="age"
+								placeholder="age" required>
 						</div>
 						<div class="form-group">
 							<label class="control-label"> Refer Friend: <span
