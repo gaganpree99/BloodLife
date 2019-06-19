@@ -30,6 +30,11 @@ public class ViewController {
 		return "donor";
 	}
 	
+	@RequestMapping("/eventsManagement")
+	public String eventsManagement() {
+		return "eventsManagement";
+	}
+	
 	@RequestMapping("/events")
 	public String events() {
 		return "events";
@@ -38,6 +43,11 @@ public class ViewController {
 	@RequestMapping("/gallery")
 	public String gallery() {
 		return "gallery";
+	}
+
+	@RequestMapping("/galleryManagement")
+	public String galleryManagement() {
+		return "galleryManagement";
 	}
 
 	@RequestMapping("/dashboard")

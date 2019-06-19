@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Login </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -15,28 +15,29 @@ padding-right:10%
 </style>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">BLOOD-LIFE</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+  <a class="navbar-brand" href="#">Blood-Life</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-  <div class="collapse navbar-collapse" id="navbarCollapse">
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/index">Home</a>
+      <li class="nav-item">
+        <a class="nav-link active" href="/">Login </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="/index">Home </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Events</a>
+        <a class="nav-link" href="/events">Events</a>
       </li>
-       <li class="nav-item">
-        <a class="nav-link" href="#">Gallery</a>
+      <li class="nav-item">
+        <a class="nav-link" href="/gallery">Gallery</a>
       </li>
       
     </ul>
   </div>
 </nav>
-
 <div class="wrap ">
 
 <div class="card">
@@ -111,7 +112,7 @@ padding-right:10%
 										<label class="control-label"> Blood Group:<span
 											style="color: red"> *</span>
 										</label> <select
-											class="col-sm-12" id="bloodList" style="width: 100%">
+											class="col-sm-12 form-control" id="bloodList" style="width: 100%">
 											<option value="A+">A+</option>
 											<option value="A-">A-</option>
 											<option value="B+">B+</option>
@@ -135,7 +136,12 @@ padding-right:10%
 										</label> <input type="number" class="form-control" name="date"
 											id="age" placeholder="date" required>
 									</div>
-
+									<div class="form-group">
+										<label class="control-label"> Refer Friend: <span
+											style="color: red"> *</span>
+										</label> <input type="text" class="form-control" name="email"
+											id="referEmail" placeholder="Friend's Email" required>
+									</div>
 								</div>
 								<div class="modal-footer">
 									<button type="submit" class="btn btn-success" id="btnSave">Sign up</button>
