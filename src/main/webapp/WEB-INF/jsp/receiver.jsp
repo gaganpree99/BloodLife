@@ -5,11 +5,8 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta
-	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0 , shrink-to-fit=no"
 	name="viewport" />
-
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
 <!--     Fonts and icons     -->
 <link
 	href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200"
@@ -37,9 +34,9 @@
 </head>
 <body>
 	<div class="wrapper">
-		<jsp:include page="sidebar.jsp" />
+		<jsp:include page="sidebar.jsp" ></jsp:include>
 		<div class="main-panel">
-			<jsp:include page="navbar.jsp" />
+			<jsp:include page="navbar.jsp" ></jsp:include>
 			<div class="content">
 				<div class="row">
 					<div class="col-sm-1">
@@ -55,14 +52,14 @@
 						<table class="table table-striped" id="receiverTable" style="text-align:center">
 							<thead class="thead-dark">
 								<tr>
-									<th scope="col" width="5%">#</th>
-									<th scope="col" width="10%">First Name</th>
-									<th scope="col" width="10%">Last Name</th>
-									<th scope="col" width="10%">Blood Group</th>
-									<th scope="col" width="10%">Quantity</th>
-									<th scope="col" width="10%">Contact Number</th>
-									<th scope="col" width="10%">Date</th>
-									<th scope="col" width="10%"></th>
+									<th scope="col" style="width:5%">#</th>
+									<th scope="col" style="width:10%">First Name</th>
+									<th scope="col" style="width:10%">Last Name</th>
+									<th scope="col" style="width:10%">Blood Group</th>
+									<th scope="col" style="width:10%">Quantity</th>
+									<th scope="col" style="width:10%">Contact Number</th>
+									<th scope="col" style="width:10%">Date</th>
+									<th scope="col" style="width:10%"></th>
 								</tr>
 							</thead>
 							<tbody>
@@ -272,20 +269,20 @@
 				</div>
 				<!-- End Edit Modal -->
 			</div>
-			<jsp:include page="footer.jsp" />
+			<jsp:include page="footer.jsp" ></jsp:include>
 		</div>
 	</div>
-</body>
+
 <!--   Core JS Files   -->
-<script src="/js/core/jquery.min.js" type="text/javascript"></script>
-<script src="/js/core/popper.min.js" type="text/javascript"></script>
-<script src="/js/core/bootstrap.min.js" type="text/javascript"></script>
+<script src="/js/core/jquery.min.js" ></script>
+<script src="/js/core/popper.min.js" ></script>
+<script src="/js/core/bootstrap.min.js" ></script>
 <script src="/js/plugins/perfect-scrollbar.jquery.min.js"
-	type="text/javascript"></script>
+	></script>
 <script src="/js/plugins/bootstrap-notify.js"></script>
 <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="/js/paper-dashboard.js?v=2.0.0" type="text/javascript"></script>
+<script src="/js/paper-dashboard.js?v=2.0.0" ></script>
 
 
 <script>
@@ -396,4 +393,5 @@
 		$("#addReceiverModal").modal('show');
 	})
 </script>
+</body>
 </html>

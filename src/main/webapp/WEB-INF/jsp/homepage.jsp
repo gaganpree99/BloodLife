@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,28 +56,25 @@
 <body style="background: #f4f3ef">
 	<div style="margin-bottom: 2.5%">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
-  <a class="navbar-brand" href="#">Blood-Life</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/">Login </a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="/index">Home </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/events">Events</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/gallery">Gallery</a>
-      </li>
-      
-    </ul>
-  </div>
-</nav>
+			<a class="navbar-brand" href="/index">BLOOD LIFE</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a class="nav-link" href="/">Login </a></li>
+					<li class="nav-item active"><a class="nav-link" href="/index">Home
+					</a></li>
+					<li class="nav-item"><a class="nav-link" href="/events">Events</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="/gallery">Gallery</a>
+					</li>
+
+				</ul>
+			</div>
+		</nav>
 		<div class="container">
 			<div class="row" style="margin: 1.5%">
 
@@ -131,8 +127,7 @@
 							<!-- Modal footer -->
 							<div class="modal-footer">
 								<button type="submit" id="submitBtn" class="btn btn-success">Submit</button>
-								<button type="button" class="btn btn-info"
-									data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
 							</div>
 						</form>
 					</div>
@@ -150,7 +145,7 @@
 											<i class="fas fa-ambulance" style="font-size: 72px"></i>
 										</div>
 									</div>
-									<div class="col-lg-9" style="padding: 3%;font-size: 24px">
+									<div class="col-lg-9" style="padding: 3%; font-size: 24px">
 										<div class="numbers">
 											<p>Registered Organizations</p>
 											83
@@ -171,7 +166,7 @@
 											<i class="fas fa-band-aid" style="font-size: 72px"></i>
 										</div>
 									</div>
-									<div class="col-lg-9" style="padding: 3%;font-size: 24px">
+									<div class="col-lg-9" style="padding: 3%; font-size: 24px">
 										<div class="numbers">
 											<p>Registered Donors</p>
 											12,305
@@ -184,11 +179,12 @@
 				</div>
 
 
-				<div class="container" style="margin-top:5%;margin-bottom:5%">
+				<div class="container" style="margin-top: 5%; margin-bottom: 5%">
 					<h3 id="organizationTitle">Organizations</h3>
 					<div class="card" id="organizationDiv"
 						style="margin-bottom: 5%; display: none;">
-						<div class="container-fluid" style="margin-bottom:1%;margin-top:1%">
+						<div class="container-fluid"
+							style="margin-bottom: 1%; margin-top: 1%">
 							<div class="header">
 								<h3 class="title" style="padding-top: 1%; font-family: cursive">Organization
 									Name</h3>
@@ -214,7 +210,8 @@
 								<div class="col-sm-4">
 									<img
 										src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/IWK_Health_Centre_%28logo%29.svg/320px-IWK_Health_Centre_%28logo%29.svg.png"
-										title="will be replaced by organization logo" style="width:100%">
+										title="will be replaced by organization logo"
+										style="width: 100%">
 								</div>
 								<div class="container-fluid">
 									<div id="googleMap" style="width: 100%; height: 300px;"></div>
@@ -237,24 +234,27 @@
 	<!-- Footer -->
 	<footer class="page-footer font-small blue"
 		style="background: #f8f9fa !important; position: fixed; width: 100%; bottom: 0; height: 5%">
-		<div class="footer-copyright text-center py-3">Â© 2018 Copyright
-		</div>
+
+		<div class="footer-copyright  py-3" style="padding-left:5%;padding-right:5%">
+			About Us &nbsp;&nbsp; Contact  Us &nbsp;&nbsp; <span class="fab fa-twitter-square"> &nbsp;&nbsp;&nbsp;&nbsp;</span>
+							<span class="fab fa-facebook-square"></span>
+			<span style="float:right"> © 2018 Copyright</span></div>
 	</footer>
-</body>
-<script src="/js/core/jquery.min.js"></script>
-<script src="/js/core/popper.min.js"></script>
-<script src="/js/core/bootstrap.min.js"></script>
-<script src="/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-<script src="/js/plugins/bootstrap-notify.js"></script>
-<!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-<script src="/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
-<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-<script src="./demo/demo.js"></script>
-<script
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAgr94q-qXSYGSO-NdpvvrImA_ln0uVcs"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
-<script type="text/javascript">
+
+	<script src="/js/core/jquery.min.js"></script>
+	<script src="/js/core/popper.min.js"></script>
+	<script src="/js/core/bootstrap.min.js"></script>
+	<script src="/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+	<script src="/js/plugins/bootstrap-notify.js"></script>
+	<!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+	<script src="/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
+	<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+	<script src="./demo/demo.js"></script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAgr94q-qXSYGSO-NdpvvrImA_ln0uVcs"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+	<script type="text/javascript">
 	var markersList = [];
 	$(document).ready(function() {
 		$('#organizationList').select2({
@@ -386,4 +386,5 @@
 		}
 	})
 </script>
+</body>
 </html>
