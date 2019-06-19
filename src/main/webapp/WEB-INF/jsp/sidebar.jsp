@@ -3,7 +3,7 @@
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
       <div class="logo" style="text-align:center">
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        <a href="#" class="simple-text logo-normal">
           Blood Life
         </a>
       </div>
@@ -34,13 +34,13 @@
             </a>
           </li>
            <li id="eventsJsp">
-            <a href="/events">
+            <a href="/eventsManagement">
             <i class="fas fa-star-of-david"></i>
               <p>events</p>
             </a>
           </li>
            <li id="galleryJsp">
-            <a href="/gallery">
+            <a href="/galleryManagement">
              <i class="fas fa-images"></i>
               <p>Gallery</p>
             </a>
