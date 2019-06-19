@@ -1,17 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8" />
+<meta charset=utf-8>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no"
+	name=viewport>
+<meta content=#3c790a name=theme-color>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="IE=edge,chrome=1" />
 <link rel="apple-touch-icon" sizes="76x76"
 	href="../assets/img/apple-icon.png">
 <link rel="icon" type="image/png" href="../assets/img/favicon.png">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
 <title>Dashboard</title>
-<meta
-	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
-	name='viewport' />
+
 <!--     Fonts and icons     -->
 <link
 	href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200"
@@ -25,9 +27,7 @@
 <!-- CSS Just for demo purpose, don't include it in your project -->
 <link href="/demo/demo.css" rel="stylesheet" />
 <link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-	integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
-	crossorigin="anonymous">
+	href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 <link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"
 	rel="stylesheet" />
 <style>
@@ -35,145 +35,132 @@
 	box-shadow: 3px 3px 20px #000000;
 }
 
-#card3:hover{
+#card3:hover {
 	box-shadow: 3px 3px 20px #000000;
-	
 }
+
 .card_img {
 	height: 280px;
 }
-.text{
-	color:#bd2a2a
+
+.text {
+	color: #bd2a2a
 }
 </style>
 </head>
 <body>
-<body class="">
 	<div class="wrapper ">
-		<jsp:include page="sidebar.jsp" />
+		<jsp:include page="sidebar.jsp"></jsp:include>
 		<div class="main-panel">
 			<!-- Navbar -->
-			<jsp:include page="navbar.jsp" />
+			<jsp:include page="navbar.jsp"></jsp:include>
 			<!-- End Navbar -->
 			<div class="content">
 				<div class="row">
 					<div class="col-lg-3 col-sm-6 mb-3">
-						<div id="card3" class="card ">
+						<div id="card1" class="card ">
 							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
-							<a href="#"><img class="card-img-top card_img"
-								
-								alt="" style="background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),
-    url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038772-stock-photo-a-blood-type-on-red.jpg'); background-position: center;
-  background-repeat: no-repeat; background-size: cover; border-radius:10px;"></a>
+							<a href="#"><img class="card-img-top card_img" alt=""
+								style="background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038772-stock-photo-a-blood-type-on-red.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; border-radius: 10px;"></a>
 							<div class="card-body">
-								
-								<p class="card-text" style="font-size: 24px;  font-weight: 700;">5300 ml</p>
+
+								<p class="card-text" style="font-size: 24px; font-weight: 700;">5300
+									ml</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-3 col-sm-6 mb-3">
-						<div id="card3" class="card ">
+						<div id="card2" class="card ">
 							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
-							<a href="#"><img class="card-img-top card_img"
-								alt="" style="background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),
-    url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038792-stock-photo-a-blood-type-on-red.jpg'); background-position: center;
-  background-repeat: no-repeat; background-size: cover; border-radius:10px;"></a>
+							<a href="#"><img class="card-img-top card_img" alt=""
+								style="background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038792-stock-photo-a-blood-type-on-red.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; border-radius: 10px;"></a>
 							<div class="card-body">
-								
-								<p class="card-text" style="font-size: 24px;  font-weight: 700;">5300 ml</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-sm-6 mb-3">
-						<div id="card3" class="card">
-							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
-							<a href="#"><img class="card-img-top card_img"
-								alt="" style="background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),
-    url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038856-stock-photo-b-blood-type-on-red.jpg'); background-position: center;
-  background-repeat: no-repeat; background-size: cover; border-radius:10px;"></a>
-							<div class="card-body">
-								
-								<p class="card-text" style="font-size: 24px;  font-weight: 700;">5300 ml</p>
+
+								<p class="card-text" style="font-size: 24px; font-weight: 700;">5300
+									ml</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-3 col-sm-6 mb-3">
 						<div id="card3" class="card">
 							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
-							<a href="#"><img class="card-img-top card_img"
-								alt="" style="background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),
-    url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038868-stock-photo-b-blood-type-on-red.jpg'); background-position: center;
-  background-repeat: no-repeat; background-size: cover; border-radius:10px;"></a>
+							<a href="#"><img class="card-img-top card_img" alt=""
+								style="background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038856-stock-photo-b-blood-type-on-red.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; border-radius: 10px;"></a>
 							<div class="card-body">
-								
-								<p class="card-text" style="font-size: 24px;  font-weight: 700;">5300 ml</p>
+
+								<p class="card-text" style="font-size: 24px; font-weight: 700;">5300
+									ml</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-3 col-sm-6 mb-3">
-						<div id="card3" class="card">
+						<div id="card4" class="card">
 							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
-							<a href="#"><img class="card-img-top card_img"
-								alt="" style="background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),
-    url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038882-stock-photo-o-blood-type-on-red.jpg'); background-position: center;
-  background-repeat: no-repeat; background-size: cover; border-radius:10px;"></a>
+							<a href="#"><img class="card-img-top card_img" alt=""
+								style="background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038868-stock-photo-b-blood-type-on-red.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; border-radius: 10px;"></a>
 							<div class="card-body">
-								
-								<p class="card-text" style="font-size: 24px;  font-weight: 700;">5300 ml</p>
+
+								<p class="card-text" style="font-size: 24px; font-weight: 700;">5300
+									ml</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-3 col-sm-6 mb-3">
-						<div id="card3" class="card">
+						<div id="card5" class="card">
 							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
-							<a href="#"><img class="card-img-top card_img"
-								alt="" style="background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),
-    url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038906-stock-photo-o-blood-type-on-red.jpg'); background-position: center;
-  background-repeat: no-repeat; background-size: cover;  border-radius:10px;"></a>
+							<a href="#"><img class="card-img-top card_img" alt=""
+								style="background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038882-stock-photo-o-blood-type-on-red.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; border-radius: 10px;"></a>
 							<div class="card-body">
-								
-								<p class="card-text" style="font-size: 24px;  font-weight: 700;">5300 ml</p>
+
+								<p class="card-text" style="font-size: 24px; font-weight: 700;">5300
+									ml</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-3 col-sm-6 mb-3">
-						<div id="card3" class="card">
+						<div id="card6" class="card">
 							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
-							<a href="#"><img class="card-img-top card_img"
-								alt="" style="background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),
-    url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038822-stock-photo-ab-blood-type-on-red.jpg'); background-position: center;
-  background-repeat: no-repeat; background-size: cover;  border-radius:10px;"></a>
+							<a href="#"><img class="card-img-top card_img" alt=""
+								style="background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038906-stock-photo-o-blood-type-on-red.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; border-radius: 10px;"></a>
 							<div class="card-body">
-								
-								<p class="card-text" style="font-size: 24px;  font-weight: 700;">5300 ml</p>
+
+								<p class="card-text" style="font-size: 24px; font-weight: 700;">5300
+									ml</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-3 col-sm-6 mb-3">
-						<div id="card3" class="card">
+						<div id="card7" class="card">
 							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
-							<a href="#"><img class="card-img-top card_img"
-								
-								alt="" style="background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),
-    url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038840-stock-photo-ab-blood-type-on-red.jpg'); background-position: center;
-  background-repeat: no-repeat; background-size: cover;  border-radius:10px;"></a>
+							<a href="#"><img class="card-img-top card_img" alt=""
+								style="background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038822-stock-photo-ab-blood-type-on-red.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; border-radius: 10px;"></a>
 							<div class="card-body">
-								
-								<p class="card-text" style="font-size: 24px;  font-weight: 700;">5300 ml</p>
+
+								<p class="card-text" style="font-size: 24px; font-weight: 700;">5300
+									ml</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6 mb-3">
+						<div id="card9" class="card">
+							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
+							<a href="#"><img class="card-img-top card_img" alt=""
+								style="background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038840-stock-photo-ab-blood-type-on-red.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; border-radius: 10px;"></a>
+							<div class="card-body">
+
+								<p class="card-text" style="font-size: 24px; font-weight: 700;">5300
+									ml</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-12 col-sm-6 mb-3">
-						<div id="card3" class="card h-100">
+						<div id="card8" class="card h-100">
 							<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
 							<div class="header" style="padding: 1.5%; margin: 0px">
-								<h5>
-									Checked In Doctors
-								</h5>
+								<h5>Checked In Doctors</h5>
 								<hr>
 							</div>
-							<div class="card-body">
-							</div>
+							<div class="card-body"></div>
 						</div>
 					</div>
 				</div>
@@ -336,22 +323,22 @@
 				</div>
 				<div class="row"></div>
 			</div>
-			<jsp:include page="footer.jsp" />
+			<jsp:include page="footer.jsp" ></jsp:include>
 		</div>
 	</div>
-</body>
-
-<script src="/js/core/jquery.min.js"></script>
-<script src="/js/core/popper.min.js"></script>
-<script src="/js/core/bootstrap.min.js"></script>
-<script src="/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-<script src="/js/plugins/bootstrap-notify.js"></script>
-<script src="/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
-<script src="/demo/demo.js"></script>
-<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
 
-<script>
+	<script src="/js/core/jquery.min.js"></script>
+	<script src="/js/core/popper.min.js"></script>
+	<script src="/js/core/bootstrap.min.js"></script>
+	<script src="/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+	<script src="/js/plugins/bootstrap-notify.js"></script>
+	<script src="/js/paper-dashboard.min.js?v=2.0.0"></script>
+	<script src="/demo/demo.js"></script>
+	<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+
+	<script>
 	$(document).ready(function() {
 		$("#header").html("Dashboard");
 		$("li").removeClass("active");
@@ -369,4 +356,5 @@
 		});
 	})
 </script>
+</body>
 </html>
