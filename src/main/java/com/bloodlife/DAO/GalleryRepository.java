@@ -10,4 +10,5 @@ public interface GalleryRepository  extends CrudRepository<Gallery, Long> {
     public Gallery save(Gallery gallery);
     public Gallery findById(long id);
     public List<Gallery> findAll();
+    public  void deleteById(long id);
 }

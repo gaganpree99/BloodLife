@@ -45,12 +45,11 @@ public class galleryController {
 
     @RequestMapping(value = "/saveImageDetails", method=RequestMethod.POST)
     @ResponseBody
-    public Map<String, Object> uploadFile(@RequestBody Gallery gallery) {
+    public Map<String, Object> saveImageDetails(@RequestBody Gallery gallery) {
         Map<String,Object> response = new HashMap<>();
         try{
             galleryService.saveImage(gallery);
             response.put("status",200);
-
             return response;
         }catch(Exception ex){
             ex.printStackTrace();
@@ -73,6 +72,23 @@ public class galleryController {
             List<Gallery> galleryList = galleryService.findAll();
             response.put("status",200);
             response.put("data",galleryList);
+            return response;
+        }catch(Exception ex){
+            ex.printStackTrace();
+            response.put("error",ex.getLocalizedMessage());
+            return response;
+        }
+    }
+
+    @RequestMapping(value = "/deletePhoto", method=RequestMethod.GET)
+    @ResponseBody
+    public Map<String, Object> deletePhoto(@RequestParam (value = "photoId") long photoId) {
+        Map<String,Object> response = new HashMap<>();
+        try{
+            Gallery gallery = galleryService.findById(photoId);
+            boolean result = galleryService.deleteById(photoId);
+            response.put("status",200);
+            response.put("data",result);
             return response;
         }catch(Exception ex){
             ex.printStackTrace();
