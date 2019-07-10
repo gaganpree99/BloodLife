@@ -45,7 +45,8 @@
           <div class="card ">
             <div class="card-details ">
               <div class="card-heading">
-                <h4 class="card-title">User info</h4>
+                <h4 class="card-title">User info  <%= session.getAttribute("id") %></h4>
+
               </div>
               <div class="form-group">
                 <div class="lable-class col-sm-2">
