@@ -136,6 +136,30 @@ $(document).ready(function(){
 var first_name, last_name, Age, email, phone;
 
 function myFunction() {
+	
+	/* var first_name="helloaaaa";
+	var last_name="hello";
+	var age=23;
+	var email="hello@gmail.com";
+	var refer_friend="hello@gmail.com";
+	var blood_group="A-";
+	var phone_number=7828822900;
+	var body = {"id": 1, "age" : age, "blood_group" : blood_group, "email" : email, "firstName" : first_name, "lastName" : last_name, "refer_friend" : refer_friend, "phone_number" : phone_number};
+	
+	 $.ajax({
+		type: 'POST',
+		url: '/updateProfilePost',
+		cache: false,
+        contentType: false,
+        processData: false,
+	    contentType: "application/json",
+	    dataType:"json",
+	    data: JSON.stringify(body),
+	    success: function(response) {
+			console.log(response);
+		}
+	});  */
+	 
   document.getElementById('first_name').removeAttribute('readonly');
   document.getElementById('last_name').removeAttribute('readonly');
   document.getElementById('Age').removeAttribute('readonly');
@@ -159,7 +183,7 @@ function saveChanges() {
   var number = /^\d{10}$/;
 
   // the regular expression of identifying email address was taken from https://stackoverflow.com/a/9204568
-  var emailValidation = /\S+@\S+\.\S+/;
+  /* var emailValidation = /\S+@\S+\.\S+/;
   var stringCheck = /[a-zA-Z]/;
   var ageCheck = /^\d+$/;
   if (!phone.match(number)) {
@@ -177,7 +201,8 @@ function saveChanges() {
 			},
 			timer : 200
 		});
-  } else if (!email.match(emailValidation)) {
+  }
+  else if (!email.match(emailValidation)) {
 	  
 	  $.notify({
 			// options
@@ -192,7 +217,8 @@ function saveChanges() {
 			},
 			timer : 200
 		});
-  } else if (!first_name.match(stringCheck) || !last_name.match(stringCheck)) {
+  } 
+  else if (!first_name.match(stringCheck) || !last_name.match(stringCheck)) {
 	  $.notify({
 			// options
 			message : 'First Name or Last Name should not be empty'
@@ -221,37 +247,74 @@ function saveChanges() {
 		timer : 200
 	});
   
-  } else {
-
-    document.getElementById('first_name').value = first_name;
-    document.getElementById('last_name').value = last_name;
-    document.getElementById('Age').value = Age;
-    document.getElementById('email').value = email;
-    document.getElementById('phone').value = phone;
-
-    document.getElementById('first_name').setAttribute('readonly', 'readonly');
-    document.getElementById('last_name').setAttribute('readonly', 'readonly');
-    document.getElementById('Age').setAttribute('readonly', 'readonly');
-    document.getElementById('email').setAttribute('readonly', 'readonly');
-    document.getElementById('phone').setAttribute('readonly', 'readonly');
-    document.getElementById('save_btn').setAttribute('disabled', 'disabled');
-    document.getElementById('edit_btn').removeAttribute('disabled');
-    document.getElementById('type').setAttribute('disabled', 'disabled');
-    $.notify({
-		// options
-		message : 'Profile Successfully updated'
-	}, {
-		// settings
-		type : 'success',
-		allow_dismiss : true,
-		placement : {
-			from : "top",
-			align : "center"
-		},
-		timer : 200
-	});
-
   }
+  
+  else { */
+	
+	var refer_friend="hello@gmail.com";
+	var blood_group="A-";  
+	var body = {"id": 1, "age" : Age, "blood_group" : blood_group, "email" : email, "firstName" : first_name, "lastName" : last_name, "refer_friend" : refer_friend, "phone_number" : phone};
+
+	
+	 $.ajax({
+			type: 'POST',
+			url: '/updateProfilePost',
+			cache: false,
+	        contentType: false,
+	        processData: false,
+		    contentType: "application/json",
+		    dataType:"json",
+		    data: JSON.stringify(body),
+		    success: function(response) {
+				console.log(response);
+				if(response.status==200){
+					  document.getElementById('first_name').value = first_name;
+					    document.getElementById('last_name').value = last_name;
+					    document.getElementById('Age').value = Age;
+					    document.getElementById('email').value = email;
+					    document.getElementById('phone').value = phone;
+
+					    document.getElementById('first_name').setAttribute('readonly', 'readonly');
+					    document.getElementById('last_name').setAttribute('readonly', 'readonly');
+					    document.getElementById('Age').setAttribute('readonly', 'readonly');
+					    document.getElementById('email').setAttribute('readonly', 'readonly');
+					    document.getElementById('phone').setAttribute('readonly', 'readonly');
+					    document.getElementById('save_btn').setAttribute('disabled', 'disabled');
+					    document.getElementById('edit_btn').removeAttribute('disabled');
+					    document.getElementById('type').setAttribute('disabled', 'disabled');
+					    $.notify({
+							// options
+							message : 'Profile Successfully updated'
+						}, {
+							// settings
+							type : 'success',
+							allow_dismiss : true,
+							placement : {
+								from : "top",
+								align : "center"
+							},
+							timer : 200
+						});
+					
+				}else if(response.status==400){
+					$.notify({
+						// options
+						message : response.Message
+					}, {
+						// settings
+						type : 'danger',
+						allow_dismiss : true,
+						placement : {
+							from : "top",
+							align : "center"
+						},
+						timer : 200
+					});
+				}
+				
+			}
+		}); 
+  
 }
 
 
