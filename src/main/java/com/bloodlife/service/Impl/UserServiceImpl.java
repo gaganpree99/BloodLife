@@ -43,4 +43,14 @@ public class UserServiceImpl implements UserService{
 
 	}
 
+	@Override
+	public Users findByEmail(String email) {
+		try{
+			return userRepository.findByEmail(email);
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return null;
+		}
+	}
+
 }

@@ -17,7 +17,8 @@ public class Users {
     private String firstName;
     
     private String lastName;
-    
+
+    private String password;
     
     private String email;
     
@@ -78,6 +79,12 @@ public class Users {
 	public void setRefer_friend(String refer_friend) {
 		Refer_friend = refer_friend;
 	}
-	
-    
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 }
