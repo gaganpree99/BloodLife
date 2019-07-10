@@ -34,4 +34,16 @@ public class GalleryServiceImpl implements GalleryService {
     public List<Gallery> findAll() {
         return galleryRepository.findAll();
     }
+
+    @Override
+    public boolean deleteById(long id) {
+        try{
+            galleryRepository.deleteById(id);
+            return true;
+        }catch(Exception ex){
+            ex.printStackTrace();
+            return false;
+        }
+
+    }
 }

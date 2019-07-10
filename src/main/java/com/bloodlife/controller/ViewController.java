@@ -15,6 +15,7 @@ public class ViewController {
 	public String homepage() {
 		return "homepage";
 	}
+
 	@RequestMapping("/updateProfile")
 	public String updateProfile() {
 		return "updateProfile";

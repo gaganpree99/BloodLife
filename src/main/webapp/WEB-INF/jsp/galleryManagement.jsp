@@ -46,10 +46,10 @@
         <div class="row" id="photosDiv">
           <div class="col-4" id="photoComponent" style="display: none;">
             <div class="card" style="width: 20rem;">
-             <a href="#"> <img class="card-img-top" src="" alt="Card image cap"></a>
+             <a href="#"> <img class="card-img-top" src="" alt="Card image cap" style="height: 200px;"></a>
               <div class="card-body">
                 <h4 class="card-title" id="imgTitle">Card title</h4>
-                <a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Remove</a>
+                <button  class="btn btn-danger" onclick="deletePhoto(this)" id="deletePhoto"><i class="fa fa-trash" aria-hidden="true"></i> Remove</button>
               </div>
             </div>
           </div>
@@ -106,7 +106,7 @@
   <script src="/js/core/popper.min.js"></script>
   <script src="/js/core/bootstrap.min.js"></script>
   <script src="/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-   <script src="/js/plugins/bootstrap-notify.js"></script>
+  <script src="/js/plugins/bootstrap-notify.js"></script>
   <script src="/js/paper-dashboard.min.js?v=2.0.0"></script>
   <script src="/demo/demo.js"></script>
   
@@ -151,6 +151,7 @@
               success: function (response) {
                 if(response.status == 200){
                   $('#addPhotoModal').modal('hide');
+                  getAllPhotos ();
                 }
               }
             });
@@ -165,10 +166,28 @@
       dataType:"json",
       url: '/getAllPhotos',
       success: function (response) {
+        $("#photosDiv").children().not('#photoComponent').remove();
         for (var i = 0; i <  response.data.length; i++) {
           $("#photoComponent").clone().appendTo("#photosDiv").attr("id","photo"+i).css("display","block");
           $("#photo"+i).find("img").attr("src",response.data[i].imageUrl);
           $("#photo"+i).find("#imgTitle").html(response.data[i].title);
+          $("#photo"+i).find("#deletePhoto").attr("id","deletePhoto"+response.data[i].id);
+        }
+      }
+    });
+  }
+
+  function deletePhoto(element){
+    console.log(element.id);
+    var photoId = element.id;
+    photoId = photoId.split("Photo")[1];
+    $.ajax({
+      type: 'GET',
+      dataType:"json",
+      url: '/deletePhoto?photoId='+photoId,
+      success: function (response) {
+        if (response.status === 200){
+          getAllPhotos();
         }
       }
     });
