@@ -1,4 +1,4 @@
-package com.bloodlife.Utility;
+package com.bloodlife.utility;
 
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.BasicAWSCredentials;

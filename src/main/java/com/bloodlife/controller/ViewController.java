@@ -66,5 +66,10 @@ public class ViewController {
 	public String report() {
 		return "report";
 	}
+	@RequestMapping("/FAQ")
+	public String fetch() {
+		return "FAQ";
+	}
+	
 	
 	}

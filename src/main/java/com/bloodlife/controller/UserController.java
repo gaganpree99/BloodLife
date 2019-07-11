@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -39,6 +40,23 @@ public class UserController {
 		Map<String,Object> response = new HashMap<String, Object>();
 		try {
 			response.put("data",userService.findByFirstName(firstName));
+			response.put("status", 200);
+		}catch(Exception ex) {
+			ex.printStackTrace();
+			response.put("error", ex.getLocalizedMessage());
+			response.put("status", 500);
+		}
+		
+		return response;
+	}
+	
+	@RequestMapping(value = "/user/{id}" , method=RequestMethod.GET)
+	@ResponseBody
+	public Map<String,Object> getUserById(@PathVariable(name = "id") long userId) {
+		Map<String,Object> response = new HashMap<String, Object>();
+		try {
+			// service --> userId
+			//response.put("data",userService.findByFirstName(firstName));
 			response.put("status", 200);
 		}catch(Exception ex) {
 			ex.printStackTrace();

@@ -1,8 +1,9 @@
 package com.bloodlife.controller;
 
-import com.bloodlife.Utility.AmazonClient;
 import com.bloodlife.models.Gallery;
 import com.bloodlife.service.GalleryService;
+import com.bloodlife.utility.AmazonClient;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
