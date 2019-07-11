@@ -10,6 +10,8 @@ import javax.persistence.Id;
 public class Users {
 
 	
+	
+	
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
@@ -26,9 +28,11 @@ public class Users {
     
     private int age;
     
+    private String gender;
+    
     private String blood_group;
     
-    private String Refer_friend;
+    private String role;
     
 	public Long getId() {
 		return id;
@@ -73,12 +77,7 @@ public class Users {
 	public void setBlood_group(String blood_group) {
 		this.blood_group = blood_group;
 	}
-	public String getRefer_friend() {
-		return Refer_friend;
-	}
-	public void setRefer_friend(String refer_friend) {
-		Refer_friend = refer_friend;
-	}
+	
 
 	public String getPassword() {
 		return password;
@@ -87,4 +86,18 @@ public class Users {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	
 }

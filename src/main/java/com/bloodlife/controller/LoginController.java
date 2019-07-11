@@ -27,8 +27,14 @@ public class LoginController {
             HttpSession session = req.getSession();
             if(userObj.getPassword().equals(user.getPassword())){
                 session.setAttribute("name",userObj.getFirstName());
+                session.setAttribute("last",userObj.getLastName());
                 session.setAttribute("id", userObj.getId());
                 session.setAttribute("email",userObj.getEmail());
+                session.setAttribute("role", userObj.getRole());
+                session.setAttribute("age", userObj.getAge());
+                session.setAttribute("phone", userObj.getPhone_number());
+                session.setAttribute("gender", userObj.getGender());
+
                 System.out.println(session.getAttribute("id"));
                 response.put("status", 200);
             }else{
