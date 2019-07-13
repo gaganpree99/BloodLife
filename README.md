@@ -91,7 +91,7 @@ public class SendMail {
  
     *Source Code :* [https://regexone.com/](https://regexone.com/)(accessed on 31st May'19)
 
-    Learnt Regex patterns to implement form validations in signup.html
+    Learnt Regex patterns to implement form validations.
     
  3. **Navbar and Footer**
         
