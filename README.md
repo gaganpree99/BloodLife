@@ -31,6 +31,23 @@ Further, since we have merged the code base of all the team members, the website
  1. **Sending Email using SMTP using Springboot** 
  
     *Source Code :* https://www.mkyong.com/spring-boot/spring-boot-how-to-send-email-via-smtp/ (accessed on 25th June'19)
+    
+    *Original Code*
+```
+void sendEmail() {
+
+    SimpleMailMessage msg = new SimpleMailMessage();
+    msg.setTo("to_1@gmail.com", "to_2@gmail.com", "to_3@yahoo.com");
+
+    msg.setSubject("Testing from Spring Boot");
+    msg.setText("Hello World \n Spring Boot Email");
+    
+    javaMailSender.send(msg);
+
+    } 
+```
+
+    
  
  2. **Regex Patterns**
  
