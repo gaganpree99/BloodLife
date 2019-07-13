@@ -46,7 +46,6 @@ public class SendMail {
 				message.setFrom(new InternetAddress(property.getProperty("spring.mail.username")));
 				message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
 				message.setSubject(subject);
-
 				message.setContent(messageText, "text/html");
 				javaMailSender.send(message);
 
@@ -55,5 +54,4 @@ public class SendMail {
 				e.printStackTrace();
 			}
 		}
-
 }

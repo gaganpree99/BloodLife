@@ -4,7 +4,7 @@
 <title>FAQ</title>
 <meta charset="utf-8">
 <meta
-	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0 , shrink-to-fit=no"
+	content="width=device-width"
 	name="viewport" />
 <link rel="stylesheet" href="/css/bootstrap.min.css">
 <link href="/demo/login.css" rel="stylesheet" />
@@ -12,9 +12,12 @@
 .nav-item {
 	padding-right: 10%
 }
+ul {
+  list-style: none; /* Remove default bullets */
+}
 
 .frequenQ>ul li::before {
-	content: "\2022";
+	content: "\2022"; 
 	color: red;
 	font-weight: bold;
 	display: inline-block;
@@ -59,57 +62,59 @@
 
 							<h1 class="underline mb-5 ">Frequently Asked Questions</h1>
 							<ul>
-								<div>
-									<h5>
-										<li>How much blood are you taking with every donation?</li>
-									</h5>
+								<li>
+									
+										<b>How much blood are you taking with every donation?</b>
+										
+									
 									<p>During a single blood donation, we obtain about 450 ml (a pint) of blood.</p>
-								</div>
-								<div>
-									<h5>
-										<li>How long will it take my body to replace the blood
-											that's taken?</li>
-									</h5>
+								</li>
+								<li>
+									
+										<b>How long will it take my body to replace the blood
+											that's taken?</b>
+									
 									<p>The plasma portion of your donation is replaced within
 										hours and the platelet portion within days. Red blood cells
 										can take months to replenish.</p>
-								</div>
-								<div>
-									<h5>
-										<li>How long after donating blood should I avoid
-											strenuous activity?</li>
-									</h5>
+								</li>
+								<li>
+									<b>
+										How long after donating blood should I avoid
+											strenuous activity?
+											</b>
+									
 									<p>You should avoid strenuous activity for six to eight
 										hours after giving blood.</p>
-								</div>
-								<div>
-									<h5>
-										<li>For someone to be a 'universal' donor, what blood
-											type must he/she have?</li>
-									</h5>
+								</li>
+								<li>
+									<b>
+										For someone to be a 'universal' donor, what blood
+											type must he/she have?</b>
+									
 
 									<p>People with O negative (O-) blood are considered
 										universal donors because anyone can receive O- blood. But all
 										blood types are needed to meet the needs of patients for blood
 										and blood products.</p>
-								</div>
-								<div>
-									<h5>
-										<li>I am currently taking medication. Can I still give
-											blood?</li>
-									</h5>
+								</li>
+								<li>
+									<b>
+										I am currently taking medication. Can I still give
+											blood?</b>
+									
 									<p>If you want to know whether a particular medication
 										might keep you from being eligible to donate, you can call us
 										at 1&nbsp;888&nbsp;2&nbsp;DONATE (1-888-236-6283). You can
 										still give blood when taking certain medications: in many
 										cases, it isn't the medicine but rather the reason for taking
 										it that may be of concern.</p>
-								</div>
-								<div>
-									<h5>
-										<li>Why are the questions asked during the screening
-											process so personal?</li>
-									</h5>
+								</li>
+								<li>
+									<b>
+									Why are the questions asked during the screening
+											process so personal?</b>
+									
 									<p>The screening process is lengthy and may seem intrusive,
 										but it is absolutely necessary to safeguard the blood supply
 										by screening out people who are at greater risk of
@@ -118,12 +123,12 @@
 										knowledge of risk factors. All our screening measures meet
 										stringent regulatory requirements and accepted worldwide blood
 										service standards.</p>
-								</div>
-								<div>
-									<h5>
-										<li>If you test all donated blood, is screening even
-											necessary?</li>
-									</h5>
+								</li>
+								<li>
+									<b>
+										If you test all donated blood, is screening even
+											necessary?</b>
+									
 									<p>While we test every donation using sophisticated and
 										reliable procedures, these tests are not perfect. There are
 										brief periods after infection called ‘window periods’ when
@@ -132,24 +137,24 @@
 										window periods. This is why we have strict screening
 										procedures to ensure each donor poses the least possible risk
 										of transmitting diseases through his or her blood.</p>
-								</div>
-								<div>
-									<h5>
-										<li>I donate blood regularly and my answers to the
+								</li>
+								<li>
+									<b>
+										I donate blood regularly and my answers to the
 											screening questions are always the same. Do I have to answer
-											every time I donate?</li>
-									</h5>
+											every time I donate?</b>
+									
 									<p>Because a lot can happen between donations, we are
 										required to treat every donation as a separate event. For the
 										safety of the blood supply and potential blood recipients, we
 										have to take maximum caution and ask the questions every time.</p>
-								</div>
-								<div>
+								</li>
+								<li>
 
-									<h5>
-										<li>I am a healthy teenager. Why do I have to wait until
-											I'm 17 before I donate?</li>
-									</h5>
+									<b>
+										I am a healthy teenager. Why do I have to wait until
+											I'm 17 before I donate?</b>
+									
 									<p>
 										Current medical information tells us that 17 is the earliest
 										age at which it is safe to give blood. But there are other
@@ -159,11 +164,12 @@
 										us at <a href="mailto:feedback@blood.ca">feedback@blood.ca</a>
 										or calling 1&nbsp;888&nbsp;2&nbsp;DONATE (1-888-236-6283).
 									</p>
-								</div>
-								<div>
-									<h5>
-										<li>May I bring children with me when I come to donate?</li>
-									</h5>
+								</li>
+								<li>
+									<b>
+										May I bring children with me when I come to donate?
+										</b>
+									
 									<p>
 										Please plan to have a friend or family member who is not
 										donating with you if you bring children under 10 years of age.
@@ -177,7 +183,7 @@
 										you are comfortable being in an environment where blood is
 										collected.
 									</p>
-								</div>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -194,7 +200,7 @@
 										<h3 class="login-heading mb-4">
 											Still have a query? <br>We will be glad to answer
 										</h3>
-										<form  action="" id="faqForm" method="POST">
+										<form   id="faqForm" method="POST">
 											<div class="form-label-group">
 												<input type="email" name="email" id="FAQemail"
 													class="form-control" placeholder="Email address" required
