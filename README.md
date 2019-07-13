@@ -1,4 +1,4 @@
-# Read Me for Assignment 4: Gaganpreet Singh (B00829217)
+# Read Me for Assignment 4: Gaganpreet Singh (B00129217)
 
 From the 2 features I had selected in Assignment 3, i.e. Report Managemnet and Frequently Asked Questions (FAQ's), I have selected to implement the latter.
 
