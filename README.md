@@ -3,9 +3,9 @@
 From the 2 features I had selected in Assignment 3, i.e. Report Managemnet and Frequently Asked Questions (FAQ's), I have selected to implement the latter.
 
 # Frequently Asked Question (FAQ's)
-Apart from a list of Frequently asked questions, a user will have an option to send the query to the organisations. 
-These queries will be sent to the organisation registered with BloodLife via email. 
-The organisation can reply to the user over email.
+Apart from a list of Frequently asked questions, a user will has an option to send the query to the organisation. 
+The user gets a unique token ID for his submitted query on the website. Also, a confirmation email for the submitted query is sent to the user.
+The organisation can then reply to the user over email.
 
 ## GitLab Repository
 
