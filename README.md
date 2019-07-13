@@ -48,14 +48,23 @@ Further, since we have merged the code base of all the team members, the website
 As discussed in Assignment 3, the folder structure being used for our project has been borrowed from Spring boot.
 
 .
+
 ├── src
+
 │   ├── main
+
 │   │   ├── java
+
 │   │   │   └── com
+
 │   │   │       └── bloodlife
+
 │   │   │           ├── DAO
+
 │   │   │           ├── controller
+
 │   │   │           ├── models
+
 │   │   │           ├── service
 │   │   │           │   └── Impl
 │   │   │           └── utility
