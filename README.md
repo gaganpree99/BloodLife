@@ -51,13 +51,12 @@ void sendEmail() {
  @Service
 public class SendMail {
 	
-	 	@Autowired
-	    private JavaMailSender javaMailSender;
-
+    @Autowired
+    private JavaMailSender javaMailSender;
 	 	
-		public void sendMail(String to, String subject, String messageText)  {
-			try {
-				FileReader fr = new FileReader("src/main/resources/application.properties");
+    public void sendMail(String to, String subject, String messageText)  {
+        try {
+                FileReader fr = new FileReader("src/main/resources/application.properties");
 				Properties property = new Properties();
 				property.load(fr);
 				Properties properties = System.getProperties();
@@ -83,9 +82,9 @@ public class SendMail {
 
 			} catch (Exception e) {
 
-				e.printStackTrace();
-			}
-		}
+		    e.printStackTrace();
+        }
+    }
 }
 ```
 
