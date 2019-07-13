@@ -1,6 +1,6 @@
-# Read Me for Assignment 4: Gaganpreet Singh (B00819217)
+# Assignment 4: Gaganpreet Singh (B00819217)
 
-From the 2 features I had selected in Assignment 3, i.e. Report Managemnet and Frequently Asked Questions (FAQ's), I have selected to implement the latter.
+From the two features I had selected in Assignment 3, i.e. Report Managemnet and Frequently Asked Questions (FAQ's), I have selected to implement the latter.
 
 # Frequently Asked Question (FAQ's)
 Apart from a list of Frequently asked questions, a user will has an option to send the query to the organisation. 
@@ -38,7 +38,7 @@ Further, since we have merged the code base of all the team members, the website
 
     Learnt Regex patterns to implement form validations in signup.html
     
- 7. **Navbar and Footer**
+ 3. **Navbar and Footer**
         
     *Source Code :* [https://getbootstrap.com/docs/4.0/components/navbar/](https://getbootstrap.com/docs/4.0/components/navbar/)
 
@@ -46,6 +46,70 @@ Further, since we have merged the code base of all the team members, the website
 
 ## File Structure
 As discussed in Assignment 3, the folder structure being used for our project has been borrowed from Spring boot.
+
+.
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── bloodlife
+│   │   │           ├── DAO
+│   │   │           ├── controller
+│   │   │           ├── models
+│   │   │           ├── service
+│   │   │           │   └── Impl
+│   │   │           └── utility
+│   │   ├── resources
+│   │   │   └── static
+│   │   │       ├── css
+│   │   │       ├── demo
+│   │   │       ├── fonts
+│   │   │       ├── img
+│   │   │       └── js
+│   │   │           ├── core
+│   │   │           └── plugins
+│   │   └── webapp
+│   │       └── WEB-INF
+│   │           ├── jsp
+│   │           └── sample
+│   └── test
+│       └── java
+└── target
+    ├── classes
+    │   ├── WEB-INF
+    │   │   ├── jsp
+    │   │   └── sample
+    │   ├── com
+    │   │   └── bloodlife
+    │   │       ├── DAO
+    │   │       ├── controller
+    │   │       ├── models
+    │   │       ├── service
+    │   │       │   └── Impl
+    │   │       └── utility
+    │   └── static
+    │       ├── css
+    │       ├── demo
+    │       ├── fonts
+    │       ├── img
+    │       └── js
+    │           ├── core
+    │           └── plugins
+    ├── generated-sources
+    │   └── annotations
+    ├── m2e-wtp
+    │   └── web-resources
+    │       └── META-INF
+    │           └── maven
+    │               └── com.bloodLife
+    │                   └── blood-life
+    ├── maven-status
+    │   └── maven-compiler-plugin
+    │       ├── compile
+    │       │   └── default-compile
+    │       └── testCompile
+    │           └── default-testCompile
+    └── test-classes
     
 ## W3 Validation
 
