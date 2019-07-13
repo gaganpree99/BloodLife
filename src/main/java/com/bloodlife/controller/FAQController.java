@@ -1,3 +1,7 @@
+/* Assignment 4 Submission 
+     by Gaganpreet Singh 
+	 Banner ID: B00819217 */
+
 package com.bloodlife.controller;
 
 import java.text.DateFormat;
@@ -31,19 +35,19 @@ public class FAQController {
 	@RequestMapping(value = "/fetchFAQ" , method=RequestMethod.POST)
 	@ResponseBody
 	public String fetchFAQ(@RequestParam Map<String, String> data) {
- 		FAQ n = new FAQ();
- 		String email=data.get("email");
-		n.setQuestion(data.get("question"));
+ 		FAQ n = new FAQ(); // Creating instance of model FAQ
+ 		String email=data.get("email");  // Fetching email from front end request
+		n.setQuestion(data.get("question"));// Fetching question from front end request
 		n.setEmail(data.get("email"));
-		
+		//generating unique token ID with date
 		Random random = new Random();
-		DateFormat date = new SimpleDateFormat("yyyyMMdd");
+		DateFormat date = new SimpleDateFormat("yyyyMMdd"); 
 		String token="BF"+date.format(new Date()) + String.valueOf(random.nextInt(999999999));
 		
 		n.setTokenId(token);
-		faqRepository.save(n);
+		faqRepository.save(n);//saving record to database
 		
-		System.out.println("email"+email);
+		//email functionality
 		sendMail.sendMail(email, "Bloodlife: Successfully submitted your query",
 				"Your query has been successfully submitted and the token ID is "+token+".<br>Our team will get back to you shortly.<br><br>Regards,<br>Team Bloodlife");
 		
