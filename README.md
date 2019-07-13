@@ -1,4 +1,4 @@
-# Read Me for Assignment 4: Gaganpreet Singh (B00129217)
+# Read Me for Assignment 4: Gaganpreet Singh (B00819217)
 
 From the 2 features I had selected in Assignment 3, i.e. Report Managemnet and Frequently Asked Questions (FAQ's), I have selected to implement the latter.
 
@@ -10,6 +10,7 @@ The organisation can then reply to the user over email.
 ## GitLab Repository
 
 The code for FAQ webpage can be access through [GitLab branch A4_Singh_Gaganpreet](https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/tree/A4_Singh_Gaganpreet).
+
 Also, since we have merged the code bose of all the team members the website can be checked at [Gitlab master branch](https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/tree/master)
  
 ## Libraries/Toolkits Used
