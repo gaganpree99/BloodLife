@@ -5,9 +5,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
 @Entity
 public class Users {
 
+	
+	
+	
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
@@ -15,8 +19,20 @@ public class Users {
     private String firstName;
     
     private String lastName;
+
+    private String password;
     
     private String email;
+    
+    private Long phone_number;
+    
+    private int age;
+    
+    private String gender;
+    
+    private String blood_group;
+    
+    private String role;
     
 	public Long getId() {
 		return id;
@@ -43,6 +59,45 @@ public class Users {
 		this.email = email;
 	}
     
+	public Long getPhone_number() {
+		return phone_number;
+	}
+	public void setPhone_number(Long phone_number) {
+		this.phone_number = phone_number;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public String getBlood_group() {
+		return blood_group;
+	}
+	public void setBlood_group(String blood_group) {
+		this.blood_group = blood_group;
+	}
 	
-    
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	
 }

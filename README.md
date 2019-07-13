@@ -28,79 +28,51 @@ Further, since we have merged the code base of all the team members, the website
 
 ## Code Inspirations
 
- 1. **Sending Email using SMTP using Springboot** 
- 
-    *Source Code :* https://www.mkyong.com/spring-boot/spring-boot-how-to-send-email-via-smtp/ (accessed on 25th June'19)
-    
-    *Original Code Snippet:*
-```
-void sendEmail() {
-
-    SimpleMailMessage msg = new SimpleMailMessage();
-    msg.setTo("to_1@gmail.com", "to_2@gmail.com", "to_3@yahoo.com");
-
-    msg.setSubject("Testing from Spring Boot");
-    msg.setText("Hello World \n Spring Boot Email");
-    
-    javaMailSender.send(msg);
-
-    } 
-```
- I took an idea on how to implement the email fucntionality from this tutorial and wrote the following code:
-```
-@Service
-public class SendMail {
+		` @RequestMapping(value = "/ajaxtest", method = RequestMethod.GET)
+          public @ResponseBody
+          String getTime() {
+             Random rand = new Random();
+             float r = rand.nextFloat() * 100;
+             String result = "<br>Next Random # is <b>" + r + "</b>. Generated on <b>" + new Date().toString() + "</b>";
+             System.out.println("Debug Message from CrunchifySpringAjaxJQuery Controller.." + new Date().toString());
+             return result;
+            }`
+		
+	*Modified Code:*
 	
-    @Autowired
-    private JavaMailSender javaMailSender;
-	 	
-    public void sendMail(String to, String subject, String messageText)  {
-        try {
-                FileReader fr = new FileReader("src/main/resources/application.properties");
-				Properties property = new Properties();
-				property.load(fr);
-				Properties properties = System.getProperties();
-				properties.setProperty("mail.smtp.starttls.required", property.getProperty("spring.mail.properties.mail.smtp.starttls.required"));
-				properties.setProperty("mail.smtp.starttls.enabled", property.getProperty("spring.mail.properties.mail.smtp.starttls.enable"));
-				properties.setProperty("mail.smtp.host", property.getProperty("spring.mail.host"));
-				properties.setProperty("mail.smtp.port", property.getProperty("spring.mail.port"));
-				properties.put("mail.smtp.auth",property.getProperty("spring.mail.properties.mail.smtp.starttls.enable"));
+	I initially referred to the above code to know the actual syntax of making a request, then I have modified my code which takes some input from the user and also I am returning the data back to the front-end using HashMap:
 
-				Session session = Session.getDefaultInstance(properties, new javax.mail.Authenticator() {
-					protected PasswordAuthentication getPasswordAuthentication() {
-						return new PasswordAuthentication(property.getProperty("spring.mail.username"),
-								property.getProperty("spring.mail.password"));
-					}
-				});
-				MimeMessage message = new MimeMessage(session);
-				message.setFrom(new InternetAddress(property.getProperty("spring.mail.username")));
-				message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-				message.setSubject(subject);
-				message.setContent(messageText, "text/html");
-				javaMailSender.send(message);
-			} catch (Exception e) {
-		    e.printStackTrace();
-        }
-    }
-}
-```
+	    `@RequestMapping(value = "/getUserById" , method=RequestMethod.GET)
+	     @ResponseBody
+	     public Map<String,Object> getUserById(@RequestParam(name = "id") Long id) {
+		    Map<String,Object> response = new HashMap<String, Object>();
+		    try {
+			    response.put("data",userService.findById(id));
+			    response.put("status", 200);
+	    	}catch(Exception ex) {
+			    ex.printStackTrace();
+			    response.put("error", ex.getLocalizedMessage());
+			    response.put("status", 500);
+		    }
+		    return response;
+	    }`
 
-    
- 
- 2. **Regex Patterns**
- 
-    *Source Code :* [https://regexone.com/](https://regexone.com/)(accessed on 31st May'19)
+ 2. **Phone number validation** 
+	 
+    *Source Code :* https://stackoverflow.com/a/42105140
+	
+    *Original Code Snippet:* 
 
-    Learnt Regex patterns to implement form validations.
-    
- 3. **Navbar and Footer**
-        
-    *Source Code :* [https://getbootstrap.com/docs/4.0/components/navbar/](https://getbootstrap.com/docs/4.0/components/navbar/)
+		` String pattern = "\\d{10}|(?:\\d{3}-){2}\\d{4}|\\(\\d{3}\\)\\d{3}-?\\d{4}";`
+	
+	*Modified Code:*
+	
+	The above regex was used to detect phone number that had numbers, spaces, braces etc. But In my case I am only allowing numbers as phone number. Hence I modified the above regex to fit my needs.
+	
+	    `String regex = "\\d{10}";`
+	    
+	
 
-    In order to make a responsive webpage, I took the idea of navbar and footer from bootstrap's documentation page.
-
-## File Structure
-As discussed in Assignment 3, the folder structure being used for our project has been borrowed from Spring boot.
     
 ## W3 Validation
 
