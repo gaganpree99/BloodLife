@@ -1,18 +1,11 @@
-# Read Me for BloodLife
+# Read Me for Assignment 4: Gaganpreet Singh (B00829217)
 
-The following webpages have been implemented for this assignment:
-1. Home Page
-2. Donor Registration Page
-3. Organization Login
-4. Donor Login
-3. Gallery Page
-4. Event Page
-4. Manage Gallery
-5. Registration Successfull Page
-6. View Reports
-7. Event Management
+From the 2 features I had selected in Assignment 3, i.e. Report Managemnet and Frequently Asked Questions (FAQ's), I have selected to implement the latter.
 
-The Hyperlink takes you directly to the bluenose/hector server where you can preview them.
+# Frequently Asked Question (FAQ's)
+Apart from a list of Frequently asked questions, a user will have an option to send the query to the organisations. 
+These queries will be sent to the organisation registered with BloodLife via email. 
+The organisation can reply to the user over email.
 
 ## GitLab Repository
 
