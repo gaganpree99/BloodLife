@@ -1,49 +1,32 @@
-# Read Me for Assignment 4 by Mohammed Sohail Ahmed
+# Assignment 4: Gaganpreet Singh (B00819217)
 
+From the two features I had selected in Assignment 3, i.e. Report Managemnet and Frequently Asked Questions (FAQ's), I have selected to implement the latter.
 
-The feature that I have selected to implement for this Assignment is Given below
-
-## Profile Management
-
-This feature allows the user to update the details of their profile like their email address, phone number etc. This feature will also be responsible for checking the roles of user from the backend database and displaying the update profile page to them.
-
-The Hyperlink takes you directly to the bluenose/hector server where you can preview them.
+## Frequently Asked Question (FAQ's)
+Apart from a list of Frequently asked questions, a user will has an option to send the query to the organisation. 
+The user gets a unique token ID for his submitted query on the website. Also, a confirmation email for the submitted query is sent to the user.
+The organisation can then reply to the user over email.
 
 ## GitLab Repository
 
-The code which only includes the implementation of my Assignment 4 can be access through [GitLab](https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/edit/Assignment4_Sohail_Mohammed/).
+The code for FAQ webpage can be access through [GitLab branch A4_Singh_Gaganpreet](https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/tree/A4_Singh_Gaganpreet).
 
-**Note: For my feature to work I needed to access the login session (implemented by Drhuv Purohit) for which I had to merge his code into mine for it work**
-
-We have decided to also merge all the code from the assignment 4 from all the group members, so that it can be hosted.
-
-The code for it can be access through [GitLab](https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/tree/master).
-
-## Images
-
-**Update profile:**
-1. “Free Image on Pixabay - Head, The Dummy, Avatar, Man, Tie,” Head The Dummy Avatar - Free image on Pixabay. [Online]. Available: https://pixabay.com/illustrations/head-the-dummy-avatar-man-tie-659651/. [Accessed: 31-May-2019]. 
-
-**Note: This image is used only for UI purposes and we have no plans of adding and maitaining profile images, hence I have not implemented an image upload to the database functionality**
-
-## Technologies Used
- 1. **Ajax**
-   Ajax allows exchanging data between the web server and the front end. Using ajax part of webpages can be updated without reloading the whole page
+Further, since we have merged the code base of all the team members, the website can be checked at [Gitlab master branch](https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/tree/master)
+ 
+## Libraries/Toolkits Used
+ 1. **Bootstrap**
+    Bootstrap is an open source toolkit for HTML, CSS, and JS development. I have used this toolkit to add responsiveness to the webpages.
 
  2. **Jquery**
     Jquery is a lightweight Javascript language. It helps in HTML/DOM, CSS manipulation and HTML event methods. 
 
- 3. **JAVA**
-    I have used Java Programming language to connect with the MySQL Database.
+ 3. **Ajax**
+    Ajax is a collection of web development methods for creating asynchronous web applications using many client-side web technologies.
 
-## Code References
+ 4. **Spring Boot Framework**
+    The Spring Framework is a framework for implementation and reversal of the Java platform control container.
 
- 1. **Make a request** 
- 
-    *Source Code :* https://crunchify.com/how-to-use-ajax-jquery-in-spring-web-mvc-jsp-example/
- 
-
-	*Original Code Snippet:* 
+## Code Inspirations
 
 		` @RequestMapping(value = "/ajaxtest", method = RequestMethod.GET)
           public @ResponseBody
@@ -93,4 +76,4 @@ The code for it can be access through [GitLab](https://git.cs.dal.ca/mahagaokar/
     
 ## W3 Validation
 
-All the webpages are W3 Compliant and have been checked through [https://validator.w3.org](https://validator.w3.org)
+The FAQ webpage has beem checked for W3 Compliance through [https://validator.w3.org](https://validator.w3.org)
