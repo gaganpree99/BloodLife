@@ -30,9 +30,8 @@ Further, since we have merged the code base of all the team members, the website
 
  1. **Sending Email using SMTP using Springboot** 
  
-    *Source Code :* https://www.mkyong.com/spring-boot/spring-boot-how-to-send-email-via-smtp/ (accessed on 25th May'19)
+    *Source Code :* https://www.mkyong.com/spring-boot/spring-boot-how-to-send-email-via-smtp/ (accessed on 25th June'19)
  
-
  2. **Regex Patterns**
  
     *Source Code :* [https://regexone.com/](https://regexone.com/)(accessed on 31st May'19)
@@ -44,6 +43,9 @@ Further, since we have merged the code base of all the team members, the website
     *Source Code :* [https://getbootstrap.com/docs/4.0/components/navbar/](https://getbootstrap.com/docs/4.0/components/navbar/)
 
     In order to make a responsive webpage, I took the idea of navbar and footer from bootstrap's documentation page.
+
+## File Structure
+As discussed in Assignment 3, the folder structure being used for our project has been borrowed from Spring boot.
     
 ## W3 Validation
 
