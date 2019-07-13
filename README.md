@@ -11,7 +11,7 @@ The organisation can then reply to the user over email.
 
 The code for FAQ webpage can be access through [GitLab branch A4_Singh_Gaganpreet](https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/tree/A4_Singh_Gaganpreet).
 
-Also, since we have merged the code bose of all the team members the website can be checked at [Gitlab master branch](https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/tree/master)
+Further, since we have merged the code base of all the team members, the website can be checked at [Gitlab master branch](https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/tree/master)
  
 ## Libraries/Toolkits Used
  1. **Bootstrap**
