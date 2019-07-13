@@ -48,7 +48,7 @@ void sendEmail() {
 ```
  I took an idea on how to implement the email fucntionality from this tutorial and wrote the following code:
 ```
- @Service
+@Service
 public class SendMail {
 	
     @Autowired
@@ -72,16 +72,13 @@ public class SendMail {
 								property.getProperty("spring.mail.password"));
 					}
 				});
-
 				MimeMessage message = new MimeMessage(session);
 				message.setFrom(new InternetAddress(property.getProperty("spring.mail.username")));
 				message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
 				message.setSubject(subject);
 				message.setContent(messageText, "text/html");
 				javaMailSender.send(message);
-
 			} catch (Exception e) {
-
 		    e.printStackTrace();
         }
     }
