@@ -56,6 +56,7 @@ The code for it can be access through [GitLab](https://git.cs.dal.ca/mahagaokar/
             }`
 		
 	*Modified Code:*
+	
 	I initially referred to the above code to know the actual syntax of making a request, then I have modified my code which takes some input from the user and also I am returning the data back to the front-end using HashMap:
 
 	    `@RequestMapping(value = "/getUserById" , method=RequestMethod.GET)
