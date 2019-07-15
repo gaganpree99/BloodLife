@@ -82,6 +82,25 @@ The code which only includes the implementation of my Assignment 4 can be access
 	    `String regex = "\\d{10}";`
 
 
+## Testing Instructions
+
+To test this feature you need to login using the following credentials:
+
+**Username** : sohail@gmail.com
+
+**Password** : sohail123
+
+When you login using the above credentials you will be redirected to the update profile screen where you can update the details of the user. As the role of this user is that of a "donor" he can't view the dashboard features of an organisation hence he is directed straight to the update profile page.
+
+**Note: All the validations made on this page is done through back-end.**
+
+credentials of an Organisation:
+
+**Username**: varun090295@gmail.com
+
+**Password**: varun12345
+
+When you login using the above credentials you will be taken to the dashboard screen where you can perform the tasks of an organisations. These tasks are hidden from the donors (which you can using the above credentials).
 
 
 ## W3 Validation
