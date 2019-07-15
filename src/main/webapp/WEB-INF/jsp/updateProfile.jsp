@@ -184,7 +184,8 @@ function loadData(){
 
 function makeEditable() {
 	
-	 
+
+//Make all the fields editable	
   document.getElementById('first_name').removeAttribute('readonly');
   document.getElementById('last_name').removeAttribute('readonly');
   document.getElementById('Age').removeAttribute('readonly');
@@ -197,6 +198,8 @@ function makeEditable() {
 };
 
 function saveChanges() {
+	
+	//get values from the fields
   first_name = document.getElementById('first_name').value;
   last_name = document.getElementById('last_name').value;
   Age = document.getElementById('Age').value;
@@ -204,7 +207,6 @@ function saveChanges() {
   phone_number = document.getElementById('phone').value;
   gender=document.getElementById('type').value;
 	
-	var refer_friend="hello@gmail.com";
 	var blood_group="A-";  
 	var body = {"id": 1, "age" : Age, "blood_group" : blood_group, "email" : email, "firstName" : first_name, "lastName" : last_name, "role": role, "gender":gender, "phone_number" : phone_number, "password":password};
 

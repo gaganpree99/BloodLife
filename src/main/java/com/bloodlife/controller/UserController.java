@@ -85,7 +85,7 @@ public class UserController {
         Map<String,Object> response = new HashMap<>();
         try{
 
-        	
+
         	if(users.getEmail().length()==0) {
         		response.put("status",400);
                 response.put("Message","Email should not be empty");
