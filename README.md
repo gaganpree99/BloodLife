@@ -1,32 +1,42 @@
-# Assignment 4: Gaganpreet Singh (B00819217)
+# Read Me for Assignment 4 by Mohammed Sohail Ahmed (B00821054)
 
-From the two features I had selected in Assignment 3, i.e. Report Managemnet and Frequently Asked Questions (FAQ's), I have selected to implement the latter.
+Initially I have selected 2 features (Profile Management, sms/email notification) in my Assignment3, from these two features I have decided to implement "Profile Management" for this Assignment.
 
-## Frequently Asked Question (FAQ's)
-Apart from a list of Frequently asked questions, a user will has an option to send the query to the organisation. 
-The user gets a unique token ID for his submitted query on the website. Also, a confirmation email for the submitted query is sent to the user.
-The organisation can then reply to the user over email.
+## Profile Management
+
+This feature allows the user to update the details of their profile like their email address, phone number etc. This feature will also be responsible for checking the roles of the user from the back-end database and displaying the update profile page to them.
+
+The Hyperlink takes you directly to the bluenose/hector server where you can preview them.
 
 ## GitLab Repository
 
-The code for FAQ webpage can be access through [GitLab branch A4_Singh_Gaganpreet](https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/tree/A4_Singh_Gaganpreet).
+The code which only includes the implementation of my Assignment 4 can be access through [GitLab](https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/edit/Assignment4_Sohail_Mohammed/).
 
-Further, since we have merged the code base of all the team members, the website can be checked at [Gitlab master branch](https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/tree/master)
- 
-## Libraries/Toolkits Used
- 1. **Bootstrap**
-    Bootstrap is an open source toolkit for HTML, CSS, and JS development. I have used this toolkit to add responsiveness to the webpages.
+## Images
+
+**Update profile:**
+1. “Free Image on Pixabay - Head, The Dummy, Avatar, Man, Tie,” Head The Dummy Avatar - Free image on Pixabay. [Online]. Available: https://pixabay.com/illustrations/head-the-dummy-avatar-man-tie-659651/. [Accessed: 31-May-2019].
+
+**Note: This image is used only for UI purposes and we have no plans of adding and maitaining profile images, hence I have not implemented an image upload functionality**
+
+## Technologies Used
+ 1. **Ajax**
+   Ajax allows exchanging data between the web server and the front end. Using ajax part of webpages can be updated without reloading the whole page
 
  2. **Jquery**
-    Jquery is a lightweight Javascript language. It helps in HTML/DOM, CSS manipulation and HTML event methods. 
+    Jquery is a lightweight Javascript language. It helps in HTML/DOM, CSS manipulation and HTML event methods.
 
- 3. **Ajax**
-    Ajax is a collection of web development methods for creating asynchronous web applications using many client-side web technologies.
+ 3. **JAVA**
+    I have used Java Programming language to connect with the MySQL Database.
 
- 4. **Spring Boot Framework**
-    The Spring Framework is a framework for implementation and reversal of the Java platform control container.
+## Code References
 
-## Code Inspirations
+ 1. **Make a request**
+
+    *Source Code :* https://crunchify.com/how-to-use-ajax-jquery-in-spring-web-mvc-jsp-example/
+
+
+	*Original Code Snippet:*
 
 		` @RequestMapping(value = "/ajaxtest", method = RequestMethod.GET)
           public @ResponseBody
@@ -37,7 +47,7 @@ Further, since we have merged the code base of all the team members, the website
              System.out.println("Debug Message from CrunchifySpringAjaxJQuery Controller.." + new Date().toString());
              return result;
             }`
-		
+
 	*Modified Code:*
 	
 	I initially referred to the above code to know the actual syntax of making a request, then I have modified my code which takes some input from the user and also I am returning the data back to the front-end using HashMap:
@@ -57,23 +67,35 @@ Further, since we have merged the code base of all the team members, the website
 		    return response;
 	    }`
 
- 2. **Phone number validation** 
-	 
+ 2. **Phone number validation**
+
     *Source Code :* https://stackoverflow.com/a/42105140
-	
-    *Original Code Snippet:* 
+
+    *Original Code Snippet:*
 
 		` String pattern = "\\d{10}|(?:\\d{3}-){2}\\d{4}|\\(\\d{3}\\)\\d{3}-?\\d{4}";`
-	
+
 	*Modified Code:*
-	
+
 	The above regex was used to detect phone number that had numbers, spaces, braces etc. But In my case I am only allowing numbers as phone number. Hence I modified the above regex to fit my needs.
-	
+
 	    `String regex = "\\d{10}";`
-	    
-	
 
-    
+
+
+
 ## W3 Validation
+The update profile page has been validated for w3c compilance using [https://validator.w3.org](https://validator.w3.org)
 
-The FAQ webpage has beem checked for W3 Compliance through [https://validator.w3.org](https://validator.w3.org)
+
+## References
+
+[1]M. Tutorials, "How to use AJAX and jQuery in Spring Web MVC (.jsp) Application • Crunchify", Crunchify, 2019. [Online]. Available: https://crunchify.com/how-to-use-ajax-jquery-in-spring-web-mvc-jsp-example/. [Accessed: 15- Jul- 2019].
+
+[2]J. numbers, P. Parker, a. MISHRA, A. Gupta and E. Frisch, "Java Regular Expressions to Validate phone numbers", Stack Overflow, 2019. [Online]. Available: https://stackoverflow.com/a/42105140. [Accessed: 15- Jul- 2019].
+
+[3]front-end implemntation from the project proposal. [Accessed: 15- Jul- 2019].
+
+[4]"AJAX Introduction", W3schools.com, 2019. [Online]. Available: https://www.w3schools.com/xml/ajax_intro.asp. [Accessed: 15- Jul- 2019].
+
+[5]"Validate the first name and last name with Java Regular Expressions", Tutorialspoint.com, 2019. [Online]. Available: https://www.tutorialspoint.com/validate-the-first-name-and-last-name-with-java-regular-expressions. [Accessed: 15- Jul- 2019].
