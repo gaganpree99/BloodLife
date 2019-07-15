@@ -149,7 +149,7 @@ var id ,first_name, last_name, Age, email, phone_number,blood_group,role,gender;
 
 //This method loads the user details from the user table in the database.
 function loadData(){
-	var id='<%= session.getAttribute("id") %>'
+	id='<%= session.getAttribute("id") %>'
 	$.ajax({
 		type: 'GET',
 		dataType: "json",
@@ -208,7 +208,7 @@ function saveChanges() {
   gender=document.getElementById('type').value;
 	
 	var blood_group="A-";  
-	var body = {"id": 1, "age" : Age, "blood_group" : blood_group, "email" : email, "firstName" : first_name, "lastName" : last_name, "role": role, "gender":gender, "phone_number" : phone_number, "password":password};
+	var body = {"id": id, "age" : Age, "blood_group" : blood_group, "email" : email, "firstName" : first_name, "lastName" : last_name, "role": role, "gender":gender, "phone_number" : phone_number, "password":password};
 
 	//Make a "POST" request and save the updated user details to MySQL database.
 	
