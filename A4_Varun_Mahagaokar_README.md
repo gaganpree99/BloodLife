@@ -14,6 +14,13 @@ When user will click on "Add" button, image will be uploaded to Amazon S3. And t
 
 The photos upload by the organization will be viewed by other users without login to the portal. Users can view photo by navigating to gallery page from the navbar of the homepage.
 
+## Feature Testing
+In order to test the feature please visit: https://group14bloodlife.herokuapp.com/
+
+Credentials : 
+username : varun090295@gmail.com
+password : Varun12345
+
 ## GitLab Repository
 
 The code for Gallery Management can be access through [GitLab branch A4_GalleryManagement_Varun](https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/tree/A4_GalleryManagement_Varun).
