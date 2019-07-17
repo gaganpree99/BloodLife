@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.bloodlife.models.UserUpdateResponse;
 import com.bloodlife.models.Users;
 import com.bloodlife.service.UserService;
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
@@ -197,8 +196,20 @@ public class UserController {
 	      String regex = "\\d{10}";
 	      String s=String.valueOf(phone);
 	      return s.matches(regex);
-	   }
-	
-	
+	   }	
+	@RequestMapping(value = "/userRegistration", method=RequestMethod.POST)
+	@ResponseBody
+	public Map<String,Object> userRegistration(@RequestBody Users user) {
+		Map<String,Object> response = new HashMap<String, Object>();
+		try {
+			userService.save(user);
+			response.put("status", 200);
+		}catch(Exception ex) {
+			ex.printStackTrace();
+			response.put("error", ex.getLocalizedMessage());
+			response.put("status", 500);
+		}
+		return response;
+	}
 
 }
