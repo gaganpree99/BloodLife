@@ -1,102 +1,68 @@
-# Read Me for BloodLife
-
-The following webpages have been implemented for this assignment:
-1. Home Page
-2. Donor Registration Page
-3. Organization Login
-4. Donor Login
-3. Gallery Page
-4. Event Page
-4. Manage Gallery
-5. Registration Successfull Page
-6. View Reports
-7. Event Management
-
-The Hyperlink takes you directly to the bluenose/hector server where you can preview them.
-
-## GitLab Repository
-
-The code for these webpages can be access through [GitLab](https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/tree/master).
-
-## Images
-
- **Landing page:**
+## Readme file created by Jeel Gondaliya(B00819827)
+I chose two features in assignment 3, the first one is monitoring system and the second one is Event Management. I decicded to implement 'Event Management' feature for assignment 4.
 
 
-1. Unsplash, “This local sheriff took about 30 minu... | HD photo by LuAnn Hunt (@luannhunt180) on Unsplash,” Beautiful Free Images & Pictures. [Online]. Available: https://unsplash.com/photos/X20g2GQsVdA. [Accessed: 31-May-2019].
-1. Unsplash, “Working on web components | HD photo by Yucel Moran (@yucelmoran) on Unsplash,” Beautiful Free Images & Pictures. [Online]. Available: https://unsplash.com/photos/Ky9JHrdvb1o. [Ac-cessed: 31-May-2019].
-1. Unsplash, “Human, person, injection and arm | HD photo by Chang Duong (@chang612) on Unsplash,” Beautiful Free Images & Pictures. [Online]. Available: https://unsplash.com/photos/z4n1tcahzrk. [Ac-cessed: 31-May-2019].
-1. Unsplash, “Painted red | HD photo by Tim Marshall (@timmarshall) on Unsplash,” Beautiful Free Images & Pictures. [Online]. Available: https://unsplash.com/photos/cAtzHUz7Z8g. [Accessed: 31-May-2019].
+## Event Management
+Organizations can add events from the 'events' part in the dashboard by clicking 'Add Events' button. A form will pop up, where the organization can add the details like event name, event venue, date and desciprtion. 
+This event will be displayed in another section but in dashboard only. So that organizaion can keep track of all the events uploaded by them.
+Organization can also add, update and delete events.
 
-**Update profile:**
-1. “Free Image on Pixabay - Head, The Dummy, Avatar, Man, Tie,” Head The Dummy Avatar - Free image on Pixabay. [Online]. Available: https://pixabay.com/illustrations/head-the-dummy-avatar-man-tie-659651/. [Accessed: 31-May-2019]. 
 
-**Login:**
-1. Vecteezy. (2019). Blood Drive. [online] Available at: https://www.vecteezy.com/vector-art/224235-blood-drive [Ac-cessed 18 Jun. 2019].
-1. Bootstrap, S. (2019). Bootstrap 4 Modern Sign In Page. [online] Start Bootstrap. Available at: https://startbootstrap.com/snippets/sign-in-split/ [Accessed 18 Jun. 2019].
+## Git Repository
+The implementation of Assignment 4(Event Management Feature) can be access thorugh gitlab.
 
-**Dashboard:**
+## Technology Used
+Springboot Framework: It handles all the backend functionalities. 
+Jquery : It is a javascript library and manipulated HTML documents.
+bootstrap: It is frontend component library to design responsive website. 
+Java : Java is used to connect with database as well as for backend functionalities.
 
-1. Depositphotos, I. (2019). AB- blood type on red back-ground.. [online] Depositphotos. Available at: https://depositphotos.com/118038840/stock-photo-ab-blood-type-on-red.html [Accessed 18 Jun. 2019].
-1. Depositphotos, I. (2019). B+ blood type on red back-ground.. [online] Depositphotos. Available at: https://depositphotos.com/118038856/stock-photo-b-blood-type-on-red.html [Accessed 18 Jun. 2019].
-1. Depositphotos, I. (2019). A+ blood type on red back-ground.. [online] Depositphotos. Available at: https://depositphotos.com/118038772/stock-photo-a-blood-type-on-red.html [Accessed 18 Jun. 2019].
-1. Depositphotos, I. (2019). O+ blood type on red back-ground.. [online] Depositphotos. Available at: https://depositphotos.com/118038882/stock-photo-o-blood-type-on-red.html [Accessed 18 J
 
- 
-## Libraries/Toolkits Used
- 1. **Bootstrap**
-    Bootstrap is an open source toolkit for HTML, CSS, and JS development. I have used this toolkit to add responsiveness to the webpages.
+## Required Username and Password Instructions
+In order to login to website as a organization, consider this UserID and Password given below. The page will be directed to Organization dashboard, where 'events' will show the implementation of event management.
+Username: varun090295@gmail.com
+password: Varun12345
 
- 2. **Jquery**
-    Jquery is a lightweight Javascript language. It helps in HTML/DOM, CSS manipulation and HTML event methods. 
+## Folder Structure 
+Event Controller.java
+Events.java
+EventService.java
+events.jsp
+eventsManagement.jsp
 
-## Code Inspirations
 
- 1. **Google Maps Embedded** 
- 
-    *Source Code :* https://www.embedgooglemap.net/ (accessed on 25th May'19)
- 
+## Code Reference
+Source Code : https://docs.spring.io/spring-data/jpa/docs/current/reference/html/ (accessed on 14th July 19)   
 
-	*Original Code Snippet:* 
 
-		`<div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=university%20of%20san%20francisco&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>Google Maps Generator by <a href="https://www.embedgooglemap.net">embedgooglemap.net</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>`
-		
-	*Modified Code:*
-	This code was then used in an `iframe` as shown here:
+    Original Code Snippet:
 
-	    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2645.9577697739874!2d-89.21424329999999!3d48.457339800000014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d5923eaca84fa67%3A0xfd2f9f807114acd4!2s292+Shuniah+St%2C+Thunder+Bay%2C+ON+P7A+3A2!5e0!3m2!1sen!2sca!4v1424272931061" height="420" style="border:0; width:100%"></iframe>
 
- 3. **Password Validation** 
-	 
-    *Source Code :* http://khaidoan.wikidot.com/bootstrap-form-validation (accessed on 28th May'19)
+interface UserRepository extends CrudRepository<User, Long> {
+
+  long deleteByLastname(String lastname);
+
+  List<User> removeByLastname(String lastname);
+}
+
+
+
+@Repository
+public interface EventRepository extends CrudRepository<Events, Long>{
+
+	public List<Events> findAll();
+	public  Events save(Events event);
+	public void deleteById(long eventId);
 	
-    The intention here was to validate the passwords, emails etc. without writing a external Javascript. I used the examples given in this website to make the Registration form.
-	
- 4. **Sidebar on Manage Gallery** 
-	 
-    *Source Code :*[https://bootsnipp.com/snippets/eNe4v](https://bootsnipp.com/snippets/eNe4v) (accessed on 28th May'19)
-	
-    The idea for the sidebar was from this website. However the code has been modified quite a lot as I have added dividers between segements of the sidebar.
-	
- 5. **Javascript to show preview of the images to upload in Gallery.**  
-	
-	*Source Code :* [https://bootsnipp.com/snippets/2eNKz](https://bootsnipp.com/snippets/2eNKz) (accessed on 28th May'19)
-	
-    The original code shows how we can preview a image before uploading. Also, it allows multiple file selection and their manipulation before uploading.
-	I have taken the same concept and have changed the code as per my understanding.
+}
 
- 6. **Regex Patterns**
- 
-    *Source Code :* [https://regexone.com/](https://regexone.com/)(accessed on 31st May'19)
 
-    Learnt Regex patterns to implement form validations in signup.html
-    
- 7. **Navbar and Footer**
-        
-    *Source Code :* [https://getbootstrap.com/docs/4.0/components/navbar/](https://getbootstrap.com/docs/4.0/components/navbar/)
+## W3 Validation:
+Event Management page is validated using https://validator.w3.org
 
-    In order to make a responsive webpage, I took the idea of navbar and footer from bootstrap's documentation page.
-    
-## W3 Validation
 
-All the webpages are W3 Compliant and have been checked through [https://validator.w3.org](https://validator.w3.org)
+## References:
+[1] a. Mark Otto, "Bootstrap", Getbootstrap.com, 2019. [Online]. Available: https://getbootstrap.com/. [Accessed: 17- Jul- 2019].
+[2] J. js.foundation, "jQuery", Jquery.com, 2019. [Online]. Available: https://jquery.com/. [Accessed: 17- Jul- 2019].
+[3] "Building an Application with Spring Boot", Spring.io, 2019. [Online]. Available: https://spring.io/guides/gs/spring-boot/. [Accessed: 17- Jul- 2019].
+[4] J. Oliver Gierke, "Spring Data JPA - Reference Documentation", Docs.spring.io, 2019. [Online]. Available: https://docs.spring.io/spring-data/jpa/docs/current/reference/html/. [Accessed: 17- Jul- 2019].
