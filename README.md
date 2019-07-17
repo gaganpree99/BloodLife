@@ -117,3 +117,6 @@ As discussed in Assignment 3, the folder structure being used for our project ha
 ## W3 Validation
 
 The FAQ webpage has beem checked for W3 Compliance through [https://validator.w3.org](https://validator.w3.org)
+
+When we copy the contents of FAQ.jsp and then validate it with W3C, no errors are seen.
+However, a couple of error regarding the Legacy encoding show up when tested directly using the FAQ URL. This probably some issue at heroku's end.
