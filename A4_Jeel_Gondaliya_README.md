@@ -19,6 +19,9 @@ Java : Java is used to connect with database as well as for backend functionalit
 
 
 ## Required Username and Password Instructions
+In order to visit the website, refer this URL,
+https://group14bloodlife.herokuapp.com/
+
 In order to login to website as a organization, consider this UserID and Password given below. The page will be directed to Organization dashboard, where 'events' will show the implementation of event management.
 Username: varun090295@gmail.com
 password: Varun12345
