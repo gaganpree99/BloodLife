@@ -189,6 +189,21 @@
 							</label> <input type="number" class="form-control" name="age" id="age"
 								placeholder="age" required>
 						</div>
+						<div class="form-group">
+							<label class="control-label"> Phone Number: <span
+								style="color: red"> *</span>
+							</label> <input type="number" class="form-control" name="phone_number" id="phone_number"
+								placeholder="Phone Number" required>
+						</div>
+						<div class="form-group">
+							<label class="control-label"> Gender: <span
+								style="color: red"> *</span>
+							</label> <select class="col-sm-12 form-control" id="gender"
+								style="width: 100%">
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
+							</select>
+						</div>
 
 					</div>
 					<div class="modal-footer">
@@ -272,25 +287,52 @@
 
 			})
 
-
-			//
 		}
 
 		function SignUpDone() {
-			$("#signUpModal").modal('hide');
-			$.notify({
-				// options
-				message : 'Account created successfully'
-			}, {
-				// settings
-				type : 'success',
-				allow_dismiss : true,
-				placement : {
-					from : "top",
-					align : "center"
+			var body = {"firstName": $('#firstName').val(),
+						"lastName": $('#lastName').val(),
+						"password": $('#passwordSignUp').val(),
+						"email": $('#contact').val(),
+						"phone_number": $('#phone_number').val(),
+						"age": $('#age').val(),
+						"gender": $('#gender').val(),
+						"blood_group": $('#bloodList').val(),
+						"role": null
+						};
+			
+			$.ajax({
+				type: "POST",
+				url: "/userRegistration",
+				data: JSON.stringify(body),
+				dataType:"json",
+				contentType: "application/json",
+				success: function (response) {
+					if(response.status==200){
+						$("#signUpModal").modal('hide');
+						$.notify({
+							// options
+							message : 'Registered successfully'
+						}, {
+							// settings
+							type : 'success',
+							allow_dismiss : true,
+							placement : {
+								from : "top",
+								align : "center"
+							},
+							timer : 200
+						});	
+								
+					}
 				},
-				timer : 200
-			});
+				error: function (error){
+					console.log("error");
+				}
+
+			})
+			
+			
 		}
 		
 		function forgotPassDone() {

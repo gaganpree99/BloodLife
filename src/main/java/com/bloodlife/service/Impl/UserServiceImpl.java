@@ -53,4 +53,14 @@ public class UserServiceImpl implements UserService{
 		}
 	}
 
+	@Override
+	public Users save(Users user) {
+		try{
+			return userRepository.save(user);
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return null;
+		}	
+	}
+
 }
