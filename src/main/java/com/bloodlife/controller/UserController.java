@@ -202,6 +202,7 @@ public class UserController {
 	public Map<String,Object> userRegistration(@RequestBody Users user) {
 		Map<String,Object> response = new HashMap<String, Object>();
 		try {
+			user.setRole("organization");
 			userService.save(user);
 			response.put("status", 200);
 		}catch(Exception ex) {
