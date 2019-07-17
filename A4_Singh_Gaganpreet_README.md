@@ -116,4 +116,4 @@ As discussed in Assignment 3, the folder structure being used for our project ha
     
 ## W3 Validation
 
-The FAQ webpage has beem checked for W3 Compliance through [https://validator.w3.org](https://validator.w3.org)
+The FAQ webpage has been checked for W3 Compliance through [https://validator.w3.org](https://validator.w3.org)
