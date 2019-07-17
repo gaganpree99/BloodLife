@@ -17,9 +17,9 @@ The photos upload by the organization will be viewed by other users without logi
 ## Feature Testing
 In order to test the feature please visit: https://group14bloodlife.herokuapp.com/
 
-Credentials : 
-username : varun090295@gmail.com
-password : Varun12345
+Credentials : <br />
+username : varun090295@gmail.com <br />
+password : Varun12345 <br />
 
 ## GitLab Repository
 
