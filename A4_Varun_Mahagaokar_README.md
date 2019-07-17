@@ -110,7 +110,7 @@ public class AmazonClient {
 ```
 
 
-the list of files that are added/updated, for implementing the Assignment 4.
+The list of files that are added/updated, for implementing the Assignment 4.
 
 1. GalleryController.java
 
