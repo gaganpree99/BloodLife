@@ -70,6 +70,11 @@ public class ViewController {
 	public String fetch() {
 		return "FAQ";
 	}
+
+	@RequestMapping("/organization")
+	public String organization() {
+		return "organization";
+	}
 	
 	
 	}
