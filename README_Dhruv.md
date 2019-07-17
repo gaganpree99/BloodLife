@@ -39,6 +39,7 @@ https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/tree/A4_Registration_Dhruv
 
 *Original Code Snippet:*
 
+```
  $.ajax({
         type: "POST",
         url: "/webservices/PodcastService.asmx/CreateMarkers",
@@ -85,7 +86,7 @@ The implementation of AJAX calls was given a glance from this tutorial and wrote
 				}
 
  })
-
+```
  2. **Spring Boot reference document**
 
  *Source:* [https://docs.spring.io/spring-data/jpa/docs/current/reference/html/](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/)(accessed on 16th July'19)
