@@ -4,7 +4,7 @@ Initially I have selected 2 features (Profile Management, sms/email notification
 
 ## Profile Management
 
-This feature allows the user to update the details of their profile like their email address, phone number etc. This feature will also be responsible for checking the roles of the user from the back-end database and displaying the update profile page to them.
+This feature allows the user to update the details of their profile, like their email address, phone number etc. This feature will also be responsible for checking the roles of the user from the back-end database and displaying the update-profile page to them.
 
 The Hyperlink takes you directly to the bluenose/hector server where you can preview them.
 
@@ -20,7 +20,7 @@ To test this feature you need to login using the following credentials:
 
 **Password** : sohail123
 
-When you login using the above credentials you will be redirected to the update profile screen where you can update the details of the user. As the role of this user is that of a "donor" he can't view the dashboard features of an organisation hence he is directed straight to the update profile page.
+When you login using the above credentials, you will be redirected to the update-profile screen, where you can update the details of the user. As the role of this user is that of a "donor", he/she can't view the dashboard features of an organisation, hence he is directed straight to the update-profile page.
 
 **Note: All the validations made on this page is done through back-end.**
 
@@ -30,7 +30,7 @@ credentials of an Organisation:
 
 **Password**: varun12345
 
-When you login using the above credentials you will be taken to the dashboard screen where you can perform the tasks of an organisations. These tasks are hidden from the donors (which you can using the above credentials).
+When you login using the above credentials you will be taken to the dashboard screen where you can perform the tasks of an organisations. These tasks are hidden from the donors (which you can see using the above credentials).
 
 ## Related Code
 
