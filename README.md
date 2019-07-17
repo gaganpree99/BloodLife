@@ -6,11 +6,17 @@ Initially I have selected 2 features (Profile Management, sms/email notification
 
 This feature allows the user to update the details of their profile, like their email address, phone number etc. This feature will also be responsible for checking the roles of the user from the back-end database and displaying the update-profile page to them.
 
-The Hyperlink takes you directly to the bluenose/hector server where you can preview them.
-
 ## GitLab Repository
 
 The code which only includes the implementation of my Assignment 4 can be access through [GitLab](https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/edit/Assignment4_Sohail_Mohammed/).
+
+## Link to the website
+
+please visit: [https://group14bloodlife.herokuapp.com/updateProfile](https://group14bloodlife.herokuapp.com/updateProfile)
+
+The above link will redirect you to the login screen as the user is not logged in.
+
+Once you login (the login credentials are provided below) It will redirect you back to update profile screen where you can test the feature.
 
 ## Testing Instructions
 
@@ -28,7 +34,7 @@ credentials of an Organisation:
 
 **Username**: varun090295@gmail.com
 
-**Password**: varun12345
+**Password**: Varun12345
 
 When you login using the above credentials you will be taken to the dashboard screen where you can perform the tasks of an organisations. These tasks are hidden from the donors (which you can see using the above credentials).
 
