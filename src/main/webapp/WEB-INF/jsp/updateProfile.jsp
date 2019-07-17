@@ -20,14 +20,25 @@
  <link rel="stylesheet" href="demo/edit_profile.css">
 	
 <title>Profile</title>
+<script>
+	
+	//Check if the session exists, if it doesn't, then redirect the user to login.
+	var flag = '<%=session.getAttribute("role") == null%>';
+	
+	 if(flag.toLowerCase()== 'true'){
+		window.location.href="/";
+
+	}
+</script>	 
 </head>
-<body>
+<body onload="loadData();">
 	<div class="wrapper">
 			<jsp:include page="sidebar.jsp" />
 			<div class="main-panel">
 				<jsp:include page="navbar.jsp" />
 				<div class="content">
 					    <div class="row">
+					    
       <div class="col-xs-10 col-sm-9 col-lg-10 center">
         <form class="form ">
           <div id="parent_layout" class="card center">
@@ -36,7 +47,7 @@
               <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659651_1280.png" class="img-circle profile-avatar" alt="User avatar">
             </div>
             <div class="card-btn center">
-              <button id="edit_btn" type="button" onclick="myFunction()" name="button">Edit Profile</button>
+              <button id="edit_btn" type="button" onclick="makeEditable()" name="button">Edit Profile</button>
               <button id="save_btn" type="button" onclick="saveChanges()" name="button" disabled="disabled">Save Edits</button>
 
             </div>
@@ -45,14 +56,15 @@
           <div class="card ">
             <div class="card-details ">
               <div class="card-heading">
-                <h4 class="card-title">User info</h4>
+                <h4 class="card-title">Your info</h4>
+
               </div>
               <div class="form-group">
                 <div class="lable-class col-sm-2">
                   <label>First Name:</label>
                 </div>
                 <div class="field col-sm-10 col-lg-8">
-                  <input id="first_name" type="text" class="form-control" readonly="readonly" value="Sohail">
+                  <input id="first_name" type="text" class="form-control" readonly="readonly">
                 </div>
               </div>
               <div class="form-group">
@@ -60,7 +72,7 @@
                   <label>Last Name:</label>
                 </div>
                 <div class="field col-sm-10 col-lg-8">
-                  <input id="last_name" type="text" class="form-control" readonly="readonly" value="Mohammed" required>
+                  <input id="last_name" type="text" class="form-control" readonly="readonly" required>
                 </div>
               </div>
 
@@ -69,7 +81,7 @@
                   <label>Age:</label>
                 </div>
                 <div class="field col-sm-10 col-lg-8">
-                  <input id="Age" type="text" class="form-control" readonly="readonly" value="22">
+                  <input id="Age" type="text" class="form-control" readonly="readonly">
                 </div>
               </div>
 
@@ -99,7 +111,7 @@
                   <label>Email:</label>
                 </div>
                 <div class="field col-sm-10 col-lg-8">
-                  <input id="email" type="email" class="form-control" readonly="readonly" value="sohail7788@gmail.com">
+                  <input id="email" type="email" class="form-control" readonly="readonly">
                 </div>
               </div>
               <div class="form-group">
@@ -107,7 +119,7 @@
                   <label>Phone Number:</label>
                 </div>
                 <div class="field col-sm-10 col-lg-8">
-                  <input id="phone" type="tel" class="form-control" readonly="readonly" value="7818821200">
+                  <input id="phone" type="tel" class="form-control" readonly="readonly">
                 </div>
               </div>
             </div>
@@ -133,9 +145,46 @@ $(document).ready(function(){
 	$("#header").html("Update Profile");
 })
 
-var first_name, last_name, Age, email, phone;
+var id ,first_name, last_name, Age, email, phone_number,blood_group,role,gender;
 
-function myFunction() {
+//This method loads the user details from the user table in the database.
+function loadData(){
+	var id='<%= session.getAttribute("id") %>'
+	$.ajax({
+		type: 'GET',
+		dataType: "json",
+		url: '/getUserById',
+		data: {"id": id},
+		success: function(response){
+			var jsonData=response.data;
+			first_name=jsonData.firstName;
+			last_name= jsonData.lastName;
+			Age= jsonData.age;
+			phone_number= jsonData.phone_number;
+			blood_group= jsonData.blood_group;
+			password= jsonData.password;
+			role= jsonData.role;
+			email= jsonData.email;
+			gender= jsonData.gender;
+			id= jsonData.id;
+			
+
+			document.getElementById('first_name').value = first_name;
+		    document.getElementById('last_name').value = last_name;
+		    document.getElementById('Age').value = Age;
+		    document.getElementById('email').value = email;
+		    document.getElementById('type').value = gender;
+		    document.getElementById('phone').value = phone_number;
+		}
+	});
+	
+	
+}
+
+
+function makeEditable() {
+	
+	 
   document.getElementById('first_name').removeAttribute('readonly');
   document.getElementById('last_name').removeAttribute('readonly');
   document.getElementById('Age').removeAttribute('readonly');
@@ -152,106 +201,77 @@ function saveChanges() {
   last_name = document.getElementById('last_name').value;
   Age = document.getElementById('Age').value;
   email = document.getElementById('email').value;
-  phone = document.getElementById('phone').value;
+  phone_number = document.getElementById('phone').value;
+  gender=document.getElementById('type').value;
+	
+	var refer_friend="hello@gmail.com";
+	var blood_group="A-";  
+	var body = {"id": 1, "age" : Age, "blood_group" : blood_group, "email" : email, "firstName" : first_name, "lastName" : last_name, "role": role, "gender":gender, "phone_number" : phone_number, "password":password};
 
+	//Make a "POST" request and save the updated user details to MySQL database.
+	
+	 $.ajax({
+			type: 'POST',
+			url: '/updateProfilePost',
+			cache: false,
+	        contentType: false,
+	        processData: false,
+		    contentType: "application/json",
+		    dataType:"json",
+		    data: JSON.stringify(body),
+		    success: function(response) {
+				console.log(response);
+				//if the response is ok then update data on the front-end
+				if(response.status==200){
+					  document.getElementById('first_name').value = first_name;
+					    document.getElementById('last_name').value = last_name;
+					    document.getElementById('Age').value = Age;
+					    document.getElementById('email').value = email;
+					    document.getElementById('phone').value = phone_number;
 
-  //  the regular expression of identifying phone number was taken from https://stackoverflow.com/a/52391385
-  var number = /^\d{10}$/;
-
-  // the regular expression of identifying email address was taken from https://stackoverflow.com/a/9204568
-  var emailValidation = /\S+@\S+\.\S+/;
-  var stringCheck = /[a-zA-Z]/;
-  var ageCheck = /^\d+$/;
-  if (!phone.match(number)) {
-	  
-	  $.notify({
-			// options
-			message : 'Phone number should be a 10 digit Number'
-		}, {
-			// settings
-			type : 'danger',
-			allow_dismiss : true,
-			placement : {
-				from : "top",
-				align : "center"
-			},
-			timer : 200
-		});
-  } else if (!email.match(emailValidation)) {
-	  
-	  $.notify({
-			// options
-			message : 'Invalid Email Address, it should be of format abc@abc.abc'
-		}, {
-			// settings
-			type : 'danger',
-			allow_dismiss : true,
-			placement : {
-				from : "top",
-				align : "center"
-			},
-			timer : 200
-		});
-  } else if (!first_name.match(stringCheck) || !last_name.match(stringCheck)) {
-	  $.notify({
-			// options
-			message : 'First Name or Last Name should not be empty'
-		}, {
-			// settings
-			type : 'danger',
-			allow_dismiss : true,
-			placement : {
-				from : "top",
-				align : "center"
-			},
-			timer : 200
-		});
-  } else if (!Age.match(ageCheck)) {
-	  $.notify({
-		// options
-		message : 'Age should be a Number'
-	}, {
-		// settings
-		type : 'danger',
-		allow_dismiss : true,
-		placement : {
-			from : "top",
-			align : "center"
-		},
-		timer : 200
-	});
+					    document.getElementById('first_name').setAttribute('readonly', 'readonly');
+					    document.getElementById('last_name').setAttribute('readonly', 'readonly');
+					    document.getElementById('Age').setAttribute('readonly', 'readonly');
+					    document.getElementById('email').setAttribute('readonly', 'readonly');
+					    document.getElementById('phone').setAttribute('readonly', 'readonly');
+					    document.getElementById('save_btn').setAttribute('disabled', 'disabled');
+					    document.getElementById('edit_btn').removeAttribute('disabled');
+					    document.getElementById('type').setAttribute('disabled', 'disabled');
+					    $.notify({
+							// options
+							message : 'Profile Successfully updated'
+						}, {
+							// settings
+							type : 'success',
+							allow_dismiss : true,
+							placement : {
+								from : "top",
+								align : "center"
+							},
+							timer : 200
+						});
+					
+				}
+				//print error messages from the backend validations
+				else if(response.status==400){
+					$.notify({
+						// options
+						message : response.Message
+					}, {
+						// settings
+						type : 'danger',
+						allow_dismiss : true,
+						placement : {
+							from : "top",
+							align : "center"
+						},
+						timer : 200
+					});
+				}
+				
+			}
+		}); 
   
-  } else {
-
-    document.getElementById('first_name').value = first_name;
-    document.getElementById('last_name').value = last_name;
-    document.getElementById('Age').value = Age;
-    document.getElementById('email').value = email;
-    document.getElementById('phone').value = phone;
-
-    document.getElementById('first_name').setAttribute('readonly', 'readonly');
-    document.getElementById('last_name').setAttribute('readonly', 'readonly');
-    document.getElementById('Age').setAttribute('readonly', 'readonly');
-    document.getElementById('email').setAttribute('readonly', 'readonly');
-    document.getElementById('phone').setAttribute('readonly', 'readonly');
-    document.getElementById('save_btn').setAttribute('disabled', 'disabled');
-    document.getElementById('edit_btn').removeAttribute('disabled');
-    document.getElementById('type').setAttribute('disabled', 'disabled');
-    $.notify({
-		// options
-		message : 'Profile Successfully updated'
-	}, {
-		// settings
-		type : 'success',
-		allow_dismiss : true,
-		placement : {
-			from : "top",
-			align : "center"
-		},
-		timer : 200
-	});
-
-  }
 }
 
 

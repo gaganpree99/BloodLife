@@ -25,4 +25,42 @@ public class UserServiceImpl implements UserService{
 		return userRepository.findByFirstName(firstName);
 	}
 
+	@Override
+	public Users findById(long id) {
+		// TODO Auto-generated method stub
+		return userRepository.findById(id);
+	}
+
+	@Override
+	public void update(Users users) {
+		// TODO Auto-generated method stub
+		try{
+            userRepository.save(users);
+        }catch(Exception ex){
+            ex.printStackTrace();
+
+        }
+
+	}
+
+	@Override
+	public Users findByEmail(String email) {
+		try{
+			return userRepository.findByEmail(email);
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return null;
+		}
+	}
+
+	@Override
+	public Users save(Users user) {
+		try{
+			return userRepository.save(user);
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return null;
+		}	
+	}
+
 }

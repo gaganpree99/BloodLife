@@ -48,8 +48,28 @@
 	color: #bd2a2a
 }
 </style>
+
+<script>
+	
+	//this short scripts checks if the session exists, if it doesn't exists then login page is opened
+	var flag = '<%=session.getAttribute("role") == null%>';
+	
+	 if(flag.toLowerCase()== 'true'){
+		window.location.href="/";
+
+	}
+	 //if the user is a donor then the user is redirected to update profile page.
+	 else if(flag.toLowerCase()== 'false'){
+		var role='<%= session.getAttribute("role")%>'
+		if(role ==="donor"){
+		window.location.href="/updateProfile";
+		
+		}
+	
+	}
+ </script>
 </head>
-<body>
+<body >
 	<div class="wrapper ">
 	<jsp:include page="sidebar.jsp"></jsp:include>
 		<div class="main-panel">
@@ -356,7 +376,10 @@
 				var receiverTable = $('#receiverTable').DataTable({
 					"paging" : false
 				});
+				
+
 			})
+			
 		</script>
 </body>
 </html>

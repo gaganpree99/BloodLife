@@ -62,79 +62,11 @@
 		<div class="container wrap">
 			<div class="container">
 				<div id="slides" class="carousel slide" data-ride="carousel">
-					<ol class="carousel-indicators">
-						<li data-target="#slides" data-slide-to="0" class="active"></li>
-						<li data-target="#slides" data-slide-to="1"></li>
-						<li data-target="#slides" data-slide-to="2"></li>
-						<li data-target="#slides" data-slide-to="3"></li>
-						<li data-target="#slides" data-slide-to="4"></li>
+					<ol class="carousel-indicators" id="indicators">
+
 					</ol>
-					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<!--
-		Image taken from https://dummyimage.com
-          -->
-							<img src="https://dummyimage.com/1280x720/823082/00010f.jpg"
-								style="width: 100%; height: 100%;" alt="Image1">
-							<div class="carousel-caption">
-								<h5 class="display-4">Organisation ABC</h5>
-								<p>Some details of this Image</p>
-								<!-- <button type="button" class="btn btn-outline-light">Read
-									More</button> -->
-							</div>
-						</div>
-						<div class="carousel-item" style="width: 100%">
-							<!--
-		Image taken from https://dummyimage.com
-          -->
-							<img src="https://dummyimage.com/1280x720/856778/00010f.jpg"
-								style="width: 100%; height: 100%;" alt="Image2">
-							<div class="carousel-caption">
-								<h5 class="display-4">Organisation XYZ</h5>
-								<p>Some details of this Image</p>
-								<!-- <button type="button" class="btn btn-outline-light">Read
-									More</button> -->
-							</div>
-						</div>
-						<div class="carousel-item" style="width: 100%">
-							<!--
-		Image taken from https://dummyimage.com
-          -->
-							<img src="https://dummyimage.com/1280x720/223082/00010f.jpg"
-								style="width: 100%; height: 100%;" alt="Image3">
-							<div class="carousel-caption">
-								<h5 class="display-4">Organisation KLM</h5>
-								<p>Some details of this Image</p>
-								<!-- <button type="button" class="btn btn-outline-light">Read
-									More</button> -->
-							</div>
-						</div>
-						<div class="carousel-item" style="width: 100%">
-							<!--
-		Image taken from https://dummyimage.com
-          -->
-							<img src="https://dummyimage.com/1280x720/687652/00010f.jpg"
-								style="width: 100%; height: 100%;" alt="Image4">
-							<div class="carousel-caption">
-								<h5 class="display-4">Organisation PQR</h5>
-								<p>Some details of this Image</p>
-								<!-- <button type="button" class="btn btn-outline-light">Read
-									More</button> -->
-							</div>
-						</div>
-						<div class="carousel-item" style="width: 100%">
-							<!--
-		Image taken from https://dummyimage.com
-          -->
-							<img src="https://dummyimage.com/1280x720/398789/00010f.jpg"
-								style="width: 100%; height: 100%;" alt="Image5">
-							<div class="carousel-caption">
-								<h5 class="display-4">Organisation UVW</h5>
-								<p>Some details of this Image</p>
-								<!-- <button type="button" class="btn btn-outline-light">Read
-									More</button> -->
-							</div>
-						</div>
+					<div class="carousel-inner" id="carouselDiv">
+
 					</div>
 					<a class="carousel-control-prev" href="#slides" role="button"
 						data-slide="prev"> <span class="carousel-control-prev-icon"></span>
@@ -174,7 +106,32 @@
 			$('#organizationList').select2({
 				placeholder : "Select Organization"
 			});
-		})
+			getAllPhotos ();
+		});
+
+		function getAllPhotos () {
+			$.ajax({
+				type: 'GET',
+				dataType:"json",
+				url: '/getAllPhotos',
+				success: function (response) {
+					$("#photosDiv").children().not('#photoComponent').remove();
+					for (var i = 0; i <  response.data.length; i++) {
+						if(i === 0){
+							var addIndicator = '<li data-target="#slides" data-slide-to="'+i+'" class="active"></li>';
+							var imageDiv = '<div class="carousel-item active" id="imageDiv'+i+'"></div>';
+						}else{
+							var addIndicator = '<li data-target="#slides" data-slide-to="'+i+'" ></li>';
+							var imageDiv = '<div class="carousel-item" id="imageDiv'+i+'"></div>';
+						}
+						var img = '<img src="'+response.data[i].imageUrl+'" style="width: 100%; height: 100%;" alt="Image1">';
+						$('#indicators').append(addIndicator);
+						$('#carouselDiv').append(imageDiv);
+						$('#imageDiv'+i).append(img);
+					}
+				}
+			});
+		}
 	</Script>
 </body>
 </html>

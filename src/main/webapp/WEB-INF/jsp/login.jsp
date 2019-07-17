@@ -34,6 +34,8 @@
 				</li>
 				<li class="nav-item"><a class="nav-link" href="/gallery">Gallery</a>
 				</li>
+				<li class="nav-item"><a class="nav-link" href="/FAQ">FAQ</a>
+				</li>
 
 			</ul>
 		</div>
@@ -76,6 +78,9 @@
 											<button
 												class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
 												type="button" id="signUp">Sign up</button>
+											<button
+													class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
+													type="button" id="referFriend">Refer Friend</button>
 
 											<div class="text-center">
 												<a class="small" href="#" onClick='forgotPass()'
@@ -92,6 +97,38 @@
 
 		</div>
 	</div>
+
+	<div id="referFriendModal" class="modal " tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-md" role="document">
+			<div class="modal-content">
+				<form onsubmit="return referFriend()" action="javascript:void(0)"
+					  id="referFriendForm">
+					<div class="modal-header">
+						<h5 class="modal-title">Refer Friend</h5>
+						<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label class="control-label"> Refer Friend: <span
+									style="color: red"> *</span>
+							</label> <input type="text" class="form-control" name="email"
+											id="referEmail" placeholder="Friend's Email" required>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-success" id="btnReferFriend">Send Email
+							</button>
+						<button type="button" class="btn btn-secondary"
+								data-dismiss="modal">Close</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
 
 	<div id="signUpModal" class="modal " tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-md" role="document">
@@ -153,11 +190,21 @@
 								placeholder="age" required>
 						</div>
 						<div class="form-group">
-							<label class="control-label"> Refer Friend: <span
+							<label class="control-label"> Phone Number: <span
 								style="color: red"> *</span>
-							</label> <input type="text" class="form-control" name="email"
-								id="referEmail" placeholder="Friend's Email" required>
+							</label> <input type="number" class="form-control" name="phone_number" id="phone_number"
+								placeholder="Phone Number" required>
 						</div>
+						<div class="form-group">
+							<label class="control-label"> Gender: <span
+								style="color: red"> *</span>
+							</label> <select class="col-sm-12 form-control" id="gender"
+								style="width: 100%">
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
+							</select>
+						</div>
+
 					</div>
 					<div class="modal-footer">
 						<button type="submit" class="btn btn-success" id="btnSave">Sign
@@ -216,24 +263,76 @@
 	
 		function login(){
 
-			document.location.href = '/dashboard'
+			var email = $('#inputEmail').val();
+			var password = $('#inputPassword').val();
+
+			var body = '{';
+			body += '"email": "'+ email +'"';
+			body += ',"password":"'+password+'"';
+			body += '}';
+
+			$.ajax({
+				type: "POST",
+				url: "/userCheck",
+				data: body,
+				dataType:"json",
+				contentType: "application/json",
+				success: function (response) {
+					if(response.status==200){
+						document.location.href = '/dashboard';
+					}else{
+						document.location.href = '/'
+					}
+				}
+
+			})
+
 		}
 
 		function SignUpDone() {
-			$("#signUpModal").modal('hide');
-			$.notify({
-				// options
-				message : 'Account created successfully'
-			}, {
-				// settings
-				type : 'success',
-				allow_dismiss : true,
-				placement : {
-					from : "top",
-					align : "center"
+			var body = {"firstName": $('#firstName').val(),
+						"lastName": $('#lastName').val(),
+						"password": $('#passwordSignUp').val(),
+						"email": $('#contact').val(),
+						"phone_number": $('#phone_number').val(),
+						"age": $('#age').val(),
+						"gender": $('#gender').val(),
+						"blood_group": $('#bloodList').val(),
+						"role": null
+						};
+			
+			$.ajax({
+				type: "POST",
+				url: "/userRegistration",
+				data: JSON.stringify(body),
+				dataType:"json",
+				contentType: "application/json",
+				success: function (response) {
+					if(response.status==200){
+						$("#signUpModal").modal('hide');
+						$.notify({
+							// options
+							message : 'Registered successfully'
+						}, {
+							// settings
+							type : 'success',
+							allow_dismiss : true,
+							placement : {
+								from : "top",
+								align : "center"
+							},
+							timer : 200
+						});	
+								
+					}
 				},
-				timer : 200
-			});
+				error: function (error){
+					console.log("error");
+				}
+
+			})
+			
+			
 		}
 		
 		function forgotPassDone() {
@@ -256,7 +355,11 @@
 		
 		$("#signUp").click(function() {
 			$("#signUpModal").modal('show');
-		})
+		});
+
+		$("#referFriend").click(function() {
+			$("#referFriendModal").modal('show');
+		});
 		
 		function forgotPass(){
 			$("#forgotPasswordModal").modal('show');

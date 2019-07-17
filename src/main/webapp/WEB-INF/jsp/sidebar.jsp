@@ -12,6 +12,12 @@
 					class="fas fa-clipboard-list"></i>
 					<p>Dashboard</p>
 			</a></li>
+			<% 
+				//if the user is a donor then don't display all the options to the user.
+				if(session.getAttribute("role")!=null){
+				String role=session.getAttribute("role").toString();
+		 	   if(!role.equals("donor")){
+			%>
 			<li id="donorJsp"><a href="/donor"> <i
 					class="fas fa-procedures"></i>
 					<p>Donor</p>
@@ -19,6 +25,10 @@
 			<li id="receiverJsp"><a href="/receiver"> <i
 					class="fas fa-user-injured"></i>
 					<p>Receiver</p>
+			</a></li>
+			<li id="organizationJsp"><a href="/organization"> <i
+					class="fa fa-hospital-o"></i>
+				<p>Organization</p>
 			</a></li>
 			<li id="reportJsp"><a href="report"> <i
 					class="fas fa-chart-bar"></i>
@@ -32,6 +42,9 @@
 					class="fas fa-images"></i>
 					<p>Gallery</p>
 			</a></li>
+			<%} 
+			}
+			%>
 		</ul>
 	</div>
 </div>
