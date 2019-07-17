@@ -7,6 +7,12 @@ Apart from a list of Frequently asked questions, a user will has an option to se
 The user gets a unique token ID for his submitted query on the website. Also, a confirmation email for the submitted query is sent to the user.
 The organisation can then reply to the user over email.
 
+## How it works?
+In case a user has a query which is not presnt on the FAQ page, he/she has an option to submit this query to BloodLife. To do so, the user needs to enter his email address and the query in the form provided on FAQ page.
+When the user submits the query, the same is updated into the database of BloodLife and a unique token ID is generated for the submitted query.
+This token ID is shown to the user after he presses Submit button. The same ID is also sent to the provided email address.
+The blood bank organisation can then communicate with the user through email and thus resolve the query.
+
 ## GitLab Repository
 
 The code for FAQ webpage can be access through [GitLab branch A4_Singh_Gaganpreet](https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/tree/A4_Singh_Gaganpreet).
