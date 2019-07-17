@@ -7,10 +7,10 @@ The organization can use this feature to post their photos of events or camps fo
 Photos posted/upload by the organization will be viewed by all the users visiting the website.
 
 ## How it works?
-User with role "Organization" has to login in the portal, a user has to then navigate to the Events tab. 
-After navigating to the Events tab, the user can upload the photos by clicking on the "Add photo" button.
-A modal will be displayed with 2 fields: title ( title of the photo) and another to upload the image.
-When the user will click on the "Add" button, the image will be uploaded to Amazon S3. And the link received from amazon S3 will be stored in the database.
+User with role "Organization" has to login in the portal, user has to then navigate to Events tab. 
+After navigating to Events tab, user can upload the photos by clicking on "Add photo" button.
+A modal will be display with 2 fields : title (title of photo) and another to upload the image.
+When user will click on "Add" button, image will be uploaded to Amazon S3. And the link received from amazon S3 will be stored in the database.
 
 The photos upload by the organization will be viewed by other users without login to the portal. Users can view photo by navigating to gallery page from the navbar of the homepage.
 
@@ -30,7 +30,6 @@ The code for Gallery Management can be access through [GitLab branch A4_GalleryM
 
  4. **Spring Boot Framework**
     The Spring Framework is a framework for implementation and reversal of the Java platform control container.
-    
  5. **Amazon S3**
     Amazon S3 is a service offered by Amazon Web Services that provides object storage through a web service interface.
 
@@ -109,6 +108,23 @@ public class AmazonClient {
     }
 }
 ```
+
+
+the list of files that are added/updated, for implementing the Assignment 4.
+
+1. GalleryController.java
+
+2. GalleryRepository.java
+
+3. Gallery.java
+
+4. GalleryService.java
+
+5. GalleryServiceImpl.java
+
+6. galleryManagement.jsp
+
+7. gallery.jsp
 
 ## File Structure
 As mentioned in Assignment 3, the folder structure used for our project is spring boot folder structure.
