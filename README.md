@@ -16,6 +16,9 @@ The blood bank organisation can then communicate with the user through email and
 
 NOTE: The email send by bloodlife might end up in your spam folder as it is being sent by a script.
 
+## Feature Testing
+In order to test the feature please visit: https://group14bloodlife.herokuapp.com/FAQ
+
 ## GitLab Repository
 
 The code for FAQ webpage can be access through [GitLab branch A4_Singh_Gaganpreet](https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/tree/A4_Singh_Gaganpreet).
