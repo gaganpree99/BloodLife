@@ -26,6 +26,10 @@
 					class="fas fa-user-injured"></i>
 					<p>Receiver</p>
 			</a></li>
+			<li id="organizationJsp"><a href="/organization"> <i
+					class="fa fa-hospital-o"></i>
+				<p>Organization</p>
+			</a></li>
 			<li id="reportJsp"><a href="report"> <i
 					class="fas fa-chart-bar"></i>
 					<p>Report</p>

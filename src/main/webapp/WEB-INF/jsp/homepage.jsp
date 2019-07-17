@@ -80,10 +80,6 @@
 
 				<select class="select2 col-sm-12" id="organizationList"
 					name="organization" multiple="multiple">
-					<option value="Canadian Blood Services">Canadian Blood
-						Services</option>
-					<option value="Nova Scotia Blood Services">Nova Scotia
-						Blood Services</option>
 				</select>
 
 			</div>
@@ -238,7 +234,7 @@
 		<div class="footer-copyright  py-3" style="padding-left:5%;padding-right:5%">
 			About Us &nbsp;&nbsp; Contact  Us &nbsp;&nbsp; <span class="fab fa-twitter-square"> &nbsp;&nbsp;&nbsp;&nbsp;</span>
 							<span class="fab fa-facebook-square"></span>
-			<span style="float:right"> © 2018 Copyright</span></div>
+			<span style="float:right"> ï¿½ 2018 Copyright</span></div>
 	</footer>
 
 	<script src="/js/core/jquery.min.js"></script>
@@ -260,6 +256,7 @@
 		$('#organizationList').select2({
 			placeholder : "Select Organization"
 		});
+		getAllOrganizations();
 		$('#bloodList').select2({
 			placeholder : "Select blood group"
 		});
@@ -295,7 +292,7 @@
 										"organization" + i);
 								$("#organization" + i).css("display", "block");
 								$("#organization" + i).find(".title").html(
-										$("#organizationList").val()[i]);
+										$("#organizationList :selected").text());
 								$("#organization" + i).find("#contact").html(
 										"organization " + i
 												+ " : contact Number");
@@ -384,7 +381,26 @@
 				timer : 200
 			});
 		}
-	})
+	});
+		function  getAllOrganizations() {
+			$.ajax({
+				type: 'GET',
+				contentType: "application/json",
+				url: '/getAllOrganization',
+				success: function (response) {
+					if(response.status == 200){
+						var options = "";
+						for (var i = 0; i < response.data.length ; i++) {
+							options += '<option value='+response.data[i].id;
+							options += '>'+response.data[i].organizationName;
+							options += '</option>';
+						}
+						$('#organizationList').append(options);
+					}
+				}
+			});
+
+		}
 </script>
 </body>
 </html>
