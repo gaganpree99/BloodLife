@@ -13,6 +13,7 @@ To do so, the user needs to enter his email address and the query in the form pr
 When the user submits the query, the same is updated into the database of BloodLife and a unique token ID is generated for the submitted query.
 This token ID is shown to the user after he presses Submit button. The same ID is also sent to the provided email address.
 The blood bank organisation can then communicate with the user through email and thus resolve the query.
+
 NOTE: The email send by bloodlife might end up in your spam folder as it is being sent by a script.
 
 ## GitLab Repository
