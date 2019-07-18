@@ -78,12 +78,23 @@ Below is the link to files used to create this feature:
 
 - Original Source Code 
 
-`interface UserRepository extends CrudRepository<User, Long> {
+``interface UserRepository extends CrudRepository<User, Long> {
 
   long coduntByLastname(String lastname);
+}``
+
+
+- Modified code 
+
+`@Repository
+public interface OrganizationRepository extends CrudRepository<Organization, Long> {
+
+    public List<Organization> findAll();
+    public  Organization save(Organization organization);
+    public void  deleteById(long id);
+
 }`
 
-- Modifie
 ## W3 Validation
 
 The Search Orginzation has been checked for W3 Compliance through [https://validator.w3.org](https://validator.w3.org)
