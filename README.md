@@ -96,5 +96,7 @@ The Search Orginzation has been checked for W3 Compliance through [https://valid
 
 # Refrences 
 Colon, Jorge. JQuery AJAX POST Tutorial. www.airpair.com/js/jquery-ajax-post-tutorial.
+
 Gierke, Oliver, et al. “Spring Data JPA - Reference Documentation.” Spring Data JPA - Reference Documentation, docs.spring.io/spring-data/jpa/docs/current/reference/html/.
+
 Font Awesome, fontawesome.com/icons/hospital?style=solid.
