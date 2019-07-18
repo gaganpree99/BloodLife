@@ -1,5 +1,10 @@
-# Read Me for BloodLife
+# Assignment 4 : Ghazayil Alkhalifah (B00559684)
+In Assignment 3 I disscussed two features which are, search donors and search orgnization. For Assignment 4 I chose Search orgnization to implement.
 
+# Search Orgnization 
+In Search organizations feature allows the blood receivers and blood donors to look up blood collection organizations.
+
+# 
 The following webpages have been implemented for this assignment:
 1. Home Page
 2. Donor Registration Page
@@ -13,11 +18,29 @@ The following webpages have been implemented for this assignment:
 7. Event Management
 
 The Hyperlink takes you directly to the bluenose/hector server where you can preview them.
+# Link to the website
+The website URL : https://group14bloodlife.herokuapp.com/updateProfile
+
+# Testing the feature 
+Please use the above link to go to the website, and use the following credentials to login: 
+Username: varun090295@gmail.com 
+Password: Varun12345
+
+Once logged in, choose orgnization option, the page will load of avavibale orgnizations registed in the website already.
+to search for specific one type in the name in the search box provided. 
 
 ## GitLab Repository
+The code for Seacrh Orgnization can be access through 
 
-The code for these webpages can be access through [GitLab](https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/tree/master).
-
+# Assignment 4 Files 
+Below is the link to files used to create this feature: 
+1. orgnizationContoler.java
+2. orgnization.jaza
+3. orgnizationRepository.java
+4. orgnizationService.java
+5. orgnizationServiceImpl.java
+6. orgnization.jsp
+7. sidebar.jsp
 ## Images
 
  **Landing page:**
@@ -99,4 +122,4 @@ The code for these webpages can be access through [GitLab](https://git.cs.dal.ca
     
 ## W3 Validation
 
-All the webpages are W3 Compliant and have been checked through [https://validator.w3.org](https://validator.w3.org)
+The Search Orginzation has been checked for W3 Compliance through [https://validator.w3.org](https://validator.w3.org)
