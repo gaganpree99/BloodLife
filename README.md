@@ -18,17 +18,18 @@ to search for specific one type in the name in the search box provided.
 
 ## GitLab Repository
 - The code for Seacrh Orgnization can be accessed through [https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/tree/A4_SearchOrg_Ghazayil](https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/tree/A4_SearchOrg_Ghazayil) 
-- The code for the whole project can be accessed through (https://git.cs.dal.ca/mahagaokar/Group14_TechGoons)
+- The code for the whole project can be accessed through https://git.cs.dal.ca/mahagaokar/Group14_TechGoons
 
 # Assignment 4 Files 
 Below is the link to files used to create this feature: 
 1. orgnizationContoler.java
-2. orgnization.jaza
+2. orgnization.java
 3. orgnizationRepository.java
 4. orgnizationService.java
 5. orgnizationServiceImpl.java
 6. orgnization.jsp
 7. sidebar.jsp
+8. homepage.jsp
 
 # Code References
 
