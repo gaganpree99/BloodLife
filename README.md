@@ -95,7 +95,7 @@ public interface OrganizationRepository extends CrudRepository<Organization, Lon
 
 The Search Orginzation has been checked for W3 Compliance through [https://validator.w3.org](https://validator.w3.org)
 
-# Refrences 
+# References 
 Colon, Jorge. JQuery AJAX POST Tutorial. www.airpair.com/js/jquery-ajax-post-tutorial.
 
 Gierke, Oliver, et al. “Spring Data JPA - Reference Documentation.” Spring Data JPA - Reference Documentation, docs.spring.io/spring-data/jpa/docs/current/reference/html/.
