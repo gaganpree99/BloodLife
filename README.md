@@ -5,7 +5,7 @@ In Assignment 3 I disscussed two features which are, search donors and search or
 In Search organizations feature allows the blood receivers and blood donors to look up blood collection organizations.
 
 # Link to the website
-The website URL : https://group14bloodlife.herokuapp.com/updateProfile
+The website URL : https://group14bloodlife.herokuapp.com/organization
 
 # Testing the feature 
 Please use the above link to go to the website, and use the following credentials to login: 
