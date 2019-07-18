@@ -18,7 +18,7 @@ to search for specific one type in the name in the search box provided.
 
 ## GitLab Repository
 - The code for Seacrh Orgnization can be accessed through [https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/tree/A4_SearchOrg_Ghazayil](https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/tree/A4_SearchOrg_Ghazayil) 
-- The code for the whole project can be accessed through [https://git.cs.dal.ca/mahagaokar/Group14_TechGoons] (https://git.cs.dal.ca/mahagaokar/Group14_TechGoons)
+- The code for the whole project can be accessed through (https://git.cs.dal.ca/mahagaokar/Group14_TechGoons)
 
 # Assignment 4 Files 
 Below is the link to files used to create this feature: 
