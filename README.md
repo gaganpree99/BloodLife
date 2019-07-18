@@ -18,7 +18,7 @@ to search for specific one type in the name in the search box provided.
 
 ## GitLab Repository
 - The code for Seacrh Orgnization can be accessed through [https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/tree/A4_SearchOrg_Ghazayil](https://git.cs.dal.ca/mahagaokar/Group14_TechGoons/tree/A4_SearchOrg_Ghazayil) 
-- The code for the whole project can be accessed through 
+- The code for the whole project can be accessed through [https://git.cs.dal.ca/mahagaokar/Group14_TechGoons] (https://git.cs.dal.ca/mahagaokar/Group14_TechGoons)
 
 # Assignment 4 Files 
 Below is the link to files used to create this feature: 
@@ -76,25 +76,25 @@ Below is the link to files used to create this feature:
             }
         });`
 
-- Original Source Code 
-
+- Original Source Code: 
 ``interface UserRepository extends CrudRepository<User, Long> {
-
   long coduntByLastname(String lastname);
 }``
 
 
-- Modified code 
-
+- Modified code :
 `@Repository
 public interface OrganizationRepository extends CrudRepository<Organization, Long> {
-
     public List<Organization> findAll();
     public  Organization save(Organization organization);
     public void  deleteById(long id);
-
 }`
 
 ## W3 Validation
 
 The Search Orginzation has been checked for W3 Compliance through [https://validator.w3.org](https://validator.w3.org)
+
+# Refrences 
+Colon, Jorge. JQuery AJAX POST Tutorial. www.airpair.com/js/jquery-ajax-post-tutorial.
+Gierke, Oliver, et al. “Spring Data JPA - Reference Documentation.” Spring Data JPA - Reference Documentation, docs.spring.io/spring-data/jpa/docs/current/reference/html/.
+Font Awesome, fontawesome.com/icons/hospital?style=solid.
