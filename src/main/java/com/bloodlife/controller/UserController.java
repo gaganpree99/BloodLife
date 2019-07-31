@@ -25,12 +25,13 @@ import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 
 @ControllerAdvice
 @Controller
+@RequestMapping("/users")
 public class UserController {
 
 	@Autowired
 	UserService userService;
 	
-	@RequestMapping("/getAllUsers")
+	@RequestMapping("/")
 	@ResponseBody
 	public Map<String,Object> getAllUsers() {
 		Map<String,Object> response = new HashMap<String, Object>();
@@ -46,7 +47,7 @@ public class UserController {
 	}
 	
 	//This method searches for users by their first name 
-	@RequestMapping(value = "/getUserByFirstName" , method=RequestMethod.GET)
+	@RequestMapping(value = "" , method=RequestMethod.GET)
 	@ResponseBody
 	public Map<String,Object> getUserByFirstName(@RequestParam(name = "firstName") String firstName) {
 		Map<String,Object> response = new HashMap<String, Object>();
@@ -62,26 +63,26 @@ public class UserController {
 		return response;
 	}
 	
-	@RequestMapping(value = "/user/{id}" , method=RequestMethod.GET)
-	@ResponseBody
-	public Map<String,Object> getUserById(@PathVariable(name = "id") long userId) {
-		Map<String,Object> response = new HashMap<String, Object>();
-		try {
-			// service --> userId
-			//response.put("data",userService.findByFirstName(firstName));
-			response.put("status", 200);
-		}catch(Exception ex) {
-			ex.printStackTrace();
-			response.put("error", ex.getLocalizedMessage());
-			response.put("status", 500);
-		}
-		return response;
-	}
-	
+//	@RequestMapping(value = "/{id}" , method=RequestMethod.GET)
+//	@ResponseBody
+//	public Map<String,Object> getUserById(@PathVariable(name = "id") long userId) {
+//		Map<String,Object> response = new HashMap<String, Object>();
+//		try {
+//			// service --> userId
+//			//response.put("data",userService.findByFirstName(firstName));
+//			response.put("status", 200);
+//		}catch(Exception ex) {
+//			ex.printStackTrace();
+//			response.put("error", ex.getLocalizedMessage());
+//			response.put("status", 500);
+//		}
+//		return response;
+//	}
+//
 	//This method searches for users in the MySQL table by searching them based on ID.
-	@RequestMapping(value = "/getUserById" , method=RequestMethod.GET)
+	@RequestMapping(value = "/{id}" , method=RequestMethod.GET)
 	@ResponseBody
-	public Map<String,Object> getUserById(@RequestParam(name = "id") Long id) {
+	public Map<String,Object> getUserById(@PathVariable(name = "id") Long id) {
 		Map<String,Object> response = new HashMap<String, Object>();
 		try {
 			response.put("data",userService.findById(id));
@@ -197,20 +198,6 @@ public class UserController {
 	      String s=String.valueOf(phone);
 	      return s.matches(regex);
 	   }	
-	@RequestMapping(value = "/userRegistration", method=RequestMethod.POST)
-	@ResponseBody
-	public Map<String,Object> userRegistration(@RequestBody Users user) {
-		Map<String,Object> response = new HashMap<String, Object>();
-		try {
-			user.setRole("organization");
-			userService.save(user);
-			response.put("status", 200);
-		}catch(Exception ex) {
-			ex.printStackTrace();
-			response.put("error", ex.getLocalizedMessage());
-			response.put("status", 500);
-		}
-		return response;
-	}
+
 
 }

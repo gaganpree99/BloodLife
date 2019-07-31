@@ -38,6 +38,18 @@
   background-color: #212121;
 }
 
+#delete_btn {
+  width: 120px;
+  text-align: center;
+  margin-left: 50px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  color:#fff;
+  margin-top: 10px;
+  border-radius: 70px;
+  background-color: #fd5d5d;
+}
+
 #edit_btn:disabled{
 	background-color: #9E9E9E;
 }

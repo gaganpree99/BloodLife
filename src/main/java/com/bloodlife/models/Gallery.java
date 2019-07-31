@@ -1,9 +1,6 @@
 package com.bloodlife.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Gallery {
@@ -11,9 +8,12 @@ public class Gallery {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-
     private String imageUrl;
     private String title;
+
+    @JoinColumn
+    @ManyToOne
+    private Organization organization;
 
     public Long getId() {
         return id;
@@ -37,5 +37,13 @@ public class Gallery {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Organization getOrganization() {
+        return organization;
+    }
+
+    public void setOrganization(Organization organization) {
+        this.organization = organization;
     }
 }

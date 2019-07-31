@@ -21,14 +21,14 @@
             
               <li class="nav-item btn-rotate dropdown">
                 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i>Group 14</i>
+                  <i><%= session.getAttribute("name") %></i>
                   <!-- <p>
                     <span class="d-lg-none d-md-block">Some Actions</span>
                   </p> -->
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="/updateProfile">Profile</a>
-                  <a class="dropdown-item" href="/">Logout</a>
+                  <a class="dropdown-item" href="/logout">Logout</a>
                   <!-- <a class="dropdown-item" href="#">Something else here</a> -->
                 </div>
               </li>

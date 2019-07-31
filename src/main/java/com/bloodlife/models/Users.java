@@ -1,9 +1,6 @@
 package com.bloodlife.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
@@ -31,6 +28,12 @@ public class Users {
     private String blood_group;
     
     private String role;
+
+	private String token;
+
+	@JoinColumn
+	@ManyToOne
+	private Organization organization;
     
 	public Long getId() {
 		return id;
@@ -97,5 +100,20 @@ public class Users {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+
+	public Organization getOrganization() {
+		return organization;
+	}
+
+	public void setOrganization(Organization organization) {
+		this.organization = organization;
+	}
 }

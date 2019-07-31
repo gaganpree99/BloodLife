@@ -16,8 +16,9 @@ public class Organization {
     private String address;
     private String email;
     private String contact;
-    private double latitude;
-    private double longitude;
+    private String latitude;
+    private String longitude;
+    private String bloodThreshold;
 
     public Long getId() {
         return id;
@@ -59,19 +60,27 @@ public class Organization {
         this.contact = contact;
     }
 
-    public double getLatitude() {
+    public String getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(double latitude) {
+    public void setLatitude(String latitude) {
         this.latitude = latitude;
     }
 
-    public double getLongitude() {
+    public String getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(double longitude) {
+    public void setLongitude(String longitude) {
         this.longitude = longitude;
+    }
+
+    public String getBloodThreshold() {
+        return bloodThreshold;
+    }
+
+    public void setBloodThreshold(String bloodThreshold) {
+        this.bloodThreshold = bloodThreshold;
     }
 }

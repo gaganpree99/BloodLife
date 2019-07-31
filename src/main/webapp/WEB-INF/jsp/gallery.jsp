@@ -49,9 +49,7 @@
 			<div class="col-md-12">
 				<div class="form-group">
 					<select id="organizationList" class="form-control">
-						<option value="Nova Scotia">Nova Scotia Blood
-							Organization</option>
-						<option value="IWK">IWK</option>
+
 					</select>
 				</div>
 			</div>
@@ -86,7 +84,7 @@
 		<div class="footer-copyright  py-3" style="padding-left:5%;padding-right:5%">
 			About Us &nbsp;&nbsp; Contact  Us &nbsp;&nbsp; <span class="fab fa-twitter-square"> &nbsp;&nbsp;&nbsp;&nbsp;</span>
 							<span class="fab fa-facebook-square"></span>
-			<span style="float:right"> © 2018 Copyright</span></div>
+			<span style="float:right"> ï¿½ 2018 Copyright</span></div>
 	</footer>
 
 	<script src="/js/core/jquery.min.js" ></script>
@@ -106,16 +104,21 @@
 			$('#organizationList').select2({
 				placeholder : "Select Organization"
 			});
-			getAllPhotos ();
+			getAllOrganizations();
+			$('#organizationList').change();
+			// getAllPhotos ();
 		});
 
-		function getAllPhotos () {
+		$('#organizationList').change(function(){
 			$.ajax({
 				type: 'GET',
 				dataType:"json",
-				url: '/getAllPhotos',
+				url: '/getAllPhotosByOrganization?organizationId='+$('#organizationList :selected').val(),
 				success: function (response) {
 					$("#photosDiv").children().not('#photoComponent').remove();
+					$('#indicators').children().remove();
+					$('#carouselDiv').children().remove();
+					$('#carouselDiv').children().remove();
 					for (var i = 0; i <  response.data.length; i++) {
 						if(i === 0){
 							var addIndicator = '<li data-target="#slides" data-slide-to="'+i+'" class="active"></li>';
@@ -131,6 +134,28 @@
 					}
 				}
 			});
+		});
+
+		function  getAllOrganizations() {
+			$.ajax({
+				type: 'GET',
+				contentType: "application/json",
+				async:false,
+				url: '/getAllOrganization',
+				success: function (response) {
+					if(response.status == 200){
+						var options = "";
+						organizationCount = response.data.length;
+						for (var i = 0; i < response.data.length ; i++) {
+							options += '<option value='+response.data[i].id;
+							options += '>'+response.data[i].organizationName;
+							options += '</option>';
+						}
+						$('#organizationList').append(options);
+					}
+				}
+			});
+
 		}
 	</Script>
 </body>
