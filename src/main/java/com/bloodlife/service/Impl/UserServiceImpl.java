@@ -1,8 +1,13 @@
 package com.bloodlife.service.Impl;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 
 import com.bloodlife.DAO.UserRepository;
@@ -62,5 +67,37 @@ public class UserServiceImpl implements UserService{
 			return null;
 		}	
 	}
+
+
+	@Override
+	public String login(String username, String password) {
+		Optional<Users> users = userRepository.login(username,password);
+		if(users.isPresent()){
+			String token = UUID.randomUUID().toString();
+			Users user= users.get();
+			user.setToken(token);
+			userRepository.save(user);
+			return token;
+		}
+
+		return StringUtils.EMPTY;
+	}
+
+	@Override
+	public Optional<User> findByToken(String token) {
+		Optional<Users> userObj= userRepository.findByToken(token);
+		if(userObj.isPresent()){
+			Users users1 = userObj.get();
+			if(users1.getRole().equals("donor")){
+				User user= new User(users1.getEmail(), users1.getPassword(), true, true, true, true,
+						AuthorityUtils.createAuthorityList("USER"));
+				return Optional.of(user);
+			}else{
+				User user= new User(users1.getEmail(), users1.getPassword(), true, true, true, true,
+						AuthorityUtils.createAuthorityList("ADMIN"));
+				return Optional.of(user);
+			}
+		}
+		return  Optional.empty();	}
 
 }

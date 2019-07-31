@@ -129,7 +129,6 @@
 					</div>
 				</div>
 			</div>
-
 			<div class="row">
 				<div class="col-lg-6 col-sm-6">
 					<div class="card" style="background: #a94d4d; color: white">
@@ -144,7 +143,7 @@
 									<div class="col-lg-9" style="padding: 3%; font-size: 24px">
 										<div class="numbers">
 											<p>Registered Organizations</p>
-											83
+											<span id="organizationCount"></span>
 										</div>
 									</div>
 								</div>
@@ -152,27 +151,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-6 col-sm-6">
-					<div class="card" style="background: #517351; color: white">
-						<div class="content">
-							<div class="container">
-								<div class="row">
-									<div class="col-lg-3" style="padding: 3%">
-										<div class="text-center">
-											<i class="fas fa-band-aid" style="font-size: 72px"></i>
-										</div>
-									</div>
-									<div class="col-lg-9" style="padding: 3%; font-size: 24px">
-										<div class="numbers">
-											<p>Registered Donors</p>
-											12,305
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+			</div>
 
 
 				<div class="container" style="margin-top: 5%; margin-bottom: 5%">
@@ -186,7 +165,7 @@
 									Name</h3>
 							</div>
 							<div class="content row">
-								<div class="col-sm-8">
+								<div class="col-sm-12">
 									<div class="form-group">
 										<div class="form-control">
 											<span class="form-label" id="contact"> Contact: </span>
@@ -203,21 +182,13 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-4">
-									<img
-										src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/IWK_Health_Centre_%28logo%29.svg/320px-IWK_Health_Centre_%28logo%29.svg.png"
-										title="will be replaced by organization logo"
-										style="width: 100%">
-								</div>
 								<div class="container-fluid">
 									<div id="googleMap" style="width: 100%; height: 300px;"></div>
 								</div>
 							</div>
 							<div class="footer">
 								<hr>
-								<div class="stats">
-									<i class="ti-timer"></i> Campaign sent 2 days ago
-								</div>
+
 							</div>
 						</div>
 					</div>
@@ -234,7 +205,7 @@
 		<div class="footer-copyright  py-3" style="padding-left:5%;padding-right:5%">
 			About Us &nbsp;&nbsp; Contact  Us &nbsp;&nbsp; <span class="fab fa-twitter-square"> &nbsp;&nbsp;&nbsp;&nbsp;</span>
 							<span class="fab fa-facebook-square"></span>
-			<span style="float:right"> � 2018 Copyright</span></div>
+			<span style="float:right"> 2018 Copyright</span></div>
 	</footer>
 
 	<script src="/js/core/jquery.min.js"></script>
@@ -242,16 +213,17 @@
 	<script src="/js/core/bootstrap.min.js"></script>
 	<script src="/js/plugins/perfect-scrollbar.jquery.min.js"></script>
 	<script src="/js/plugins/bootstrap-notify.js"></script>
-	<!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
 	<script src="/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
-	<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 	<script src="./demo/demo.js"></script>
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAgr94q-qXSYGSO-NdpvvrImA_ln0uVcs"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
 	<script type="text/javascript">
+		var token = '<%= session.getAttribute("token") %>';
+		var organizationCount;
 	var markersList = [];
+	var organizationData = [];
 	$(document).ready(function() {
 		$('#organizationList').select2({
 			placeholder : "Select Organization"
@@ -261,12 +233,14 @@
 			placeholder : "Select blood group"
 		});
 		$("#organizationTitle").hide();
+		$('#organizationCount').html(organizationCount);
 	});
 
 	$("#organizationList")
 			.change(
 					function() {
 						console.log($("#organizationList").val().length);
+						var organizationList = $('#organizationList').select2('data');
 						$("#organizationDiv").siblings().not("h3").remove();
 						$("#organizationTitle").hide();
 						if ($("#organizationList").val().length == 0) {
@@ -283,7 +257,7 @@
 								},
 								timer : 200
 							});
-							/* $("#googleMap").hide(); */
+
 						} else {
 							for (var i = 0; i < $("#organizationList").val().length; i++) {
 								$("#organizationTitle").show();
@@ -292,7 +266,7 @@
 										"organization" + i);
 								$("#organization" + i).css("display", "block");
 								$("#organization" + i).find(".title").html(
-										$("#organizationList :selected").text());
+										organizationList[i].text);
 								$("#organization" + i).find("#contact").html(
 										"organization " + i
 												+ " : contact Number");
@@ -302,7 +276,10 @@
 										"email " + i + " : email Number");
 								$("#organization" + i).find("#googleMap").attr(
 										"id", "googleMap" + i);
-								loadMap($("#organizationList").val()[i], i);
+								$("#organization" + i).find("#contact").html("contact : " + organizationData[i].contact);
+								$("#organization" + i).find("#address").html("address : " + organizationData[i].address);
+								$("#organization" + i).find("#email").html("email : " + organizationData[i].email);
+								loadMap(organizationData[i].latitude,organizationData[i].longitude ,i,organizationData[i]);
 							}
 						}
 					});
@@ -314,42 +291,34 @@
 		});
 	})
 
-	function loadMap(organization, index) {
+	function loadMap(latitude, longitude, index, organization) {
 		markersList = [];
-		console.log(organizationList);
 		var pre_infoWindow = false;
-		var latLongList = [ [ 44.637269, -63.584232 ], [ 44.6517, -63.5495 ] ];
-
-		console.log(latLongList);
-
-		var latlng = new google.maps.LatLng(latLongList[index][0],
-				latLongList[index][1]);
+		var latlng = new google.maps.LatLng(latitude,
+				longitude);
 
 		var mapProp = {
 			center : latlng,
-			zoom : 15,
+			zoom : 13
 		};
-
 		var map = new google.maps.Map(document.getElementById("googleMap"
 				+ index), mapProp);
-
-		/* for (var i = 0; i < organizationList.length; i++)  */
-		var latlong = new google.maps.LatLng(latLongList[index][0],
-				latLongList[index][1]);
-		let infowindow = new google.maps.InfoWindow(
+		var latlong = new google.maps.LatLng(latitude,
+				longitude);
+		var infowindow = new google.maps.InfoWindow(
 				{
-					content : "<table><tr><th>Contact :</th><td>Contact Number of Organization"
-							+ index
+					content : "<table><tr><th>Contact : </th><td>"
+							+ organization.contact
 							+ "</td></tr>"
-							+ "<tr><th>Address :</th><td>Address of Organization  "
-							+ index
+							+ "<tr><th>Address :</th><td>"
+							+ organization.address
 							+ "</td></tr>"
-							+ "<tr><th>Email :</th><td>Email of Organization "
-							+ index + "</td></tr>" + "</table>",
+							+ "<tr><th>Email :</th><td>"
+							+ organization.email + "</td></tr>" + "</table>",
 
-					maxWidth : 300
+					maxWidth : 400
 				});
-		let marker = new google.maps.Marker({
+		var marker = new google.maps.Marker({
 			position : latlong,
 			map : map
 		});
@@ -363,37 +332,26 @@
 		marker.setMap(map);
 		$("#googleMap" + index).show();
 	}
-	
-	$("#submitBtn").click(function(){
-		if($("#quantity").val() >= 10){
-			$('#myModal').modal('hide')
-			$.notify({
-				// options
-				message : 'Request Sent Successfully'
-			}, {
-				// settings
-				type : 'success',
-				allow_dismiss : true,
-				placement : {
-					from : "top",
-					align : "center"
-				},
-				timer : 200
-			});
-		}
-	});
+
 		function  getAllOrganizations() {
 			$.ajax({
 				type: 'GET',
 				contentType: "application/json",
+				headers: {
+
+					"Authorization": "Bearer " + token
+				},
+				async:false,
 				url: '/getAllOrganization',
 				success: function (response) {
 					if(response.status == 200){
 						var options = "";
+						organizationCount = response.data.length;
 						for (var i = 0; i < response.data.length ; i++) {
 							options += '<option value='+response.data[i].id;
 							options += '>'+response.data[i].organizationName;
 							options += '</option>';
+							organizationData.push(response.data[i]);
 						}
 						$('#organizationList').append(options);
 					}
@@ -401,6 +359,49 @@
 			});
 
 		}
+
+		$('#submitBtn').click(function(){
+			$.ajax({
+				type: 'GET',
+				contentType: "application/json",
+				headers: {
+
+					"Authorization": "Bearer " + token
+				},
+
+				url: '/getOrganizationByBloodQuatity?bloodGroup='+$('#bloodList :selected').val()+ "&quantity="+$('#quantity').val(),
+				success: function (response) {
+					if(response.status == 200){
+						$("#organizationDiv").siblings().not("h3").remove();
+						$("#organizationTitle").hide();
+						var organizationData = response.data;
+						for (var i = 0; i < organizationData.length; i++) {
+							$("#organizationTitle").show();
+							$("#organizationDiv").clone().insertAfter(
+									"#organizationDiv").attr("id",
+									"organization" + i);
+							$("#organization" + i).css("display", "block");
+							$("#organization" + i).find(".title").html(
+									organizationData[i].organizationName);
+							$("#organization" + i).find("#contact").html(
+									"organization " + i
+									+ " : contact Number");
+							$("#organization" + i).find("#address").html(
+									"address " + i + " : address Number");
+							$("#organization" + i).find("#email").html(
+									"email " + i + " : email Number");
+							$("#organization" + i).find("#googleMap").attr(
+									"id", "googleMap" + i);
+							$("#organization" + i).find("#contact").html("contact : " + organizationData[i].contact);
+							$("#organization" + i).find("#address").html("address : " + organizationData[i].address);
+							$("#organization" + i).find("#email").html("email : " + organizationData[i].email);
+							loadMap(organizationData[i].latitude,organizationData[i].longitude ,i,organizationData[i]);
+						}
+						$('#myModal').modal('hide');
+					}
+				}
+			});
+		})
 </script>
 </body>
 </html>

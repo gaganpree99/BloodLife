@@ -25,6 +25,11 @@ public class OrganizationServiceImpl implements OrganizationService {
     }
 
     @Override
+    public Organization findById(long id) {
+        return organizationRepository.findById(id);
+    }
+
+    @Override
     public void deleteById(long id) {
         organizationRepository.deleteById(id);
     }

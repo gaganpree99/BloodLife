@@ -2,6 +2,7 @@ package com.bloodlife.service.Impl;
 
 import com.bloodlife.DAO.GalleryRepository;
 import com.bloodlife.models.Gallery;
+import com.bloodlife.models.Organization;
 import com.bloodlife.service.GalleryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,8 +32,8 @@ public class GalleryServiceImpl implements GalleryService {
     }
 
     @Override
-    public List<Gallery> findAll() {
-        return galleryRepository.findAll();
+    public List<Gallery> findByOrganization(Organization organization) {
+        return galleryRepository.findByOrganization(organization);
     }
 
     @Override

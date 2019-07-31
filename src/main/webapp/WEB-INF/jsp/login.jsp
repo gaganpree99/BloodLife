@@ -52,6 +52,7 @@
 								<div class="row center">
 									<div class="col-md-9 col-lg-8 mx-auto ">
 										<h3 class="login-heading mb-4">Welcome back!</h3>
+
 										<form onsubmit="return login()" action="javascript:void(0)">
 											<div class="form-label-group">
 												<input type="email" id="inputEmail" class="form-control"
@@ -64,24 +65,13 @@
 													class="form-control" placeholder="Password" required>
 												<label for="inputPassword">Password</label>
 											</div>
-
-											<div class="custom-control custom-checkbox mb-3"
-												style="padding-left: 10%">
-												<input type="checkbox" class="custom-control-input"
-													id="customCheck1"> <label
-													class="custom-control-label" for="customCheck1">Remember
-													password</label>
-											</div>
+											<span class="col-md-3" id="display_msg" style="font-size: 18px; color: #c33131; display: none;">Invalid username or password</span>
 											<button
 												class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
-												type="submit">Sign in</button>
+												type="submit" style="margin-top: 5%;">Sign in</button>
 											<button
 												class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
 												type="button" id="signUp">Sign up</button>
-											<button
-													class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
-													type="button" id="referFriend">Refer Friend</button>
-
 											<div class="text-center">
 												<a class="small" href="#" onClick='forgotPass()'
 													id="forgotPass">Forgot password?</a>
@@ -273,16 +263,41 @@
 
 			$.ajax({
 				type: "POST",
-				url: "/userCheck",
-				data: body,
+				url: "/token?username="+email+"&password="+password,
 				dataType:"json",
 				contentType: "application/json",
+				async:false,
 				success: function (response) {
-					if(response.status==200){
-						document.location.href = '/dashboard';
+					if(response.status==200) {
+						$.ajax({
+							type: "POST",
+							url: "/userCheck",
+							data : body,
+							dataType:"json",
+							async:false,
+							contentType: "application/json",
+							success: function (response) {
+								var role = '<%= session.getAttribute("role") %>';
+								console.log(response.role);
+							  if(response.status==200) {
+							  	if(response.role == "admin"){
+									document.location.href = '/organizationPage';
+								}else if(response.role == "organization"){
+									document.location.href = '/dashboardPage';
+								}else{
+									document.location.href = '/updateProfile';
+								}
+
+								}else{
+								  $('#display_msg').css("display","");
+							  }
+							}
+
+						})
 					}else{
-						document.location.href = '/'
+						$('#display_msg').css("display","");
 					}
+
 				}
 
 			})
@@ -303,7 +318,7 @@
 			
 			$.ajax({
 				type: "POST",
-				url: "/userRegistration",
+				url: "/register",
 				data: JSON.stringify(body),
 				dataType:"json",
 				contentType: "application/json",

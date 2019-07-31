@@ -12,5 +12,6 @@ public interface OrganizationRepository extends CrudRepository<Organization, Lon
     public List<Organization> findAll();
     public  Organization save(Organization organization);
     public void  deleteById(long id);
+    public  Organization findById(long id);
 
 }

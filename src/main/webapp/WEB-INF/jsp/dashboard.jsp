@@ -36,12 +36,17 @@
 	box-shadow: 3px 3px 20px #000000;
 }
 
+.on{
+	color : green;
+}
+
+
 #card3:hover {
 	box-shadow: 3px 3px 20px #000000;
 }
 
 .card_img {
-	height: 280px;
+	height: 250px;
 }
 
 .text {
@@ -78,6 +83,10 @@
 
 			<!-- End Navbar -->
 			<div class="content">
+				<div class="row" style="margin-bottom: 2%;margin-left: 2%">
+					<i class="fa fa-refresh rotate" aria-hidden="true" style="font-size: 18px;float: right ; cursor: pointer" id="autoRefresh"> Auto Refresh</i>
+
+				</div>
 				<div class="row">
 					<div class="col-lg-3 col-sm-6 mb-3">
 						<div id="card1" class="card ">
@@ -86,8 +95,7 @@
 								style="background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038772-stock-photo-a-blood-type-on-red.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; border-radius: 10px;"></div>
 							<div class="card-body">
 
-								<p class="card-text" style="font-size: 24px; font-weight: 700;">5300
-									ml</p>
+								<p class="card-text" style="font-size: 24px; font-weight: 700;" id="countA" ></p>
 							</div>
 						</div>
 					</div>
@@ -98,8 +106,7 @@
 								style="background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038792-stock-photo-a-blood-type-on-red.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; border-radius: 10px;">
 							</div>
 							<div class="card-body">
-								<p class="card-text" style="font-size: 24px; font-weight: 700;">5300
-									ml</p>
+								<p class="card-text" style="font-size: 24px; font-weight: 700;" id="countA-"></p>
 							</div>
 						</div>
 					</div>
@@ -110,8 +117,7 @@
 								style="background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038856-stock-photo-b-blood-type-on-red.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; border-radius: 10px;"></div>
 							<div class="card-body">
 
-								<p class="card-text" style="font-size: 24px; font-weight: 700;">5300
-									ml</p>
+								<p class="card-text" style="font-size: 24px; font-weight: 700;" id="countB"></p>
 							</div>
 						</div>
 					</div>
@@ -122,8 +128,7 @@
 								style="background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038868-stock-photo-b-blood-type-on-red.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; border-radius: 10px;"></div>
 							<div class="card-body">
 
-								<p class="card-text" style="font-size: 24px; font-weight: 700;">5300
-									ml</p>
+								<p class="card-text" style="font-size: 24px; font-weight: 700;" id="countB-"></p>
 							</div>
 						</div>
 					</div>
@@ -134,8 +139,7 @@
 								style="background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038882-stock-photo-o-blood-type-on-red.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; border-radius: 10px;"></div>
 								<div class="card-body">
 
-									<p class="card-text" style="font-size: 24px; font-weight: 700;">5300
-										ml</p>
+									<p class="card-text" style="font-size: 24px; font-weight: 700;" id="countO"></p>
 								</div>
 							</div>
 						</div>
@@ -146,8 +150,7 @@
 									style="background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038906-stock-photo-o-blood-type-on-red.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; border-radius: 10px;"></div>
 								<div class="card-body">
 
-									<p class="card-text" style="font-size: 24px; font-weight: 700;">5300
-										ml</p>
+									<p class="card-text" style="font-size: 24px; font-weight: 700;" id="countO-"></p>
 								</div>
 							</div>
 						</div>
@@ -158,8 +161,7 @@
 									style="background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038822-stock-photo-ab-blood-type-on-red.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; border-radius: 10px;"></div>
 								<div class="card-body">
 
-									<p class="card-text" style="font-size: 24px; font-weight: 700;">5300
-										ml</p>
+									<p class="card-text" style="font-size: 24px; font-weight: 700;" id="countAB"></p>
 								</div>
 							</div>
 						</div>
@@ -170,19 +172,8 @@
 									style="background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url('https://st2.depositphotos.com/3097757/11803/i/950/depositphotos_118038840-stock-photo-ab-blood-type-on-red.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; border-radius: 10px;"></div>
 								<div class="card-body">
 
-									<p class="card-text" style="font-size: 24px; font-weight: 700;">5300
-										ml</p>
+									<p class="card-text" style="font-size: 24px; font-weight: 700;" id="countAB-"></p>
 								</div>
-							</div>
-						</div>
-						<div class="col-lg-12 col-sm-6 mb-3">
-							<div id="card8" class="card h-100">
-								<!-- The below image has been taken from https://unsplash.com/ (look for reference number [4] under Landing page in ReadMe file)-->
-								<div class="header" style="padding: 1.5%; margin: 0px">
-									<h5>Checked In Doctors</h5>
-									<hr>
-								</div>
-								<div class="card-body"></div>
 							</div>
 						</div>
 					</div>
@@ -199,64 +190,19 @@
 								</div>
 								<div class="content">
 									<div class="container table-responsive">
-										<table class="table table-striped" id="donorTable">
+										<table class="table table-striped" id="donorTable" style="text-align: center">
 											<thead class="thead-dark">
 												<tr>
-													<th scope="col">#</th>
 													<th scope="col">First Name</th>
 													<th scope="col">Last Name</th>
 													<th scope="col">Blood Group</th>
 													<th scope="col">Quantity</th>
 													<th scope="col">Contact Number</th>
-													<th scope="col">Date</th>
+<%--													<th scope="col">Date</th>--%>
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<th scope="row">1</th>
-													<td>Varun</td>
-													<td>Mahagaokar</td>
-													<td>O+</td>
-													<td>100</td>
-													<td>+919990002323</td>
-													<td>05/31/2019</td>
-												</tr>
-												<tr>
-													<th scope="row">2</th>
-													<td>Smit</td>
-													<td>Saraiya</td>
-													<td>O+</td>
-													<td>200</td>
-													<td>+919990002323</td>
-													<td>05/31/2019</td>
-												</tr>
-												<tr>
-													<th scope="row">3</th>
-													<td>Nishant</td>
-													<td>Bhambani</td>
-													<td>A+</td>
-													<td>150</td>
-													<td>+919990002323</td>
-													<td>05/31/2019</td>
-												</tr>
-												<tr>
-													<th scope="row">4</th>
-													<td>Anant</td>
-													<td>Pillai</td>
-													<td>AB+</td>
-													<td>300</td>
-													<td>+919990002323</td>
-													<td>05/31/2019</td>
-												</tr>
-												<tr>
-													<th scope="row">5</th>
-													<td>Dhruv</td>
-													<td>Purohit</td>
-													<td>B-</td>
-													<td>250</td>
-													<td>+919990002323</td>
-													<td>05/31/2019</td>
-												</tr>
+
 											</tbody>
 										</table>
 									</div>
@@ -277,64 +223,20 @@
 								</div>
 								<div class="content">
 									<div class="container table-responsive">
-										<table class="table table-striped" id="receiverTable">
+										<table class="table table-striped" id="receiverTable" style="text-align: center">
 											<thead class="thead-dark">
 												<tr>
-													<th scope="col">#</th>
+
 													<th scope="col">First Name</th>
 													<th scope="col">Last Name</th>
 													<th scope="col">Blood Group</th>
 													<th scope="col">Quantity</th>
 													<th scope="col">Contact Number</th>
-													<th scope="col">Date</th>
+
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<th scope="row">1</th>
-													<td>Varun</td>
-													<td>Mahagaokar</td>
-													<td>O+</td>
-													<td>100</td>
-													<td>+919990002323</td>
-													<td>05/31/2019</td>
-												</tr>
-												<tr>
-													<th scope="row">2</th>
-													<td>Smit</td>
-													<td>Saraiya</td>
-													<td>O+</td>
-													<td>200</td>
-													<td>+919990002323</td>
-													<td>05/31/2019</td>
-												</tr>
-												<tr>
-													<th scope="row">3</th>
-													<td>Nishant</td>
-													<td>Bhambani</td>
-													<td>A+</td>
-													<td>150</td>
-													<td>+919990002323</td>
-													<td>05/31/2019</td>
-												</tr>
-												<tr>
-													<th scope="row">4</th>
-													<td>Anant</td>
-													<td>Pillai</td>
-													<td>AB+</td>
-													<td>300</td>
-													<td>+919990002323</td>
-													<td>05/31/2019</td>
-												</tr>
-												<tr>
-													<th scope="row">5</th>
-													<td>Dhruv</td>
-													<td>Purohit</td>
-													<td>B-</td>
-													<td>250</td>
-													<td>+919990002323</td>
-													<td>05/31/2019</td>
-												</tr>
+												
 											</tbody>
 										</table>
 									</div>
@@ -361,25 +263,156 @@
 
 
 		<script>
+			var token = '<%= session.getAttribute("token") %>';
+			var autoRefresh = false;
+			var donorTable;
+			var receiverTable;
+			var bgBelowThreshold = [] ;
+			var thresholdA = false;
+			var thresholdB = false;
+			var thresholdO = false;
+			var thresholdAB =false;
+			var thresholdA_ = false;
+			var thresholdB_ = false;
+			var thresholdAB_ =false;
+			var thresholdO_ = false;
+
+
+
+
 			$(document).ready(function() {
 				$("#header").html("Dashboard");
 				$("li").removeClass("active");
 				$("#dashboard").addClass("active");
-				var doctorTable = $('#doctorTable').DataTable({
-					scrollY : '50vh',
-					scrollCollapse : true,
-					"paging" : false
-				});
-				var donorTable = $('#donorTable').DataTable({
-					"paging" : false
-				});
-				var receiverTable = $('#receiverTable').DataTable({
-					"paging" : false
-				});
-				
+				// var doctorTable = $('#doctorTable').DataTable({
+				// 	scrollY : '50vh',
+				// 	scrollCollapse : true,
+				// 	"paging" : false
+				// });
+				// var donorTable = $('#donorTable').DataTable({
+				// 	"paging" : false
+				// });
 
-			})
+
+				getRecentDonations();
+				getRecentReceivers();
+				getCounts();
+			});
+
+
+			function getCounts(){
+				$.ajax({
+					type: 'GET',
+					contentType: "application/json",
+					headers: {
+						"Authorization": "Bearer " + token
+					},
+					async : false,
+					url: '/dashboard/getCount',
+					success: function (response) {
+						if (response.status == 200) {
+							bgBelowThreshold = '<%= session.getAttribute("threshold") %>';
+							$.each( response.data, function( key, value ) {
+								if(value.blood.bloodGroup.indexOf("+") >= 0 ){
+									var id = value.blood.bloodGroup.slice(0,-1);
+									$('#count'+ id).html(value.quantity + " ml");
+									console.log(value.quantity);
+									if(value.quantity < 700){
+										setInterval(function() {
+											$('#count'+id).closest('.card').fadeOut(1000);
+											$('#count'+id).closest('.card').fadeIn(1000);
+										}, 1500);
+									}
+
+
+								}else{
+									$('#count'+ value.blood.bloodGroup).html(value.quantity + " ml");
+									if(value.quantity < 700){
+										setInterval(function() {
+											$('#count'+ value.blood.bloodGroup).closest('.card').fadeOut(1000);
+											$('#count'+ value.blood.bloodGroup).closest('.card').fadeIn(1000);
+										}, 1500);
+									}
+								}
+							});
+						}
+					}
+				});
+			}
+
+		$('#autoRefresh').click(function(){
+			if($(this).hasClass('on')){
+				$(this).removeClass('on');
+				autoRefresh = false;
+				refreshBloodCount()
+			}else {
+				$(this).addClass('on');
+				autoRefresh = true;
+				refreshBloodCount()
+			}
+		});
+
+			function refreshBloodCount(){
+				setInterval(function() {
+					if(autoRefresh){
+						$('#autoRefresh').fadeOut(500);
+						$('#autoRefresh').fadeIn(500);
+						getCounts();
+					}
+				}, 5000);
+			}
 			
+			function getRecentDonations() {
+				if (donorTable != null) {
+					donorTable.destroy();
+				}
+				donorTable = $('#donorTable').DataTable({
+					'ajax': {
+						'url': '/dashboard/recentDonations',
+						'type': 'GET',
+						'beforeSend': function (request) {
+							request.setRequestHeader("Authorization", "Bearer " + token);
+						}
+					},
+					"lengthChange": false,
+					"paging": false,
+					"columns": [
+
+						{"data": "user.firstName"},
+						{"data": "user.lastName"},
+						{"data": "bloodGroup"},
+						{"data": "quantity"},
+						{"data": "user.phone_number"}
+					]
+				});
+			}
+
+
+			function getRecentReceivers() {
+				if (donorTable != null) {
+					donorTable.destroy();
+				}
+				donorTable = $('#receiverTable').DataTable({
+					'ajax': {
+						'url': '/dashboard/recentReceivers',
+						'type': 'GET',
+						async :false,
+						'beforeSend': function (request) {
+							request.setRequestHeader("Authorization", "Bearer " + token);
+						}
+					},
+					"lengthChange": false,
+					"paging": false,
+					"columns": [
+
+						{"data": "firstName"},
+						{"data": "lastName"},
+						{"data": "bloodGroup"},
+						{"data": "quantity"},
+						{"data": "contact"}
+					]
+				});
+			}
 		</script>
 </body>
 </html>

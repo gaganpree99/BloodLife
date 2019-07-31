@@ -30,29 +30,29 @@ public class SendMail {
 	 	
 		public void sendMail(String to, String subject, String messageText)  {
 			try {
-				FileReader fr = new FileReader("src/main/resources/application.properties");
-				Properties property = new Properties();
-				property.load(fr);
+//				FileReader fr = new FileReader("src/main/resources/application.properties");
+//				Properties property = new Properties();
+//				property.load(fr);
 				Properties properties = System.getProperties();
-				properties.setProperty("mail.smtp.starttls.required", property.getProperty("spring.mail.properties.mail.smtp.starttls.required"));
-				properties.setProperty("mail.smtp.starttls.enabled", property.getProperty("spring.mail.properties.mail.smtp.starttls.enable"));
-				properties.setProperty("mail.smtp.host", property.getProperty("spring.mail.host"));
-				properties.setProperty("mail.smtp.port", property.getProperty("spring.mail.port"));
-				properties.put("mail.smtp.auth",property.getProperty("spring.mail.properties.mail.smtp.starttls.enable"));
+				properties.setProperty("mail.smtp.starttls.required","true");
+				properties.setProperty("mail.smtp.starttls.enabled", "true");
+				properties.setProperty("mail.smtp.host", "smtp.gmail.com");
+				properties.setProperty("mail.smtp.port", "587");
+				properties.put("mail.smtp.auth","true");
 
 				Session session = Session.getDefaultInstance(properties, new javax.mail.Authenticator() {
 					protected PasswordAuthentication getPasswordAuthentication() {
-						return new PasswordAuthentication(property.getProperty("spring.mail.username"),
-								property.getProperty("spring.mail.password"));
+						return new PasswordAuthentication("bloodLife.halifax@gmail.com",
+								"Password@123");
 					}
 				});
 
 				MimeMessage message = new MimeMessage(session);
-				message.setFrom(new InternetAddress(property.getProperty("spring.mail.username")));
+				message.setFrom(new InternetAddress("bloodLife.halifax@gmail.com"));
 				message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
 				message.setSubject(subject);
 				message.setContent(messageText, "text/html");
-				javaMailSender.send(message);
+				Transport.send(message);
 
 			} catch (Exception e) {
 
