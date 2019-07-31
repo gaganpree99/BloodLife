@@ -46,11 +46,14 @@
 	</nav>
 	<div class="row" style="margin-top: 5%;">
 		<div class="container">
-			<div class="card" id="organizationDiv" style="margin-bottom: 5%;">
+			<h2 class="title" style="padding-top: 1%;font-family: serif;text-transform: capitalize">Upcoming Events
+				</h2>
+			<hr>
+			<div class="card" id="organizationDiv" style="margin-bottom: 5%;display: none">
 				<div class="container-fluid"
 					style="margin-bottom: 1%; margin-top: 1%">
 					<div class="header">
-						<h3 class="title" style="padding-top: 1%; font-family: cursive">Event
+						<h3 class="title" style="padding-top: 1%;font-family: serif;text-transform: capitalize">Event
 							Name</h3>
 					</div>
 					<div class="content row">
@@ -71,18 +74,12 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-4">
-							<img
-								src="https://static.meraevents.com/content/gallery/109010/14445991_1079817365472520_5637130704403341559_n1475680184.jpg"
-								title="will be replaced by organization logo"
-								style="width: 320px; height: 150px">
-						</div>
-					</div>
-					<div class="footer">
-						<hr>
-						<div class="stats">
-							<i class="ti-timer"></i> Added 2 days ago
-						</div>
+<%--						<div class="col-sm-4">--%>
+<%--							<img--%>
+<%--								src="https://static.meraevents.com/content/gallery/109010/14445991_1079817365472520_5637130704403341559_n1475680184.jpg"--%>
+<%--								title="will be replaced by organization logo"--%>
+<%--								style="width: 320px; height: 150px">--%>
+<%--						</div>--%>
 					</div>
 				</div>
 			</div>
@@ -96,7 +93,7 @@
 		<div class="footer-copyright  py-3" style="padding-left:5%;padding-right:5%">
 			About Us &nbsp;&nbsp; Contact  Us &nbsp;&nbsp; <span class="fab fa-twitter-square"> &nbsp;&nbsp;&nbsp;&nbsp;</span>
 							<span class="fab fa-facebook-square"></span>
-			<span style="float:right"> © 2018 Copyright</span></div>
+			<span style="float:right"> ï¿½ 2018 Copyright</span></div>
 	</footer>
 
 
@@ -115,25 +112,43 @@
 	<script>
 		$(document).ready(
 				function() {
-					for (var i = 0; i < 3; i++) {
-						$("#organizationTitle").show();
-						$("#organizationDiv").clone().insertAfter(
-								"#organizationDiv").attr("id",
-								"organization" + i);
-						$("#organization" + i).css("display", "block");
+					getEvents();
 
-						$("#organization" + i).find("#contact").html(
-								"organization " + i + " : contact Number");
-						$("#organization" + i).find("#address").html(
-								"address " + i + " : address Number");
-						$("#organization" + i).find("#email").html(
-								"email " + i + " : email Number");
-						$("#organization" + i).find("#googleMap").attr("id",
-								"googleMap" + i);
 
+				});
+
+		function getEvents() {
+			$.ajax({
+				type: 'GET',
+				contentType: "application/json",
+				url: '/getAllUpComingEvents',
+				success: function (response) {
+					if (response.status == 200) {
+
+						console.log(response.data);
+
+
+						for (var i = 0; i < response.data.length; i++) {
+							$("#organizationTitle").show();
+							$("#organizationDiv").clone().insertAfter(
+									"#organizationDiv").attr("id",
+									"organization" + i);
+							$("#organization" + i).css("display", "block");
+							$("#organization" + i).find(".title").html( response.data[i].eventName);
+							$("#organization" + i).find("#contact").html(
+									"organization : " + response.data[i].orgName+"");
+							$("#organization" + i).find("#address").html(
+									"address : " +  response.data[i].address+"");
+							$("#organization" + i).find("#email").html(
+									"Event Date : " +  response.data[i].eventDate+"");
+							$("#organization" + i).find("#googleMap").attr("id",
+									"googleMap" + i);
+
+						}
 					}
-
-				})
+				}
+			});
+		}
 	</Script>
 </body>
 </html>

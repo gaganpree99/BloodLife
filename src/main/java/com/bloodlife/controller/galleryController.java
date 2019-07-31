@@ -1,13 +1,16 @@
 package com.bloodlife.controller;
 
 import com.bloodlife.models.Gallery;
+import com.bloodlife.models.Organization;
 import com.bloodlife.service.GalleryService;
+import com.bloodlife.service.OrganizationService;
 import com.bloodlife.utility.AmazonClient;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +23,8 @@ public class galleryController {
         this.amazonClient = amazonClient;
     }
 
+    @Autowired
+    OrganizationService organizationService;
 
     @Autowired
      AmazonClient amazonClient;
@@ -46,9 +51,10 @@ public class galleryController {
 
     @RequestMapping(value = "/saveImageDetails", method=RequestMethod.POST)
     @ResponseBody
-    public Map<String, Object> saveImageDetails(@RequestBody Gallery gallery) {
+    public Map<String, Object> saveImageDetails(@RequestBody Gallery gallery, HttpServletRequest req) {
         Map<String,Object> response = new HashMap<>();
         try{
+            gallery.setOrganization((Organization) req.getSession().getAttribute("organization"));
             galleryService.saveImage(gallery);
             response.put("status",200);
             return response;
@@ -67,10 +73,10 @@ public class galleryController {
 
     @RequestMapping(value = "/getAllPhotos", method=RequestMethod.GET)
     @ResponseBody
-    public Map<String, Object> getAllPhotos() {
+    public Map<String, Object> getAllPhotos(HttpServletRequest req) {
         Map<String,Object> response = new HashMap<>();
         try{
-            List<Gallery> galleryList = galleryService.findAll();
+            List<Gallery> galleryList = galleryService.findByOrganization((Organization) req.getSession().getAttribute("organization"));
             response.put("status",200);
             response.put("data",galleryList);
             return response;
@@ -96,7 +102,23 @@ public class galleryController {
             response.put("error",ex.getLocalizedMessage());
             return response;
         }
+    }
 
+    @RequestMapping(value = "/getAllPhotosByOrganization", method=RequestMethod.GET)
+    @ResponseBody
+    public Map<String, Object> getAllPhotosByOrganization(HttpServletRequest req, @RequestParam(value = "organizationId") long organization) {
+        Map<String,Object> response = new HashMap<>();
+        try{
+           Organization org =  organizationService.findById(organization);
+            List<Gallery> galleryList = galleryService.findByOrganization(org);
+            response.put("status",200);
+            response.put("data",galleryList);
+            return response;
+        }catch(Exception ex){
+            ex.printStackTrace();
+            response.put("error",ex.getLocalizedMessage());
+            return response;
+        }
     }
 
 }

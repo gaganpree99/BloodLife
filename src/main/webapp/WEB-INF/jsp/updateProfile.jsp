@@ -49,7 +49,7 @@
             <div class="card-btn center">
               <button id="edit_btn" type="button" onclick="makeEditable()" name="button">Edit Profile</button>
               <button id="save_btn" type="button" onclick="saveChanges()" name="button" disabled="disabled">Save Edits</button>
-
+              <button id="delete_btn" type="button" onclick="deleteUser()" name="button" >Delete Account</button>
             </div>
           </div>
           <br>
@@ -128,6 +128,25 @@
         </form>
       </div>
     </div>
+                  <div class="modal" id="deleteModal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title"> Confirm Delete</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <p>Are you sure you want to delete you account?</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" onclick=" deleteUser()">Confirm</button>
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 </div>
 </div>
 </div>
@@ -141,20 +160,25 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="/js/paper-dashboard.js?v=2.0.0" ></script>
 <script>
+  var token='<%= session.getAttribute("token") %>';
 $(document).ready(function(){
 	$("#header").html("Update Profile");
-})
+});
 
 var id ,first_name, last_name, Age, email, phone_number,blood_group,role,gender;
 
 //This method loads the user details from the user table in the database.
 function loadData(){
-	var id='<%= session.getAttribute("id") %>'
+	var id='<%= session.getAttribute("id") %>';
 	$.ajax({
 		type: 'GET',
 		dataType: "json",
-		url: '/getUserById',
-		data: {"id": id},
+		url: '/users/'+id,
+      headers: {
+
+        "Authorization": "Bearer " + token
+      },
+
 		success: function(response){
 			var jsonData=response.data;
 			first_name=jsonData.firstName;
@@ -203,22 +227,24 @@ function saveChanges() {
   email = document.getElementById('email').value;
   phone_number = document.getElementById('phone').value;
   gender=document.getElementById('type').value;
-	
+  var id='<%= session.getAttribute("id") %>';
 	var refer_friend="hello@gmail.com";
 	var blood_group="A-";  
-	var body = {"id": 1, "age" : Age, "blood_group" : blood_group, "email" : email, "firstName" : first_name, "lastName" : last_name, "role": role, "gender":gender, "phone_number" : phone_number, "password":password};
+	var body = {"id":id , "age" : Age, "blood_group" : blood_group, "email" : email, "firstName" : first_name, "lastName" : last_name, "role": role, "gender":gender, "phone_number" : phone_number, "password":password};
 
 	//Make a "POST" request and save the updated user details to MySQL database.
 	
 	 $.ajax({
 			type: 'POST',
-			url: '/updateProfilePost',
-			cache: false,
-	        contentType: false,
+			url: '/users/updateProfilePost',
 	        processData: false,
 		    contentType: "application/json",
 		    dataType:"json",
-		    data: JSON.stringify(body),
+             headers: {
+
+               "Authorization": "Bearer " + token
+             },
+            data: JSON.stringify(body),
 		    success: function(response) {
 				console.log(response);
 				//if the response is ok then update data on the front-end
@@ -274,8 +300,16 @@ function saveChanges() {
   
 }
 
+$("#delete_btn").click(function(){
+  $('#deleteModal').modal('show');
+});
 
 
+  function deleteUser() {
+    var id='<%= session.getAttribute("id") %>';
+
+    $('#deleteModal').modal('hide');
+  }
 
 </script>
 			

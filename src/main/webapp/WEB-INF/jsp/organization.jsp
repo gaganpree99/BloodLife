@@ -56,11 +56,12 @@
                            style="text-align: center">
                         <thead class="thead-dark">
                         <tr>
-                            <th scope="col" style="width:5%">#</th>
+                            <th scope="col" style="width:0px">#</th>
                             <th scope="col" style="width:25%">Name</th>
-                            <th scope="col" style="width:25%">Address</th>
+                            <th scope="col" style="width:30%">Address</th>
                             <th scope="col" style="width:15%">Contact</th>
-                            <th scope="col" style="width:20%">Email</th>
+                            <th scope="col" style="width:10%">Email</th>
+                            <th scope="col" style="width:10%">Threshold</th>
                             <th scope="col" style="width:10%"></th>
                         </tr>
                         </thead>
@@ -110,7 +111,12 @@
                                     </label> <input type="text" class="form-control" name="email"
                                                     id="email" placeholder="email" required>
                                 </div>
-
+                                <div class="form-group">
+                                    <label class="control-label">Blood Threshold:<span
+                                            style="color: red"> *</span>
+                                    </label> <input type="number" min="500" class="form-control" name="email"
+                                                    id="threshold" placeholder="email" required>
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-success" id="btnSave">Save</button>
@@ -164,6 +170,12 @@
                                     </label> <input type="text" class="form-control" id="editEmail"
                                                     placeholder="email" required>
                                 </div>
+                                <div class="form-group">
+                                    <label class="control-label"> Blood Threshold:<span
+                                            style="color: red"> *</span>
+                                    </label> <input type="number" min="500" class="form-control" id="editThreshold"
+                                                    placeholder="threshold" required>
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-success" id="updateBtn">Update</button>
@@ -193,38 +205,36 @@
 <script src="/js/paper-dashboard.js?v=2.0.0" ></script>
 <script
         src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+
+<%--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_QXCVMoGyS0934D9Kd8qrsNpeYqzLkbI&libraries=places"></script>--%>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_QXCVMoGyS0934D9Kd8qrsNpeYqzLkbI&libraries=places&callback=autofill_address"
+        async defer></script>
+
 <script>
+    var token = '<%= session.getAttribute("token") %>';
     var table;
     $(document).ready(function() {
         $("#header").html("Organization");
         $("li").removeClass("active");
         $("#organizationJsp").addClass("active");
         getAllOrganization();
+
     });
 
-    function selectRow(operation) {
-        $('#organizationTable tbody').on('click', 'tr', function() {
-            if ($(this).hasClass('rowSelected')) {
-                $(this).removeClass('rowSelected');
-            } else {
-                table.$('tr.rowSelected').removeClass('rowSelected');
-                $(this).addClass('rowSelected');
-                if (operation == "edit") {
-                    edit();
-                } else {
-                    deleteOrganization();
-                }
-            }
-        });
-    }
+
 
     function addOrganization() {
-        var body = {"organizationName" : $('#name').val(),"address":$("#address").val(),"email": $('#email').val(),"contact": $('#contact').val(), "latitude": null, "longitude":null};
+        var body = {"organizationName" : $('#name').val(),"address":$("#address").val(),"email": $('#email').val(),"contact": $('#contact').val(), "latitude": null, "longitude":null,"bloodThreshold" : $('#threshold').val()};
         $.ajax({
             type: 'POST',
             dataType:"json",
             contentType: "application/json",
-            url: '/saveOrganization',
+            url: '/organization/save',
+            headers: {
+
+                "Authorization": "Bearer " + token
+            },
             data: JSON.stringify(body),
             success: function (response) {
                 if(response.status == 200){
@@ -252,12 +262,16 @@
     function updateOrganization() {
 
         var body = {"id":$('#id').val(),"organizationName" : $('#editName').val(),"address":$("#editAddress").val(),"contact" : $('#editContact').val()
-          ,"email": $('#editEmail').val(), "latitude": null, "longitude":null};
+          ,"email": $('#editEmail').val(), "latitude": null, "longitude":null, "bloodThreshold":$('#editThreshold').val()};
         $.ajax({
             type: 'POST',
             dataType:"json",
             contentType: "application/json",
-            url: '/saveOrganization',
+            url: '/organization/save',
+            headers: {
+
+                "Authorization": "Bearer " + token
+            },
             data: JSON.stringify(body),
             success: function (response) {
                 if(response.status == 200){
@@ -286,12 +300,24 @@
     }
 
     function editOrganization(data) {
-        console.log(data);
-        selectRow("edit");
+        console.log($(data).parent().parent());
+        if ($(data).parent().parent().hasClass('rowSelected')) {
+            $($(data).parent().parent()).removeClass('rowSelected');
+        } else {
+            table.$('tr.rowSelected').removeClass('rowSelected');
+            $($(data).parent().parent()).addClass('rowSelected');
+        }
+        edit();
     }
 
-    function deleteData() {
-        selectRow("deleteOrganization");
+    function deleteData(data) {
+        if ($(data).parent().parent().hasClass('rowSelected')) {
+            $($(data).parent().parent()).removeClass('rowSelected');
+        } else {
+            table.$('tr.rowSelected').removeClass('rowSelected');
+            $($(data).parent().parent()).addClass('rowSelected');
+        }
+        deleteOrganization();
     }
 
     function edit() {
@@ -303,6 +329,7 @@
         $("#editAddress").val(rowData.address);
         $("#editContact").val(rowData.contact);
         $("#editEmail").val(rowData.email);
+        $("#editThreshold").val(rowData.bloodThreshold);
         $("#id").val(rowData.id);
         $("#editOrganizationModal").modal('show');
     }
@@ -314,9 +341,26 @@
         $.ajax({
             type: 'GET',
             contentType: "application/json",
-            url: '/deleteOrganization/'+rowData.id,
+            headers: {
+
+                "Authorization": "Bearer " + token
+            },
+            url: '/organization/delete/'+rowData.id,
             success: function (response) {
                 if(response.status == 200){
+                    $.notify({
+                        // options
+                        message : 'Organization  deleted successfully'
+                    }, {
+                        // settings
+                        type : 'success',
+                        allow_dismiss : true,
+                        placement : {
+                            from : "top",
+                            align : "center"
+                        },
+                        timer : 200
+                    });
                     getAllOrganization();
                 }
             }
@@ -326,7 +370,6 @@
     }
 
     $("#addOrganization").click(function() {
-
         $("#addOrganizationModal").modal('show');
     });
 
@@ -335,23 +378,28 @@
             table.destroy();
         }
         table = $('#organizationTable').DataTable( {
-            "ajax": "/getAllOrganization",
+            'ajax': {
+                'url': '/getAllOrganization',
+                'type': 'GET',
+                'beforeSend': function (request) {
+                    request.setRequestHeader("Authorization", "Bearer " + token);
+                }
+            },
             "columns": [
-                { "data": "id" },
+                { "data": "id", "visible": false },
                 { "data": "organizationName" },
                 { "data": "address" },
                 { "data": "contact" },
                 { "data": "email" },
+                { "data": "bloodThreshold" },
                 { "data": null,
                     "render": function ( data, type, row, meta ) {
-                        return '<i class="fas fa-edit" style="margin-right: 10%; font-size: 18px; color: #22733d" onclick="editOrganization(this)"></i><i class="fas fa-trash-alt" style="margin-left: 10%; font-size: 18px; color: #bb3b3b" onclick="deleteData()"></i>' ;
+                        return '<i class="fas fa-edit" style="margin-right: 10%; font-size: 18px; color: #22733d" onclick="editOrganization(this)"></i><i class="fas fa-trash-alt" style="margin-left: 10%; font-size: 18px; color: #bb3b3b" onclick="deleteData(this)"></i>' ;
                     }
                 }
             ]
         } );
     }
-
-
 </script>
 </body>
 </html>

@@ -45,7 +45,7 @@
 					<div class="col-sm-1">
 						<button type="button" class="btn btn-default btn-md"
 							id="addEvent">
-							<i class="fas fa-user-plus"></i> Upload Events
+							<i class="fas fa-user-plus"></i> Add Events
 						</button>
 					</div>
 				</div>
@@ -62,7 +62,7 @@
 									<th scope="col" style="width:15%">Address</th>
 									<th scope="col" style="width:10%">Contact Number</th>
 									<th scope="col" style="width:10%">Event Time</th>
-									<th scope="col" style="width:10%">Event Date</th>
+									<th scope="col" style="width:10%">Event Created</th>
 									<th scope="col" style="width:10%"></th>
 								</tr>
 							</thead>
@@ -77,7 +77,7 @@
 				<div id="addEventModal" class="modal " tabindex="-1" role="dialog">
 					<div class="modal-dialog modal-md" role="document">
 						<div class="modal-content">
-							<form action="javascript:void(0)" id="addDonorDetails">
+							<form action="javascript:void(0)" id="addDonorDetails" onsubmit="return addedEvent()" >
 								<div class="modal-header">
 									<h5 class="modal-title">Add Events</h5>
 									<button type="button" class="close" data-dismiss="modal"
@@ -108,13 +108,13 @@
 									<div class="form-group">
 										<label class="control-label"> Contact Number: <span
 											style="color: red"> *</span>
-										</label> <input type="text" class="form-control" name=contactNumber
+										</label> <input type="number" class="form-control" min=10 name=contactNumber
 											id="contactNumber" placeholder="Contact Number" required>
 									</div>
 									<div class="form-group">
 										<label class="control-label"> Event Date: <span
 											style="color: red"> *</span>
-										</label> <input type="date" class="form-control" name=eventDate
+										</label> <input type="text" class="form-control" name=eventDate
 											id="eventDate" placeholder="Event Date" required>
 									</div>
 									<!-- <div class="form-group">
@@ -176,7 +176,7 @@
 									<div class="form-group">
 										<label class="control-label"> Contact Number:<span
 											style="color: red"> *</span>
-										</label> <input type="number" class="form-control" id="editContactNumber"
+										</label> <input type="number" class="form-control" min="10" id="editContactNumber"
 											placeholder="Contact Number" required>
 									</div>
 									 <div class="form-group">
@@ -202,6 +202,25 @@
 					</div>
 				</div>
 				<!-- End Edit Modal -->
+				<div class="modal" id="deleteModal" tabindex="-1" role="dialog">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title"> Confirm Delete</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<p>Are you sure you want to delete?</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-danger" onclick=" deleteEvent()">Confirm</button>
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			<jsp:include page="footer.jsp" ></jsp:include>
 		</div>
@@ -228,31 +247,21 @@
 			$("#eventsJsp").addClass("active");
 			getAllEvents();
 			$('#userId').select2();
+			$('#eventDate').datepicker({
+				startDate : new Date()
+
+			});
 		});
 
-		function selectRow(operation) {
-			$('#eventTable tbody').on('click', 'tr', function() {
-				if ($(this).hasClass('rowSelected')) {
-					$(this).removeClass('rowSelected');
-				} else {
-					table.$('tr.rowSelected').removeClass('rowSelected');
-					$(this).addClass('rowSelected');
-					if (operation == "edit") {
-						edit();
-					} else {
-						deleteEvent();
-					}
-				}
-			});
-		}
+
 		
 		$('#addEvent').click(function() {
 			$('#addEventModal').modal('show');
-		})
+		});
 
-		$('#btnAdd').click(function() {
-			
-			var body = {"eventName" : $('#eventName').val(),"eventDescription" : $('#eventDescription').val(),"contactNumber" : $('#contactNumber').val(),"address" : $('#address').val(),"eventDate" : $('#eventDate').val()}
+		function addedEvent() {
+			var date = new Date($('#eventDate').val());
+			var body = {"eventName" : $('#eventName').val(),"eventDescription" : $('#eventDescription').val(),"contactNumber" : $('#contactNumber').val(),"address" : $('#address').val(),"eventDate" :date.getTime()};
 			
 			$.ajax({
 				type : 'POST',
@@ -278,7 +287,7 @@
 					getAllEvents() ;
 				}
 			});
-		});
+		}
 
 
 		function updateEvent() {
@@ -309,6 +318,8 @@
 							timer : 200
 						});
 						getAllEvents();
+						$('#addDonorDetails').trigger("reset");
+
 					}
 				}
 			});
@@ -318,12 +329,26 @@
 		}
 
 		function editDonor(data) {
-			console.log(data);
-			selectRow("edit");
+			if ($(data).parent().parent().hasClass('rowSelected')) {
+				$(data).parent().parent().removeClass('rowSelected');
+			} else
+			{
+				table.$('tr.rowSelected').removeClass('rowSelected');
+				$(data).parent().parent().addClass('rowSelected');
+			}
+			edit();
 		}
 
-		function deleteData() {
-			selectRow("deleteEvent");
+		function deleteData(data) {
+			if ($(data).parent().parent().hasClass('rowSelected')) {
+				$(data).parent().parent().removeClass('rowSelected');
+			} else
+			{
+				table.$('tr.rowSelected').removeClass('rowSelected');
+				$(data).parent().parent().addClass('rowSelected');
+			}
+			$('#deleteModal').modal('show');
+
 		}
 
 		function edit() {
@@ -349,6 +374,20 @@
 				url: '/deleteEvent/'+rowData.eventId,
 				success: function (response) {
 					if(response.status == 200){
+						$('#deleteModal').modal('hide');
+						$.notify({
+							// options
+							message : 'Event deleted successfully'
+						}, {
+							// settings
+							type : 'success',
+							allow_dismiss : true,
+							placement : {
+								from : "top",
+								align : "center"
+							},
+							timer : 200
+						});
 						getAllEvents();
 					}
 				}
@@ -365,7 +404,7 @@
 			table = $('#eventTable').DataTable( {
 				"ajax": "/getAllEvents",
 				"columns": [
-					{ "data": "eventId" },
+					{ "data": "eventId", "visible" : false },
 					{ "data": "eventName" },
 					{ "data": "eventDescription" },
 					{ "data": "address" },
@@ -384,7 +423,7 @@
 					},
 					{ "data": null,
 						"render": function ( data, type, row, meta ) {
-							return '<i class="fas fa-edit" style="margin-right: 10%; font-size: 18px; color: #22733d" onclick="editDonor(this)"></i><i class="fas fa-trash-alt" style="margin-left: 10%; font-size: 18px; color: #bb3b3b" onclick="deleteData()"></i>' ;
+							return '<i class="fas fa-edit" style="margin-right: 10%; font-size: 18px; color: #22733d" onclick="editDonor(this)"></i><i class="fas fa-trash-alt" style="margin-left: 10%; font-size: 18px; color: #bb3b3b" onclick="deleteData(this)"></i>' ;
 						}
 					}
 				]

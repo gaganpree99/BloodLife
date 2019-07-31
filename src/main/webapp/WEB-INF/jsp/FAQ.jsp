@@ -4,9 +4,11 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+	<meta charset="utf-8">
 <title>FAQ</title>
-<meta charset="utf-8">
+
 <meta content="width=device-width" name="viewport" />
 <link rel="stylesheet" href="/css/bootstrap.min.css">
 <link href="/demo/login.css" rel="stylesheet" />

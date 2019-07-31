@@ -26,7 +26,7 @@ public class ViewController {
 		return "index";
 	}
 
-	@RequestMapping("/donor")
+	@RequestMapping("/donorPage")
 	public String donor() {
 		return "donor";
 	}
@@ -51,12 +51,12 @@ public class ViewController {
 		return "galleryManagement";
 	}
 
-	@RequestMapping("/dashboard")
+	@RequestMapping("/dashboardPage")
 	public String dashboard() {
 		return "dashboard";
 	}
 	
-	@RequestMapping("/receiver")
+	@RequestMapping("/receiverPage")
 	public String receiver() {
 		return "receiver";
 	}
@@ -71,10 +71,13 @@ public class ViewController {
 		return "FAQ";
 	}
 
-	@RequestMapping("/organization")
+	@RequestMapping("/organizationPage")
 	public String organization() {
 		return "organization";
 	}
-	
-	
+
+	@RequestMapping("/usersPage")
+	public String orgUsers() {
+		return "orgusers";
+	}
 	}
